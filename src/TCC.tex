@@ -1,0 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Trabalho de Conclusão de Curso
+% Aluno: Mario Henrique A. C. Adaniya
+% Orientador: Prof. Dr. Mario Lemos Proença Jr.
+% 
+% Estrutura Principal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{abnt}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage{latexsym}
+\usepackage{ae}
+\usepackage{hyperref}
+\usepackage[alf]{abntcite}
+\usepackage{tabela-simbolos} %utilizado apenas para manter compatibilidade de codigo
+\usepackage{longtable} % tabelas longas, utilizado na lista de simbolos
+\usepackage{listings} % pacote para algoritmos
+%\usepackage{chngcntr} %pacote para alterar contadores
+
+\begin{document}
+
+%	\include{./capa}
+%	\include{./folhaderosto}
+	
+%	\sumario
+	
+	\include{./capitulo/webmining}
+%	\include{./capitulo/extracaoinformacao}
+%	\include{./capitulo/namedentityrecognition}
+%	\include{./capitulo/saluscyted}
+
+%	\include{./conclusao}
+	
+	\bibliographystyle{abnt-alf}
+	\bibliography{./bibliografia/bibliografia}
+
+\end{document}
