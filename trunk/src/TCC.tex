@@ -20,7 +20,22 @@
 \usepackage{tabela-simbolos} %utilizado apenas para manter compatibilidade de codigo
 \usepackage{longtable} % tabelas longas, utilizado na lista de simbolos
 \usepackage{listings} % pacote para algoritmos
+\usepackage{float}      
+\usepackage{fancyvrb}
+
 %\usepackage{chngcntr} %pacote para alterar contadores
+
+%===== Códigos Fonte =====
+\newenvironment{codeverbatim}{\VerbatimEnvironment \small
+   \begin{Verbatim}[xleftmargin=20mm]}
+   {\end{Verbatim}}
+%=======
+\floatstyle{plain}  % tipos: plain, boxed, ruled
+\newfloat{codigo}{tbp}{lop}[section]  % numera os captions com  número de seção.
+\floatname{codigo}{Código}
+% nome para ser usado no sumário
+\newcommand{\listofcodename}{Lista de Códigos}
+%=========================
 
 \begin{document}
 
@@ -28,6 +43,9 @@
 %	\include{./folhaderosto}
 	
 %	\sumario
+%	\addcontentsline{toc}{chapter}{\listofcodename}
+%	\listof{codigo}{\listofcodename}  % Lista de Códigos 
+
 	
 	\include{./capitulo/webmining}
 %	\include{./capitulo/extracaoinformacao}
