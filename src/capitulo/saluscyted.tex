@@ -6,11 +6,11 @@
 	
 	\textbf{Parser} - é um componente de um programa que analisa a estrutura léxica de uma entrada de acordo com regras pré-definidas. E para a criação do 
 	
-	A ferramenta para a implementação do NameParser foi o JavaCC(Java Compiler Compiler[tm]). É um gerador de parser inicialmente desenvolvido pela Sun. Utiliza uma sintaxe próxima do Java, e trabalha \textit{top-down}.
+	A ferramenta para a implementação do NameParser foi o JavaCC(Java Compiler Compiler[tm]). É um gerador de parser \textit{open-source} inicialmente desenvolvido pela \textit{Sun}. Utiliza uma sintaxe próxima do Java, e trabalha \textit{top-down}.
 	 
 	Um Parser é um programa de computador (ou apenas um componente de um programa) que serve para analisar a estrutura gramatical de uma entrada, manipulando os tokens, que são segmentos de texto ou símbolos que podem ser manipulados. Em XML, o parser pode ser um leitor que ajuda na conversão do arquivo para manipulação dos dados contidos no mesmo.
 	
-	A criação do Parser para a extração de nomes em paginas, foi desenvolvida em várias etapas. No primeiro momento, foi criado a Expressão Regular para a extração de nomes. 
+	A criação do Parser para a extração de nomes em paginas, foi desenvolvida em várias etapas. No primeiro momento, foi criado a Expressão Regular para a extração de nomes. A Expressão foi concebida analisando como os nomes aparecem em nossa escrita. Por exemplo: Pedro de Alcântara Francisco Antônio, podemos encontrar ele escrito nas seguintes formas: Pedro de A. F. Antonio, Pedro A. F. Antônio, Pedro de A. Francisco Antônio. Ainda temos que relevar se ele publicou algum artigo ou outro documento do gênero, onde segue-se uma regra específica, logo, podemos encontrar o nome escrito nas seguintes formas: "de A. F. A, Pedro.", 
  
 \renewcommand{\baselinestretch}{0.5}  % distância entre linhas
 \begin{codigo}[htb]
