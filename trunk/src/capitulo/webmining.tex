@@ -1,18 +1,37 @@
-\chapter{Mineração de Dados na WEB} \label{capitulo1}
+\chapter{Mineração de Dados na WEB} \label{capitulo2}
 
-\section{Introdução}
-
-	Os avanços inimagináveis presenciados atualmente, ajudam para uma globalização e modernização do mundo como nunca poderiamos prever. As informações e como elas são tratadas também sofreram drásticas alterações, e podemos destacar como um grande fator o advento da \textit{Internet}. Atualmente é improvável nos imaginarmos sem a \textit{Internet} e suas facilidades. Alguns acreditam que a importância da \textit{Internet} em nossas vidas num futuro próximo será tratada como a necessidade da energia elétrica, água e saneamento básico, entre outros serviços que tomamos como essenciais hoje.
+\section{Intro - Web Mining}
+		No inicio, a \textit{Web} continha páginas estáticas objetivando um acesso cômodo as informações. Muitas páginas eram manualmente implementadas, sem contemplar muito a interação com o usuário. Geralmente seguiam a direção servidor-usuário.
+		
+		Com a expansão e o acesso crescente, as páginas começaram a evoluir, assim como a \textit{Web}. Tornando-se dinâmica, onde encontramos páginas construídas interagindo-se com o usuário. Nos encontramos neste estágio evolutivo, e caminhamos para um futuro muito mais brilhante.
+		
+		E como a evolução não tem fim, estamos observando a concepção da \textit{Web} Semântica. Onde apenas apresentar as informações para o usuário não é o suficiente, como é preciso, expressar de uma forma semântica também para o entendimento das máquinas.
+		 
+		Alguns problemas podem ser encontrados pelos usuários quando interagem com a \textit{Web}\cite{Kosala2000}:
+  
+		 \begin{itemize}
+		   \item[a.] \textbf{Achar informações relevantes} - Os usuários quando utilizam serviços de pesquisa, procuram através de palavras-chaves alguma informação na \textit{Web}. O resultado da busca, as vezes, é enorme e com isso temos: resultados relevantes, pouco relevantes ou sem relevância;
+		   
+		   \item[b.] \textbf{Personalização da informação} - Usuários diferentes, interagem diferentemente e querem conteúdos diferentes, logo, temos o problema no lado do usuário e do próprio provedor;   
+		 \end{itemize}
+    
+		Como a\textit{Web Mining} foi concebida devido aos estudos nas mais diversas linhas de pesquisa: extração de informação, inteligência artificial, banco de dados, recuperação de informação e entre outras áreas. Ela faz parte de um todo, que abrange os problemas acimas citados.  
+  
+\section{\textit{Web Mining}}
 	
-	Cada vez mais encontramos toda e qualquer informação que precisamos disponíveis \textit{online}. É uma tendência que grandes editoras com revistas e publicações impressas estão aderindo, mantendo os impressos tradicionais e publicando virtualmente os mesmos conteúdos e adicionando outros exclusivos na edição \textit{online}. A \textit{World Wide Web (Web)} é um meio de comunicação popular e interativo para disseminar informação atualmente.\cite{Kosala2000} Todo dia, mais e mais páginas são indexadas pelos motores de buscas. \textit{Blogs} surgem aos milhares com pessoas expressando suas idéias, opiniões e experiências. Sites de relacionamento, fóruns, \textit{Wikis} armazenam conteúdos imensos dos mais diversificados assuntos. E neste pandemônio, como encontrar o que estamos procurando? Como descobrir se a informação recuperada é confiavel? 
-	
-	A area da Extração da Informação(EI) possui como meta localizar informações relevantes em documentos ou um conjunto de documentos expresso em lingua natural, extraí-las e estrutura-lás, por exemplo, em banco de dados a fim de facilitar sua manipulação e análise\cite{Alvarez2007}. 
+		\textit{Web Mining} é o uso das técnicas de Mineração de Dados para descobrir e extrair automaticamente a informação de documentos na Web\cite{Etzione1996}. Seguindo o conceito de Etzione, que utiliza da KDD(Knowledge Discovery Database), ele decompõe a Web Mining em 4 tarefas:
+		
+		\begin{enumerate}
+          \item Resource finding(Coleta de Documentos);
+          \item Information selection and pre-processing(Pré-processamento);
+          \item Generalization(Extração de Padrões);
+          \item Analysis(Análise).
+        \end{enumerate}
+		
+		É imporante ressaltar que 
+		 
+		A Mineração de Dados refere-se ao processo não trivial de identificação de padrões válidos, previamente desconhecidos e potencialmente úteis de dados.\cite{Frawley1992} 
 
-\section{Web Mining}
-	No inicio, a \textit{Web} continha páginas estáticas objetivando um acesso cômodo as informações. Muitas páginas eram manualmente implementadas, sem contemplar muito a interação com o usuário. Aumentando o 
-
-\textit{Web Mining} foi concebido devido aos estudos nas mais diversas linhas de pesquisa: extração de informação, inteligência artificial, banco de dados, recuperação de informação e entre outras areas. 
- 
 \begin{itemize}
 	\item \textbf{Mineração na \textit{WEB} de Conteúdo} - áudio, vídeo, dados simbólicos, metadados e vínculos de hipertexto fazem parte do conteúdo de documentos da \textit{Web} atualmente, e como tal, na mineração de conteúdos também são analisados. Existem áreas de pesquisas destinadas a mineração de dados multimídias, entretanto, como uma enorme parte da \textit{Web} é constituída de texto e hipertexto, portanto o foco permanece em dados de texto. Estes podem ser encontrados em três tipos: desestruturados (textos), semi-estruturados (\textit{HTML}) e estruturados (\textit{XML}). 
 	A área de mineração de textos está bem esclarecida, com muitas técnicas, uma das quais seria reestruturar o documento para uma linguagem entendida pela maquina. Uma mineração que vem ganhando destaque em pesquisas é a mineração em serviços da Web tais como grupo de noticias, grupos de e-mails, lista de discussão. Outro conceito é introduzido por estes pesquisadores, chamado de \textit{Web Intelligence}, que promete transformar os serviços da \textit{Web} em entidades inteligentes, de forma que elas possam interagir e se comunicar através de uma linguagem comum. A mineração de conteúdo e a recuperação de informação são muitas vezes utilizadas em conjunto. Enquanto uma realiza a mineração diretamente do conteúdo dos documentos a outra incrementa o poder de busca de outras ferramentas e serviços. \\
