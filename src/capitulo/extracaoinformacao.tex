@@ -1,14 +1,37 @@
 \chapter{Extração de Informação} \label{capitulo4}
 
-		Nós, simples seres humanos, não temos a capacidade de processar \textit{megabytes} de texto todos os dias, e nesses bytes, quantas oportunidades ou informações estariamos perdendo? Projetos em Processamento de Linguagem Natural originaram a Extração da Informação. Extração de Informação tem como objetivo transformar a coleção de documentos, geralmente com o auxilio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida\cite{Lehnert1996}. Na Extração da Informação, a compreensão do texto fonte não é obrigatória, pois a analise é feita com o objetivo de porções que contenham o quê deve ser extraido.
-		
-		
-		
-		O sistema de EI deve ser alimentado com algumas diretrizes sobre o domínio que orientam sobre o que encontrar nos textos e o que extrair. No desempenho destas tarefas, os sistemas de EI não precisam compreender completamente o texto fonte; ao invés, os sistemas analisam o texto na busca de porções que possam conter a informação procurada.   
-				
-		Diferente de outras técnicas que também procuram por informações relevantes em textos, a saída de um sistema de EI é um banco de dados. Uma tarefa de EI prevê que um número de campos nos registros do banco de dados sejam preenchidos por um número limitado de possibilidades previamente determinadas ou por algum valor em aberto. Os valores dos campos são expressões do texto fonte. O banco de dados funciona como um modelo (vide seção 4.2.5).
+		Nós, simples seres humanos, não temos a capacidade de processar \textit{megabytes} de texto todos os dias, e nesse mar de bytes, quantas oportunidades estariamos perdendo ou informações perdidas? Projetos em Processamento de Linguagem Natural originaram a Extração da Informação. Extração de Informação tem como objetivo transformar a coleção de documentos, geralmente com o auxilio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida\cite{Lehnert1996}. Na Extração da Informação, a compreensão do texto fonte não é obrigatória, pois a analise é feita com o objetivo de encontrar porções que contenham o quê deve ser extraido. A sáida de um sistema de Extração da Informação são informações relevantes para o domínio específico, de acordo com as orientações iniciais.
 
-			A complexidade no desenvolvimento de um sistema de EI origina-se dos requerimentos de processamento de linguagem envolvidos no reconhecimento de palavras e análise de frases, bem como da compreensão ao nível de frase, e da análise de discurso até o nível de todo o documento. A pesquisa em EI foi alavancada pelos congressos Message Understanding Conferences (MUC) (Sundheim, 1991, 1992, Lehnert, & Sundheim, 1991). O método empregado pelo laboratório de processamento de linguagem natural da Universidade de Massachusetts (Lehnert, 1996) ao participar dos MUCs (MUC-3, 1991, MUC-4, 1992, MUC-5, 1993) é bastante adequado para aplicações onde a precisão das classificações é mais importante do que o reconhecimento de cada documento. Os principais tópicos que foram objeto de pesquisa por este grupo foram análise de frase (Cardie e Lehnert, 1991), rotulagem semântica (semantic tagging) (Cardie, 1993), construção de dicionários (Riloff & Lehnert, 1993, Riloff, 1993), e classificação de texto (Riloff & Lehnert, 1992 e 1994).
+		O reconhecimento de palavras, análise de frases, compreensão do sentindo da frase ou de todo o documento são envolvidos nas pesquisas de processamento de linguagens, e aumentam a complexidade no desenvolvimento de um sistema de Extração da Informação. Um grande alavancador nas pesquisas em Extração da Informação foram os congressos \textit{MUC(Message Understanding Conferences)} que eram financiadas pelo \textit{DARPA(Defense Advanced Research Projects Agency)}\cite{Sundheim1991}.
+				
+		Os participantes puderam optar pelo formato de saída apenas no MUC-1. Da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. A cada conferência crescia o número de campos. Reconhecimento de Entidades Relacionadas e Co-referencia foram adicionadas na sexta conferência.
+						
+% Tabela dos MUC
+\begin{table}[htbp]
+  \centering   
+    \begin{tabular}{rrrr}
+    \addlinespace
+    \toprule
+    {\bf Conferência} & {\bf Ano} & {\bf Fonte de Texto} & {\bf Tópico(Dominio)} \\
+    \midrule
+    MUC-1 & 1987  & Artigos Militares &  \\
+    MUC-2 & 1989  & Artigos Militares &  \\
+    MUC-3 & 1991  & Artigos de Jornais & Atividades Terroristas na América Latina \\
+    MUC-4 & 1992  & Artigos de Jornais & Atividades Terroristas na América Latina \\
+    MUC-4 & 1993  & Artigos de Jornais &  \\
+    MUC-6 & 1995  & Artigos de Jornais &  \\
+    MUC-7 & 1997  & Artigos de Jornais & Acidente de aviões e lançamento de foguetes \\
+    \bottomrule
+    \end{tabular}
+	\caption{MUC}
+  \label{tab:addlabel}
+\end{table}
+
+		Os critérios de avaliação consistiam em:
+		
+		
+<------------->
+		A complexidade no desenvolvimento de um sistema de EI origina-se dos requerimentos de processamento de linguagem envolvidos no reconhecimento de palavras e análise de frases, bem como da compreensão ao nível de frase, e da análise de discurso até o nível de todo o documento. A pesquisa em EI foi alavancada pelos congressos Message Understanding Conferences (MUC) (Sundheim, 1991, 1992, Lehnert, & Sundheim, 1991). O método empregado pelo laboratório de processamento de linguagem natural da Universidade de Massachusetts (Lehnert, 1996) ao participar dos MUCs (MUC-3, 1991, MUC-4, 1992, MUC-5, 1993) é bastante adequado para aplicações onde a precisão das classificações é mais importante do que o reconhecimento de cada documento. Os principais tópicos que foram objeto de pesquisa por este grupo foram análise de frase (Cardie e Lehnert, 1991), rotulagem semântica (semantic tagging) (Cardie, 1993), construção de dicionários (Riloff & Lehnert, 1993, Riloff, 1993), e classificação de texto (Riloff & Lehnert, 1992 e 1994).
  
 		Extração de Informação baseada em conhecimento
 		
