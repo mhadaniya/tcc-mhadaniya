@@ -1,10 +1,10 @@
 \chapter{Extração de Informação} \label{capitulo4}
 
-		Nós, simples seres humanos, não temos a capacidade de processar \textit{megabytes} de texto todos os dias, e nesse mar de bytes, quantas oportunidades estariamos perdendo ou informações perdidas? Projetos em Processamento de Linguagem Natural originaram a Extração da Informação. Extração de Informação tem como objetivo transformar a coleção de documentos, geralmente com o auxilio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida\cite{Lehnert1996}. Na Extração da Informação, a compreensão do texto fonte não é obrigatória, pois a analise é feita com o objetivo de encontrar porções que contenham o quê deve ser extraido. A sáida de um sistema de Extração da Informação são informações relevantes para o domínio específico, de acordo com as orientações iniciais.
+		Nós, simples seres humanos, não temos a capacidade de processar \textit{megabytes} de texto todos os dias, e nesse mar de bytes, quantas oportunidades deixamos de aproveitar ou informações que estariamos perdendo? Projetos em Processamento de Linguagem Natural originaram a Extração da Informação. Extração de Informação tem como objetivo transformar a coleção de documentos, geralmente com o auxilio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida\cite{Lehnert1996}. Na Extração da Informação, a compreensão do texto fonte não é obrigatória, pois a analise é feita com o objetivo de encontrar porções que contenham o quê deve ser extraido. A sáida de um sistema de Extração da Informação são informações relevantes para o domínio específico, de acordo com as orientações iniciais.
 
 		O reconhecimento de palavras, análise de frases, compreensão do sentindo da frase ou de todo o documento são envolvidos nas pesquisas de processamento de linguagens, e aumentam a complexidade no desenvolvimento de um sistema de Extração da Informação. Um grande alavancador nas pesquisas em Extração da Informação foram os congressos \textit{MUC(Message Understanding Conferences)} que eram financiadas pelo \textit{DARPA(Defense Advanced Research Projects Agency)}\cite{Sundheim1991}.
 				
-		Os participantes puderam optar pelo formato de saída apenas no MUC-1. Da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. A cada conferência crescia o número de campos. Reconhecimento de Entidades Relacionadas e Co-referencia foram adicionadas na sexta conferência.
+		Os participantes puderam optar pelo formato de saída apenas no MUC-1. Da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. A cada conferência crescia o número de campos. Reconhecimento de Entidades Relacionadas e Co-referencia foram adicionadas na sexta conferência. 
 						
 % Tabela dos MUC
 \begin{table}[htbp]
@@ -14,8 +14,8 @@
     \toprule
     {\bf Conferência} & {\bf Ano} & {\bf Fonte de Texto} & {\bf Tópico(Dominio)} \\
     \midrule
-    MUC-1 & 1987  & Artigos Militares &  \\
-    MUC-2 & 1989  & Artigos Militares &  \\
+    MUC-1 & 1987  & Artigos Militares &  Operações de fuga\\
+    MUC-2 & 1989  & Artigos Militares &  Operações de fuga\\
     MUC-3 & 1991  & Artigos de Jornais & Atividades Terroristas na América Latina \\
     MUC-4 & 1992  & Artigos de Jornais & Atividades Terroristas na América Latina \\
     MUC-4 & 1993  & Artigos de Jornais &  \\
@@ -24,16 +24,38 @@
     \bottomrule
     \end{tabular}
 	\caption{MUC}
-  \label{tab:addlabel}
+  \label{tab:Tabela de MUC}
 \end{table}
 
-		Os critérios de avaliação consistiam em:
 		
+\section{Critérios de Avaliação} 
 		
-<------------->
-		A complexidade no desenvolvimento de um sistema de EI origina-se dos requerimentos de processamento de linguagem envolvidos no reconhecimento de palavras e análise de frases, bem como da compreensão ao nível de frase, e da análise de discurso até o nível de todo o documento. A pesquisa em EI foi alavancada pelos congressos Message Understanding Conferences (MUC) (Sundheim, 1991, 1992, Lehnert, & Sundheim, 1991). O método empregado pelo laboratório de processamento de linguagem natural da Universidade de Massachusetts (Lehnert, 1996) ao participar dos MUCs (MUC-3, 1991, MUC-4, 1992, MUC-5, 1993) é bastante adequado para aplicações onde a precisão das classificações é mais importante do que o reconhecimento de cada documento. Os principais tópicos que foram objeto de pesquisa por este grupo foram análise de frase (Cardie e Lehnert, 1991), rotulagem semântica (semantic tagging) (Cardie, 1993), construção de dicionários (Riloff & Lehnert, 1993, Riloff, 1993), e classificação de texto (Riloff & Lehnert, 1992 e 1994).
- 
-		Extração de Informação baseada em conhecimento
+		Os critérios de avaliação consistiam em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída era correta(\textit{precision}) e quanto da informação extraída era supérflua(\textit{overgeneration})\cite{Sundheim1991}. As conferência têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas\cite{Wilks1998}.
+		
+		\begin{itemize}
+          	\item \textbf{Cobertura}(\textit{Recall}) - Quantidade de informação corretamente extraídas sobre todas as informações relevantes no texto.
+          	\begin{equation}
+              C = \frac{N_c}{N_t}
+            \end{equation}
+			Onde $$N_c$$ é o número de informações preenchidas corretamente pelo sistema, e $$N_p$$ é o número total de informações que foram preenchidas pelo sistema.
+			
+          	\item \textbf{Precisão}(\textit{Precision}) - Quantidade de informações corretamente extraídas sobre as informações extraídas.
+          	\begin{equation}
+              P = \frac{N_c}{N_p}
+            \end{equation}
+			$$N_t$$ é o número de informações que deveriam ser encontradas pelo sistema.
+			
+			Importante ressaltar que $$N_t$$ e $$N_p$$ são inversamente proporcionais, isto é, quando a cobertura aumenta, a precisão tende a diminuir e vice-cersa.
+			 
+  		 	\item \textbf{\textit{F-measure}}
+  		 	\begin{equation}
+              F-measure = \frac{(\beta^2)*C*P}{\beta^2 * (C + P)}
+            \end{equation}  		 		
+        \end{itemize}
+		
+	
+		
+		Extração de Informação baseada em conhecimento 
 		
 		O papel de padrões lingüísticos é sustentar a interpretação de textos na Extração de Informação baseada em conhecimento. Em função da construção de padrões lingüísticos ser um gargalo mesmo em domínios limitados, propôs-se o uso de um mecanismo de aprendizagem indutivo para construir automaticamente uma base de conhecimento de padrões. O sistema automático é construído sempre que se identifica um padrão lingüístico desconhecido. Um pressuposto importante embasando esta pesquisa é o reduzido número de expressões normalmente utilizado para descrever uma informação dentro de um domínio limitado (Kim & Moldovan, 1995).
  
