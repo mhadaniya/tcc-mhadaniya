@@ -30,53 +30,91 @@
 		
 \section{Critérios de Avaliação} 
 		
-		Os critérios de avaliação consistiam em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída era correta(\textit{precision}) e quanto da informação extraída era supérflua(\textit{overgeneration})\cite{Sundheim1991}. As conferência têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas\cite{Wilks1998}.
-		
+		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration})\cite{Sundheim1991}. As conferência \textit{MUC} têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas\cite{Wilks1998}.
+		 
 		\begin{itemize}
           	\item \textbf{Cobertura}(\textit{Recall}) - Quantidade de informação corretamente extraídas sobre todas as informações relevantes no texto.
+
           	\begin{equation}
               C = \frac{N_c}{N_t}
             \end{equation}
-			Onde $$N_c$$ é o número de informações preenchidas corretamente pelo sistema, e $$N_p$$ é o número total de informações que foram preenchidas pelo sistema.
+
+			Onde $N_c$ é o número de informações preenchidas corretamente pelo sistema, e $N_t$ é o número total de informações que foram preenchidas pelo sistema.
 			
           	\item \textbf{Precisão}(\textit{Precision}) - Quantidade de informações corretamente extraídas sobre as informações extraídas.
+          	
           	\begin{equation}
               P = \frac{N_c}{N_p}
             \end{equation}
-			$$N_t$$ é o número de informações que deveriam ser encontradas pelo sistema.
+
+			$N_t$ é o número de informações que deveriam ser encontradas pelo sistema.
 			
-			Importante ressaltar que $$N_t$$ e $$N_p$$ são inversamente proporcionais, isto é, quando a cobertura aumenta, a precisão tende a diminuir e vice-cersa.
+			Importante ressaltar que $N_t$ e $N_p$ são inversamente proporcionais, isto é, quando a cobertura aumenta, a precisão tende a diminuir e vice-cersa.
+			  
+  		 	\item \textbf{\textit{F-measure}} - A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. 
+  		 	
+  		 	\begin{equation}\label{Fórmula F-measure}
+              F-measure = \frac{(\beta^2 + 1)*C*P}{\beta^2 * (C + P)}
+            \end{equation}
+
+			Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas, e aplicando na fórmula ~\ref{Fórmula F-measure} temos:
 			 
-  		 	\item \textbf{\textit{F-measure}}
-  		 	\begin{equation}
-              F-measure = \frac{(\beta^2)*C*P}{\beta^2 * (C + P)}
-            \end{equation}  		 		
-        \end{itemize}
+  		 	\begin{equation}\label{Fórmula F-measure com \beta = 1}
+              F_1 = \frac{2*C*P}{C + P}
+            \end{equation}			   
+  		 		 
+        \end{itemize} 
 		
-	
+		Para exemplificar, vamos demonstrar isto com a ferramenta NameParser criada para o projeto \textit{Salus Cyted}.
 		
-		Extração de Informação baseada em conhecimento 
+		Para exemplificar os calculos de precisão e cobertura, vamos ilustrar um exemplo utilizando a pagina \textit{Association Alzheimer(http://www.alz.org/)} como nossa fonte de dados, a ferramenta extratora será discutida adiante no ~\ref{Capitulo 5}. 
 		
-		O papel de padrões lingüísticos é sustentar a interpretação de textos na Extração de Informação baseada em conhecimento. Em função da construção de padrões lingüísticos ser um gargalo mesmo em domínios limitados, propôs-se o uso de um mecanismo de aprendizagem indutivo para construir automaticamente uma base de conhecimento de padrões. O sistema automático é construído sempre que se identifica um padrão lingüístico desconhecido. Um pressuposto importante embasando esta pesquisa é o reduzido número de expressões normalmente utilizado para descrever uma informação dentro de um domínio limitado (Kim & Moldovan, 1995).
- 
-		Template Mining
-		
-		Template Mining ou mineração por modelos é uma técnica de processamento de LN que extrai dados de textos que possuem padrões que permitam o reconhecimento do que se deseja extrair ou de seus arredores. Um modelo contém informação sobre o que procurar no texto e é disparado a extrair determinadas partes devidamente indicadas. Lawson et al., (1996) descreve aplicações de template mining em domínios restritos alegando que esta técnica é própria para áreas cujos textos são claros com frases objetivas e de natureza declarativa.
- 
-		Text windowing
-		
-		A técnica text windowing é do tipo orientada para corpus de textos que avalia palavras na busca de blocos de palavras que estejam relacionadas por sintática ou propriedades léxicas. Jacquemin (1996), descreve uma aplicação de text windowing em um método para selecionar trechos de textos motivados por propriedades léxicas, combinando informação conceitual em listas de termos com metaregras em filtros semânticos locais.
- 
-		Documentos Auto-Explicativos
-		
-		Consideramos adequado associar a técnica de template mining com a metodologia proposta por Branting & Lester (1996) para documentos auto-explicativos. Nesta metodologia, os textos são analisados e classificados por sua estrutura retórica. A ligação entre as técnicas se dá pelo aproveitamento das estruturas retóricas como fonte para a definição dos parâmetros dos modelos usados pela técnica de template mining para extração de dados.
- 
-		Aquisição de Conhecimento de Textos
-		
-		O trabalho publicado pelo Grupo de Engenharia de Conhecimentos de Textos da Universidade de Freiburg através de diversos artigos descreve os esforços para analisar textos que apresentam novas formas de conhecimento. O grupo se utiliza de um parser de LN e almeja a expansão desta base de conhecimento. Da mesma forma que os grupos que tomaram parte dos MUCs, eles também usam técnicas com modelos; entretanto, eles permitem que novos modelos sejam adicionados como resultado da aprendizagem de conceitos (Hahn, & Schnattinger, 1997).
+			\begin{figure}[htb]
+				\begin{center}				
+					\includegraphics[scale=0.25]{./figuras/site_nome_grifado.png}				
+				\end{center}
+			\end{figure}
 
-		O ponto central da pesquisa do grupo trata-se da aquisição de conhecimento de textos que ocorre com a aprendizagem de conceitos que alimenta um sistema de compreensão de linguagem natural. A aprendizagem de conceitos em uma plataforma de compreensão de linguagem natural é orientada para os recursos através do uso de um Machine Readable Dictionary MRD e é orientada por contexto. Os autores alegam que inferir o significado das palavras baseando-se em informações sobre o contexto é mais confiável do que procurar por seu significado em um MRD. A aprendizagem de conceitos é concebida com o desenvolvimento de uma abordagem de aprendizagem de raízes simbólicas. Um exemplo de aquisição de conceito é descrito em Hahn et al. (1996). O projeto do grupo visa duas aplicações práticas de aquisição de conhecimento de textos da língua alemã: artigos sobre testes de produtos de tecnologia de informação (100 documentos com 10^5 palavras) e artigos sobre descobertas médicas (120,000 documentos com $$10^7 palavras).
+		Temos como resultante a tabela ~\ref{resultados}.
+		
+		\begin{table}[htbp]
+		  \centering   		  	
+		    \begin{tabular}{rc}
+		    \addlinespace
+		    \toprule
+		    {} & {Pagina} \\
+		    \midrule		    
+			    Nomes presentes & 16 \\
+			    Nomes identificados pelo programa & 83 \\
+			    
+		    \bottomrule
+		    \end{tabular}			
+		  \label{resultados}
+		  \caption{Resultados da extração}
+		\end{table}		
+				
+		%Extração de Informação baseada em conhecimento 
+		
+		%O papel de padrões lingüísticos é sustentar a interpretação de textos na Extração de Informação baseada em conhecimento. Em função da construção de padrões lingüísticos ser um gargalo mesmo em domínios limitados, propôs-se o uso de um mecanismo de aprendizagem indutivo para construir automaticamente uma base de conhecimento de padrões. O sistema automático é construído sempre que se identifica um padrão lingüístico desconhecido. Um pressuposto importante embasando esta pesquisa é o reduzido número de expressões normalmente utilizado para descrever uma informação dentro de um domínio limitado (Kim & Moldovan, 1995).
+ 
+		%Template Mining
+		
+		%Template Mining ou mineração por modelos é uma técnica de processamento de LN que extrai dados de textos que possuem padrões que permitam o reconhecimento do que se deseja extrair ou de seus arredores. Um modelo contém informação sobre o que procurar no texto e é disparado a extrair determinadas partes devidamente indicadas. Lawson et al., (1996) descreve aplicações de template mining em domínios restritos alegando que esta técnica é própria para áreas cujos textos são claros com frases objetivas e de natureza declarativa.
+ 
+		%Text windowing
+		
+		%A técnica text windowing é do tipo orientada para corpus de textos que avalia palavras na busca de blocos de palavras que estejam relacionadas por sintática ou propriedades léxicas. Jacquemin (1996), descreve uma aplicação de text windowing em um método para selecionar trechos de textos motivados por propriedades léxicas, combinando informação conceitual em listas de termos com metaregras em filtros semânticos locais.
+ 
+		%Documentos Auto-Explicativos
+		
+		%Consideramos adequado associar a técnica de template mining com a metodologia proposta por Branting & Lester (1996) para documentos auto-explicativos. Nesta metodologia, os textos são analisados e classificados por sua estrutura retórica. A ligação entre as técnicas se dá pelo aproveitamento das estruturas retóricas como fonte para a definição dos parâmetros dos modelos usados pela técnica de template mining para extração de dados.
+ 
+		%Aquisição de Conhecimento de Textos
+		
+		%O trabalho publicado pelo Grupo de Engenharia de Conhecimentos de Textos da Universidade de Freiburg através de diversos artigos descreve os esforços para analisar textos que apresentam novas formas de conhecimento. O grupo se utiliza de um parser de LN e almeja a expansão desta base de conhecimento. Da mesma forma que os grupos que tomaram parte dos MUCs, eles também usam técnicas com modelos; entretanto, eles permitem que novos modelos sejam adicionados como resultado da aprendizagem de conceitos (Hahn, & Schnattinger, 1997).
 
-		O trabalho descrito por Mauldin (1991) usa a compreensão parcial de textos obtida através de um parser que realiza text skimming para recuperação de informação conceitual, utilizando um banco de dados de scripts que, por sua vez, é alimentado por um método de aprendizagem e um MRD que aprimora o conhecimento léxico. A recuperação de informação executada pelo sistema ferret é referida como recuperação de informação conceitual porque ao invés de realizar a busca através do uso de palavras-chave (baseada em palavras) é usado conhecimento sobre os conceitos.
+		%O ponto central da pesquisa do grupo trata-se da aquisição de conhecimento de textos que ocorre com a aprendizagem de conceitos que alimenta um sistema de compreensão de linguagem natural. A aprendizagem de conceitos em uma plataforma de compreensão de linguagem natural é orientada para os recursos através do uso de um Machine Readable Dictionary MRD e é orientada por contexto. Os autores alegam que inferir o significado das palavras baseando-se em informações sobre o contexto é mais confiável do que procurar por seu significado em um MRD. A aprendizagem de conceitos é concebida com o desenvolvimento de uma abordagem de aprendizagem de raízes simbólicas. Um exemplo de aquisição de conceito é descrito em Hahn et al. (1996). O projeto do grupo visa duas aplicações práticas de aquisição de conhecimento de textos da língua alemã: artigos sobre testes de produtos de tecnologia de informação (100 documentos com 10^5 palavras) e artigos sobre descobertas médicas (120,000 documentos com $$10^7 palavras).
 
-		Um ponto de vista interessante sobre o problema de aquisição de conhecimento de textos é descrito em Futrelle & Zhang (1994) que apresenta técnicas de bootstrap que podem descobrir a estrutura de ordem da linguagem natural e definir classes de palavras presentes em corpus de textos. A definição de classes de palavras é baseada no princípio da substituição onde o significado de uma palavra é encontrado pela comparação dos contextos onde as palavras aparecem e onde elas podem ser substituídas por outra palavra da mesma classe. 
+		%O trabalho descrito por Mauldin (1991) usa a compreensão parcial de textos obtida através de um parser que realiza text skimming para recuperação de informação conceitual, utilizando um banco de dados de scripts que, por sua vez, é alimentado por um método de aprendizagem e um MRD que aprimora o conhecimento léxico. A recuperação de informação executada pelo sistema ferret é referida como recuperação de informação conceitual porque ao invés de realizar a busca através do uso de palavras-chave (baseada em palavras) é usado conhecimento sobre os conceitos.
+
+		%Um ponto de vista interessante sobre o problema de aquisição de conhecimento de textos é descrito em Futrelle & Zhang (1994) que apresenta técnicas de bootstrap que podem descobrir a estrutura de ordem da linguagem natural e definir classes de palavras presentes em corpus de textos. A definição de classes de palavras é baseada no princípio da substituição onde o significado de uma palavra é encontrado pela comparação dos contextos onde as palavras aparecem e onde elas podem ser substituídas por outra palavra da mesma classe. 
