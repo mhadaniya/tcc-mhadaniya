@@ -67,7 +67,7 @@
 		
 		Para exemplificar, vamos demonstrar isto com a ferramenta NameParser criada para o projeto \textit{Salus Cyted}.
 		
-		Para exemplificar os calculos de precisão e cobertura, vamos ilustrar um exemplo utilizando a pagina \textit{Association Alzheimer(http://www.alz.org/)} como nossa fonte de dados, a ferramenta extratora será discutida adiante no ~\ref{Capitulo 5}. 
+		Para exemplificar os calculos de precisão e cobertura, vamos ilustrar um exemplo utilizando a pagina \textit{Association Alzheimer(http://www.alz.org/)} como nossa fonte de dados, a ferramenta extratora e o seu funcionamento serão discutidas adiante no capítulo ~\ref{Capitulo 5}. 
 		
 			\begin{figure}[htb]
 				\begin{center}				
@@ -76,22 +76,26 @@
 			\end{figure}
 
 		Temos como resultante a tabela ~\ref{resultados}.
-		
-		\begin{table}[htbp]
-		  \centering   		  	
-		    \begin{tabular}{rc}
-		    \addlinespace
-		    \toprule
-		    {} & {Pagina} \\
-		    \midrule		    
-			    Nomes presentes & 16 \\
-			    Nomes identificados pelo programa & 83 \\
-			    
-		    \bottomrule
-		    \end{tabular}			
-		  \label{resultados}
-		  \caption{Resultados da extração}
-		\end{table}		
+				
+            \begin{table}[htbp]
+              \centering              
+                    \begin{tabular}{rr}
+                        \addlinespace
+                        \toprule
+                              &  \\
+                        \midrule
+                              & Página \\
+                                Nomes presentes & 16 \\
+                                Nomes identificados pelo programa (usando expressões) & 83 \\
+                                Nomes corretamente identificados (usando expressões) & 16 \\
+                                Precisão – Precision & 100\% \\
+                                Abrangência – Recall & 19\% \\
+                              &  \\
+                        \bottomrule
+                    \end{tabular}
+                \caption{Resultados da extração}
+              \label{resultados}
+            \end{table}
 				
 		%Extração de Informação baseada em conhecimento 
 		
