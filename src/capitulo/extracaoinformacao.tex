@@ -24,7 +24,7 @@
     \bottomrule
     \end{tabular}
 	\caption{MUC}
-  \label{tab:Tabela de MUC}
+  \label{tab:MUC}
 \end{table}
 
 		
@@ -33,49 +33,47 @@
 		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration})\cite{Sundheim1991}. As conferência \textit{MUC} têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas\cite{Wilks1998}.
 		 
 		\begin{itemize}
-          	\item \textbf{Cobertura}(\textit{Recall}) - Quantidade de informação corretamente extraídas sobre todas as informações relevantes no texto.
-
-          	\begin{equation}
-              C = \frac{N_c}{N_t}
-            \end{equation}
-
-			Onde $N_c$ é o número de informações preenchidas corretamente pelo sistema, e $N_t$ é o número total de informações que foram preenchidas pelo sistema.
-			
-          	\item \textbf{Precisão}(\textit{Precision}) - Quantidade de informações corretamente extraídas sobre as informações extraídas.
+          	\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) - Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_c$) sobre a informação relevante na página($N_t$). Representada pela fórmula~\ref{formula:cobertura}
           	
-          	\begin{equation}
+          	\begin{equation}\label{formula:cobertura}
+              C = \frac{N_c}{N_t}              
+            \end{equation}            
+
+    is the number of true positives: the number of queries correctly classified into their true class.
+			 %$N_c$ é o número de informações preenchidas corretamente pelo sistema, e $N_t$ é o número total de informações que foram preenchidas pelo sistema.
+			
+          	\item \textbf{Precisão}(\textit{Precision}) - Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_c$) sobre a informações extraídas($N_p$).
+          	
+          	\begin{equation}\label{formula:precisao}
               P = \frac{N_c}{N_p}
             \end{equation}
-
-			$N_t$ é o número de informações que deveriam ser encontradas pelo sistema.
-			
+						
 			Importante ressaltar que $N_t$ e $N_p$ são inversamente proporcionais, isto é, quando a cobertura aumenta, a precisão tende a diminuir e vice-cersa.
 			  
   		 	\item \textbf{\textit{F-measure}} - A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. 
   		 	
-  		 	\begin{equation}\label{Fórmula F-measure}
+  		 	\begin{equation}\label{formula:F-measure}
               F-measure = \frac{(\beta^2 + 1)*C*P}{\beta^2 * (C + P)}
             \end{equation}
 
-			Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas, e aplicando na fórmula ~\ref{Fórmula F-measure} temos:
+			Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas, e aplicando na fórmula~\ref{formula:F-measure} temos:
 			 
-  		 	\begin{equation}\label{Fórmula F-measure com \beta = 1}
+  		 	\begin{equation}\label{formula:F1}
               F_1 = \frac{2*C*P}{C + P}
             \end{equation}			   
   		 		 
         \end{itemize} 
-		
-		Para exemplificar, vamos demonstrar isto com a ferramenta NameParser criada para o projeto \textit{Salus Cyted}.
-		
-		Para exemplificar os calculos de precisão e cobertura, vamos ilustrar um exemplo utilizando a pagina \textit{Association Alzheimer(http://www.alz.org/)} como nossa fonte de dados, a ferramenta extratora e o seu funcionamento serão discutidas adiante no capítulo ~\ref{Capitulo 5}. 
+		 
+		Para ilustrar melhor os calculos, utilizando a ferramenta NameParser criada para o projeto \textit{Salus Cyted}, que será discutida no capitulo~\ref{Capitulo 5}. A ferramenta será aplicada na página  \textit{Association Alzheimer\footnote{Association Alzheimer - http://www.alz.org/}}, vista na figura~\ref{fig:siteAssociationAlzheimer} como nossa fonte de dados. 
 		
 			\begin{figure}[htb]
 				\begin{center}				
 					\includegraphics[scale=0.25]{./figuras/site_nome_grifado.png}				
 				\end{center}
+                \label{fig:siteAssociationAlzheimer}
 			\end{figure}
 
-		Temos como resultante a tabela ~\ref{resultados}.
+		Temos como resultante a tabela ~\ref{tab:resultados_alzheimerassociation}.
 				
             \begin{table}[htbp]
               \centering              
@@ -89,13 +87,18 @@
                                 Nomes identificados pelo programa (usando expressões) & 83 \\
                                 Nomes corretamente identificados (usando expressões) & 16 \\
                                 Precisão – Precision & 100\% \\
-                                Abrangência – Recall & 19\% \\
+                                Cobertura(Abrangência) – Recall & 19\% \\
                               &  \\
                         \bottomrule
                     \end{tabular}
                 \caption{Resultados da extração}
-              \label{resultados}
+              \label{tab:resultados_alzheimerassociation}
             \end{table}
+
+        Interpretando os dados, nossa precisão é altíssima conseguindo obter todos os nomes presentes na página, porém extraimos muitas outras informações a mais. Aplicando a $F_1$, temos um aproveitamento de 31\%, logo estamos longe do ideal.
+        
+        Devemos lembrar também que o domínio atribuido ao resultado é muito importante, por exemplo, se encontrarmos um nome pela metade, devemos considera-lo errado ou correto? As vezes o nome se repete ao longo do pagina, logo, devemos conta-lo 1 ou mais vezes? Questões assim dificultam e devem ser relevadas.
+        
 				
 		%Extração de Informação baseada em conhecimento 
 		
