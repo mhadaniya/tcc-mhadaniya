@@ -26,7 +26,7 @@
 	\caption{MUC}
   \label{tab:MUC}
 \end{table}
-
+ 
 		
 \section{Critérios de Avaliação} 
 		
@@ -80,9 +80,8 @@
                     \begin{tabular}{rr}
                         \addlinespace
                         \toprule
-                              &  \\
-                        \midrule
                               & Página \\
+                        \midrule                              
                                 Nomes presentes & 16 \\
                                 Nomes identificados pelo programa (usando expressões) & 83 \\
                                 Nomes corretamente identificados (usando expressões) & 16 \\
@@ -95,9 +94,9 @@
               \label{tab:resultados_alzheimerassociation}
             \end{table}
 
-        Interpretando os dados, nossa precisão é altíssima conseguindo obter todos os nomes presentes na página, porém extraimos muitas outras informações a mais. Aplicando a $F_1$, temos um aproveitamento de 31\%, logo estamos longe do ideal.
+        Interpretando os dados, nossa precisão é altíssima conseguindo obter todos os nomes presentes na página, porém extraimos muitas outras informações a mais. Aplicando a $F_1$, temos um aproveitamento de 31\%, ainda muito longe do ideal esperado.
         
-        Devemos lembrar também que o domínio atribuido ao resultado é muito importante, por exemplo, se encontrarmos um nome pela metade, devemos considera-lo errado ou correto? As vezes o nome se repete ao longo do pagina, logo, devemos conta-lo 1 ou mais vezes? Questões assim dificultam e devem ser relevadas.
+        Devemos lembrar também que o domínio atribuido ao resultado é muito importante, por exemplo, se encontrarmos um nome pela metade, devemos considerá-lo errado ou correto? Quando o nome se repete ao longo do página, devemos conta-lo apenas uma vez ou mais vezes? Questões assim dificultam o critério e devem ser relevadas para uma melhor interpretação dos dados.
         
 				
 		%Extração de Informação baseada em conhecimento 
