@@ -12,9 +12,9 @@
 \usepackage[brazil]{babel}
 
 \usepackage[pdftex]{graphicx}
- 
+
 \usepackage{latexsym}
-\usepackage{ae}
+\usepackage{ae} 
 \usepackage{hyperref}
 \usepackage[alf]{abntcite}
 \usepackage{tabela-simbolos} %utilizado apenas para manter compatibilidade de codigo
@@ -23,7 +23,7 @@
 \usepackage{float}      
 \usepackage{fancyvrb}
 \usepackage{booktabs}
-
+ 
 %\usepackage{chngcntr} %pacote para alterar contadores 
  
 %===== Códigos Fonte =====
@@ -43,14 +43,17 @@
 %	\include{./capa}
 %	\include{./folhaderosto}
 	 
-	\sumario
+	\sumario \label{sumario}
 %	\addcontentsline{toc}{chapter}{\listofcodename}
+%	\listoftables
+%	\listadesiglas
 %	\listof{codigo}{\listofcodename}  % Lista de Códigos 
+
   
     \include{./capitulo/intro}
 	\include{./capitulo/recuperacaoinformacao}
 	\include{./capitulo/extracaoinformacao}
-%  \include{./capitulo/namedentityrecognition}
+%    \include{./capitulo/namedentityrecognition}
 	\include{./capitulo/webmining}
 	\include{./capitulo/saluscyted}
 

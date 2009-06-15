@@ -1,56 +1,101 @@
-\chapter{Extração de Informação} \label{capitulo4}
+\chapter{Extração de Informação} \label{EI}
 
-		Nós, simples seres humanos, não temos a capacidade de processar \textit{megabytes} de texto todos os dias, e nesse mar de bytes, quantas oportunidades deixamos de aproveitar ou informações que estariamos perdendo? Projetos em Processamento de Linguagem Natural originaram a Extração da Informação. Extração de Informação tem como objetivo transformar a coleção de documentos, geralmente com o auxilio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida\cite{Lehnert1996}. Na Extração da Informação, a compreensão do texto fonte não é obrigatória, pois a analise é feita com o objetivo de encontrar porções que contenham o quê deve ser extraido. A sáida de um sistema de Extração da Informação são informações relevantes para o domínio específico, de acordo com as orientações iniciais.
-
-		O reconhecimento de palavras, análise de frases, compreensão do sentindo da frase ou de todo o documento são envolvidos nas pesquisas de processamento de linguagens, e aumentam a complexidade no desenvolvimento de um sistema de Extração da Informação. Um grande alavancador nas pesquisas em Extração da Informação foram os congressos \textit{MUC(Message Understanding Conferences)} que eram financiadas pelo \textit{DARPA(Defense Advanced Research Projects Agency)}\cite{Sundheim1991}.
-				
-		Os participantes puderam optar pelo formato de saída apenas no MUC-1. Da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. A cada conferência crescia o número de campos. Reconhecimento de Entidades Relacionadas e Co-referencia foram adicionadas na sexta conferência. 
-						
-% Tabela dos MUC
-\begin{table}[htbp]
-  \centering   
-    \begin{tabular}{rrrr}
-    \addlinespace
-    \toprule
-    {\bf Conferência} & {\bf Ano} & {\bf Fonte de Texto} & {\bf Tópico(Dominio)} \\
-    \midrule
-    MUC-1 & 1987  & Artigos Militares &  Operações de fuga\\
-    MUC-2 & 1989  & Artigos Militares &  Operações de fuga\\
-    MUC-3 & 1991  & Artigos de Jornais & Atividades Terroristas na América Latina \\
-    MUC-4 & 1992  & Artigos de Jornais & Atividades Terroristas na América Latina \\
-    MUC-4 & 1993  & Artigos de Jornais &  \\
-    MUC-6 & 1995  & Artigos de Jornais &  \\
-    MUC-7 & 1997  & Artigos de Jornais & Acidente de aviões e lançamento de foguetes \\
-    \bottomrule
-    \end{tabular}
-	\caption{MUC}
-  \label{tab:MUC}
-\end{table}
- 
+		Nós, simples seres humanos, não temos a capacidade de processar \textit{megabytes} de texto todos os dias, e nesse mar de bytes, quantas oportunidades deixamos de aproveitar ou informações que estariamos perdendo? Projetos em Processamento de Linguagem Natural originaram a Extração da Informação. Extração de Informação tem como objetivo transformar a coleção de documentos, geralmente com o auxilio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida\cite{Lehnert1996}. Na Extração da Informação, a compreensão do texto fonte não é obrigatória, pois a analise é feita com o objetivo de encontrar porções que contenham o quê deve ser extraido. A sáida de um sistema de Extração da Informação são informações relevantes para o domínio específico em um determinado formato pré-estabelecido de acordo com as orientações iniciais.
 		
-\section{Critérios de Avaliação} 
+		A Extração da Informação é uma tarefa mais limitada do que a "compreensão completa do texto". Na Extração da Informação, nós delimitamos o escopo, estabelecendo assim um limite de compreensão, assim, não necessitando analisar o texto completo e seu sentido\cite{Grishman1997}. A Extração da Informação tem um potencial muito grande em extrair dados com maior precisão. Existe um interesse muito grande nas pesquisas em relação a Extração de Informações, uma vez que encontramos uma enorme quantidade de informações em linguagem natural.
+
+		O reconhecimento de palavras, análise de frases, compreensão do sentindo da frase ou de todo o documento são envolvidos nas pesquisas de processamento de linguagens, e aumentam a complexidade no desenvolvimento de um sistema de Extração da Informação.
+
+		
+\section{MUC - Message Understanding Conference}\label{EI:MUC}
+		
+		Quando estudamos Extração da Informação, devemos citar um grande alavancador nas pesquisas em Extração da Informação, os congressos \textit{MUC(Message Understanding Conferences)} que eram financiadas pelo \textit{DARPA(Defense Advanced Research Projects Agency)}\cite{Sundheim1991}. \textit{MUC} foi assim chamado por processar mensagens militares, e consistia em uma troca de experiências entre os participantes, avaliadores e especialistas do governo que descreviam suas necessidades. Surgindo em meados dos anos noventa, ela instaurou métricas e algoritmos estatísticos para auxiliar o governo na avaliação de novos sistemas de Extração de Informação.
+				
+		Na avaliação dos MUC, uma descrição detalhada do cenário e quais informações a serem extraidas era dado aos participantes, junto com um conjunto de documentos e o modelo a ser extraido dos documentos. Os participantes tinham um tempo limitado\footnote{Geralmente de 1 mês a 6 meses.} para adaptar os sistemas para um novo cenário. Então uma nova coleção de documentos era passado para os participantes, e estes enviavam para os organizadores os resultados extraídos. E assim a avaliação era feita, comparando o gabarito com os resultados extraídos.
+	
+		Na tabela~\ref{tab:MUC} temos as conferências, e os temas. 
+		% Tabela dos MUC
+		\begin{table}[htbp]
+		  \centering   
+		    \begin{tabular}{rrrr}
+		    \addlinespace
+		    \toprule
+		    {\bf Conferência} & {\bf Ano} & {\bf Fonte de Texto} & {\bf Tópico(Dominio)} \\
+		    \midrule
+		    MUC-1 & 1987  & Artigos Militares &  Operações de fuga\\
+		    MUC-2 & 1989  & Artigos Militares &  Operações de fuga\\
+		    MUC-3 & 1991  & Artigos de Jornais & Atividades Terroristas na América Latina \\
+		    MUC-4 & 1992  & Artigos de Jornais & Atividades Terroristas na América Latina \\
+		    MUC-4 & 1993  & Artigos de Jornais &  \\
+		    MUC-6 & 1995  & Artigos de Jornais &  \\
+		    MUC-7 & 1997  & Artigos de Jornais & Acidente de aviões e lançamento de foguetes \\
+		    \bottomrule
+		    \end{tabular}
+			\caption{MUC}
+		  \label{tab:MUC}
+		\end{table}
+				
+		Os participantes puderam optar pelo formato de saída apenas no MUC-1. Da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. Existiam cinco tarefas importantes para a Extração de Informação dentro das \emph{MUC}: Named Entity Recognition, Coreference resolution, template element construction, template relation construction e scenario template production\cite{Chang2006}.
+
+\section{Fundamentos}\label{EI:fundamentos}
+
+		Nós podemos dividir o processo de Extração de Informação em duas grandes partes. Primeiramente extraimos \emph{fatos} individuais do texto através de uma analise textual. Então, integramos estes fatos, aumentando os fatos ou criando fatos novos. E por fim, os fatos pertinentes ao cenário, nós transformamos para o formato de saída\cite{Grishman1997}.
+		
+		O alvo da extração de uma Extração de Informação pode ser uma relação de \emph{n-tuplas} ou muito mais complexa considerando a hierarquia e organização dos dados. Programas que realizam a tarefa de Extração de Informação são usualmente chamados de \emph{extratores} ou \emph{wrappers}. Sistemas de Extração da Informação são \textit{softwares} que geram \emph{wrappers}. Um \emph{wrapper} geralmente executa a tarefa de encontrar padrões, e estes dependem de um conjunto de regras. Adaptar um sistema de Extração da Informação tem muitos pontos a serem observados: tipo de texto, domínio, cenário, conjunto de regras\cite{Chang2006}.
+		
+		O processo da Extração de Informação, geralmente, inicia-se com uma analise lexica e reconhecimento de nomes. Seguidamente por uma analise sintatica completa ou por formas parciais para identificar grupo de nomes, grupo de verbos. Após completado estes passos, damos inicio a procura de fatos interessantes através de padrões. A fase de integração examina e combina os fatos do documento inteiro\cite{Grishman1997}.
+		
+		A maior parte da analise do texto é feita através de um conjunto de expressões regulares. Se a expressão encontrada estiver inserida no conjunto de expressões regulares, tão logo ela receberá um marcador, e dependendo do sistema, outros recursos.
+		
+		O Reconhecimento de Nomes em um texto é uma tarefa de destaque, uma vez que nomes aparecem frequentemente em todos os tipos de texto, e de muitas maneiras. Os nomes aparecem em um conjunto de padrão, podendo conter prefixo ou sufixo, estar escrito com letras maíusculas, facilitando assim sua extração. Observando a tabela~\ref{tab:exemplos_nome}, temos algumas maneiras de como o nome João José da Silva Pereira Junior pode aparecer em um texto.
+
+		% Tabela com exemplos de aparição de nomes
+		\begin{table}[htbp]
+		  \centering   
+		    \begin{tabular}{rrrr}
+		    \addlinespace
+		    \toprule
+		    {\bf Exemplos de aparição de nomes} \\
+		    \midrule
+		    João José da Silva Pereira Junior \\ 
+		    João José da Silva Pereira Jr. \\
+		    João J. da Silva Pereira Jr. \\
+		    João J. S. P. Jr.\\
+		    Sr. João Pereira Jr. \\
+		    JOÃO JOSÉ DA SILVA PEREIRA JUNIOR \\
+		    JUNIOR, João J. S. P.		    
+		    \bottomrule
+		    \end{tabular}
+			\caption{Exemplos de aparição de nomes}
+		  \label{tab:exemplos_nome}
+		\end{table}
+
+		Alguns sistemas não tem fases distintas para léxica e sintatica, outros implementam um \emph{parser} para a sentença inteira. Em geral, os sistemas utilizam partes que possuem certeza sobre sua construção, tanto sintaticamente quanto semânticamente. Na analise sintática, podemos ainda ter muitas interpretações ambíguas, para tal, a semântica e o domínio especifico da aplicação eliminam outras interpretações do dados extraídos.
+		
+		Construir uma estrutura completa de analise sintática é extremamente dificil. Algumas decisões são particularmente difíceis e dependem do contexto. \emph{Parsers} que buscam avaliar sentenças inteiras pecam no aspecto das decisões locais. Se as relações sintaticas forem corretamente para o passo seguinte da analise, a interpretação dos modelos de cenário serão mais simples e corretas.
+		
+		 
+
+\section{Avaliação}\label{EI:avaliacao} 
 		
 		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration})\cite{Sundheim1991}. As conferência \textit{MUC} têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas\cite{Wilks1998}.
 		 
 		\begin{itemize}
-          	\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) - Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_c$) sobre a informação relevante na página($N_t$). Representada pela fórmula~\ref{formula:cobertura}
+          	\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) : Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_{extraido-correto}$) sobre a informação relevante na página($N_{total-extraidos}$). Representada pela fórmula~\ref{formula:cobertura}
           	
           	\begin{equation}\label{formula:cobertura}
-              C = \frac{N_c}{N_t}              
+              C = \frac{N_{extraido-correto}}{N_{total-extraidos}}              
             \end{equation}            
-
-    is the number of true positives: the number of queries correctly classified into their true class.
-			 %$N_c$ é o número de informações preenchidas corretamente pelo sistema, e $N_t$ é o número total de informações que foram preenchidas pelo sistema.
-			
-          	\item \textbf{Precisão}(\textit{Precision}) - Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_c$) sobre a informações extraídas($N_p$).
+    	
+          	\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas($N_{resposta}$).
           	
           	\begin{equation}\label{formula:precisao}
-              P = \frac{N_c}{N_p}
+              P = \frac{N_{extraido-correto}}{N_{resposta}}
             \end{equation}
 						
-			Importante ressaltar que $N_t$ e $N_p$ são inversamente proporcionais, isto é, quando a cobertura aumenta, a precisão tende a diminuir e vice-cersa.
+			Importante ressaltar que $N_{total-extraido}$ e $N_{resposta}$ são inversamente proporcionais, isto é, quando a cobertura aumenta, a precisão tende a diminuir e vice-cersa.
 			  
-  		 	\item \textbf{\textit{F-measure}} - A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. 
+  		 	\item \textbf{\textit{F-measure}} : A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. 
   		 	
   		 	\begin{equation}\label{formula:F-measure}
               F-measure = \frac{(\beta^2 + 1)*C*P}{\beta^2 * (C + P)}
@@ -64,7 +109,7 @@
   		 		 
         \end{itemize} 
 		 
-		Para ilustrar melhor os calculos, utilizando a ferramenta NameParser criada para o projeto \textit{Salus Cyted}, que será discutida no capitulo~\ref{Capitulo 5}. A ferramenta será aplicada na página  \textit{Association Alzheimer\footnote{Association Alzheimer - http://www.alz.org/}}, vista na figura~\ref{fig:siteAssociationAlzheimer} como nossa fonte de dados. 
+		Para ilustrar melhor os cálculos, utilizando a ferramenta \emph{NameParser} criada para o projeto \textit{Salus Cyted}, que será discutida no capitulo~\ref{Capitulo 5}. A ferramenta será aplicada na página  \textit{Association Alzheimer\footnote{Association Alzheimer - http://www.alz.org/}}, vista na figura~\ref{fig:siteAssociationAlzheimer} como nossa fonte de dados. 
 		
 			\begin{figure}[htb]
 				\begin{center}				
@@ -94,7 +139,7 @@
               \label{tab:resultados_alzheimerassociation}
             \end{table}
 
-        Interpretando os dados, nossa precisão é altíssima conseguindo obter todos os nomes presentes na página, porém extraimos muitas outras informações a mais. Aplicando a $F_1$, temos um aproveitamento de 31\%, ainda muito longe do ideal esperado.
+        Interpretando os dados, nossa precisão é altíssima conseguindo obter todos os nomes presentes na página, porém extraímos muitas outras informações irrelevantes. Aplicando a $F_1$, temos um aproveitamento de 31\%, um resultado animador mas muito longe do ideal esperado.
         
         Devemos lembrar também que o domínio atribuido ao resultado é muito importante, por exemplo, se encontrarmos um nome pela metade, devemos considerá-lo errado ou correto? Quando o nome se repete ao longo do página, devemos conta-lo apenas uma vez ou mais vezes? Questões assim dificultam o critério e devem ser relevadas para uma melhor interpretação dos dados.
         
