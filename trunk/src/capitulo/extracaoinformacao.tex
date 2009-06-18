@@ -6,6 +6,13 @@
 
 		O reconhecimento de palavras, análise de frases, compreensão do sentindo da frase ou de todo o documento são envolvidos nas pesquisas de processamento de linguagens, e aumentam a complexidade no desenvolvimento de um sistema de Extração da Informação.
 
+\section{Extração de Informação não é Recuperação de Informação}\label{EI:EIxRI}
+
+		Recuperação de Informação é uma tecnologia madura que perdura a muito mais tempo do que a Extração da Informação, que apenas começou a poucas décadas. O objetivo da Recuperação de Informação é selecionar documentos relevantes de uma coleção de documentos de acordo com as necessidades do usuario e suas entradas.
+		
+		O contraste entre os objetivos dos sistemas de Extração da Informação e Recuperação de Informação podem ser descritos como seguem: Recuperação de Informação recupera documentos relevantes de uma coleção, enquanto Extração de Informação extrai informações relevantes de documentos. Consequentemente, as duas tecnicas se complementam, e usadas em combinação podem prover uma ferramenta poderosa[24]\cite{Eikvil1999}.
+		
+		Recuperação da Informação teve muita influência em 
 		
 \section{MUC - Message Understanding Conference}\label{EI:MUC}
 		
@@ -84,16 +91,16 @@
           	\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) : Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_{extraido-correto}$) sobre a informação relevante na página($N_{total-extraidos}$). Representada pela fórmula~\ref{formula:cobertura}
           	
           	\begin{equation}\label{formula:cobertura}
-              C = \frac{N_{extraido-correto}}{N_{total-extraidos}}              
+              Cobertura = \frac{N_{extraido-correto}}{N_{total-extraidos}}              
             \end{equation}            
     	
           	\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas($N_{resposta}$).
           	
           	\begin{equation}\label{formula:precisao}
-              P = \frac{N_{extraido-correto}}{N_{resposta}}
+              Precisão = \frac{N_{extraido-correto}}{N_{resposta}}
             \end{equation}
 						
-			Importante ressaltar que $N_{total-extraido}$ e $N_{resposta}$ são inversamente proporcionais, isto é, quando a cobertura aumenta, a precisão tende a diminuir e vice-cersa.
+			Importante ressaltar que $N_{total-extraido}$ e $N_{resposta}$ são inversamente proporcionais, isto é, quando a \emph{Cobertura} aumenta, a \emph{Precisão} tende a diminuir e vice-cersa. \emph{Precisão} e \emph{Cobertura} estão sempre no intervalo de $[0, 1]$, sendo 0 o pior resultado e 1 o melhor.
 			  
   		 	\item \textbf{\textit{F-measure}} : A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. 
   		 	
