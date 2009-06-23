@@ -71,13 +71,13 @@
 
           \item \emph{\textbf{Textos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. Técnicas de Processamento de Linguagens Naturais concebem regras para a extração de textos livres, contudo, estas regras funcionam perfeitamente para gramaticas livre de contexto ondem encontramos sentenças inteiras para analisar, fato que nem sempre ocorre em textos semi-estruturados. Regras muito simples utilizadas em textos puramente estruturados não serão eficientes também.
           
-          Encontramos ainda, em algumas literaturas,\cite{Abiteboul1997}
+          O pesquisador Sergel Abiteboul diferencia dentro do contexto de semi-estruturados, em cinco categorias\cite{Abiteboul1997}:
           \begin{itemize}
-            \item Estrutura irregular;
-            \item Estrutura implicita;
-            \item estrutura parcial;
-            \item estrutura indicativa;
-            \item estrutura flexivel.
+            \item \textbf{Estrutura irregular} - Quando uma informação está disposta de mais de uma maneira na estruturação do documento,e.g., o campo de endereço, o qual poderiamos encontrar como uma única \emph{string} representando todo o endereço, ou vários campos como \emph{string} para o nome da rua, um campo de inteiro para o número do logradouro, etc.;
+            \item \textbf{Estrutura implicita} - A estrutura existe, mas não é algo natural e possivelmente necessita de algum processamento, e a representação lógica dos dados não é de imediato obtida. Podemos configurar as paginas em \emph{HTML} nesta categoria, que é puramente texto, mesmo contendo \emph{tags}, não deixa de ser um documento semi-estruturado de puro texto, onde é necessário um processamento de suas \emph{tags} para a obtenção de alguma informação preliminar.;
+            \item \textbf{estrutura parcial} - ;
+            \item \textbf{estrutura indicativa} - ;
+            \item \textbf{estrutura flexivel} - .
           \end{itemize}
           
           Entretanto, como apresenta um minino de estruturação, alguns padrões podem ser construidos, limitando sua utilização na extração. 
@@ -101,7 +101,7 @@
 		Nós podemos dividir o processo de Extração de Informação em duas grandes partes. Primeiramente extraimos \emph{fatos} individuais do texto através de uma analise textual. Então, integramos estes fatos, aumentando os fatos ou criando fatos novos. E por fim, os fatos pertinentes ao cenário, nós transformamos para o formato de saída\cite{Grishman1997}. Para isto, o processo passa por algumas complexidades que se relacionam diretamente com os módulos que utilizaremos.
 		
 		      
-		\paragraph{Fatores de complexidade}	Como a Extração de Informação trabalha com textos, enfrentamos dificuldades como a lingua na qual é escrita, o gênero do documento, propriedades e a própria tarefa que efetuaremos sobre o documento.
+		\paragraph{Fatores de complexidade}	Como a Extração de Informação trabalha com textos, enfrentamos dificuldades como a lingua na qual é escrita, o gênero do documento, propriedades e a própria tarefa que efetuaremos sobre o documento\cite{Appelt1999}.
 			\subparagraph{Idioma} Os documentos se encontram escritos em algum idioma, tão logo nos defrontamos com nossa primeira dificuldade. Algumas linguas necessitam de tratamento morfológico, espaçamento entre palavras e segmentação de palavras.
 			
 			\subparagraph{Gênero} O gênero do documento com o qual se vai trabalhar influência também. Se limitarmos nossa ferramenta a textos de anúncios de jornais, não é o mesmo que extrairmos informações de artigos cientificos. Como consequencia, o uso da linguagem formal ou informal é extremamente ligada ao documento também.
@@ -174,7 +174,7 @@
 			Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas, e aplicando na fórmula~\ref{formula:F-measure} temos:
 			 
   		 	\begin{equation}\label{formula:F1}
-              F_1 = \frac{2*Cobertura*Precisão}{\beta^2 * (Cobertura + Precisão)}
+              F_1 = \frac{2*Cobertura*Precisão}{(Cobertura + Precisão)}
             \end{equation}			   
   		 		 
         \end{itemize} 
