@@ -1,6 +1,8 @@
 \chapter{Extração de Informação} \label{EI}
 
 		Nós, simples seres humanos, não temos a capacidade de processar \textit{megabytes} de texto todos os dias, e nesse mar de bytes, quantas oportunidades deixamos de aproveitar ou informações que estariamos perdendo? Projetos em Processamento de Linguagem Natural originaram a Extração da Informação. Extração de Informação tem como objetivo transformar a coleção de documentos, geralmente com o auxilio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida\cite{Lehnert1996}. Na Extração da Informação, a compreensão do texto fonte não é obrigatória, pois a analise é feita com o objetivo de encontrar porções que contenham o quê deve ser extraido. A sáida de um sistema de Extração da Informação são informações relevantes para o domínio específico em um determinado formato pré-estabelecido de acordo com as orientações iniciais.
+
+%\section{Fundamentos}\label{EI:fundamentos}
 		
 		A Extração da Informação é uma tarefa mais limitada do que a "compreensão completa do texto". Na Extração da Informação, nós delimitamos o escopo, estabelecendo assim um limite de compreensão, assim, não necessitando analisar o texto completo e seu sentido\cite{Grishman1997}. A Extração da Informação tem um potencial muito grande em extrair dados com maior precisão. Existe um interesse muito grande nas pesquisas em relação a Extração de Informações, uma vez que encontramos uma enorme quantidade de informações em linguagem natural.
 
@@ -8,19 +10,17 @@
 
 \section{Extração de Informação não é Recuperação de Informação}\label{EI:EIxRI}
 
-		Recuperação de Informação é uma tecnologia madura que perdura a muito mais tempo do que a Extração da Informação, que apenas começou a poucas décadas. O objetivo da Recuperação de Informação é selecionar documentos relevantes de uma coleção de documentos de acordo com as necessidades do usuario e suas entradas.
+		Recuperação de Informação é uma tecnologia madura que perdura a muito mais tempo do que a Extração da Informação, que começou a poucas décadas. O objetivo da Recuperação de Informação é selecionar documentos relevantes de uma coleção de documentos de acordo com as necessidades do usuario e suas entradas.
 		
 		O contraste entre os objetivos dos sistemas de Extração da Informação e Recuperação de Informação podem ser descritos como seguem: Recuperação de Informação recupera documentos relevantes de uma coleção, enquanto Extração de Informação extrai informações relevantes de documentos. Consequentemente, as duas tecnicas se complementam, e usadas em combinação podem prover uma ferramenta poderosa[24]\cite{Eikvil1999}.
-		
-		Recuperação da Informação teve muita influência em 
-		
+						
 \section{MUC - Message Understanding Conference}\label{EI:MUC}
 		
-		Quando estudamos Extração da Informação, devemos citar um grande alavancador nas pesquisas em Extração da Informação, os congressos \textit{MUC(Message Understanding Conferences)} que eram financiadas pelo \textit{DARPA(Defense Advanced Research Projects Agency)}\cite{Sundheim1991}. \textit{MUC} foi assim chamado por processar mensagens militares, e consistia em uma troca de experiências entre os participantes, avaliadores e especialistas do governo que descreviam suas necessidades. Surgindo em meados dos anos noventa, ela instaurou métricas e algoritmos estatísticos para auxiliar o governo na avaliação de novos sistemas de Extração de Informação.
-				
-		Na avaliação dos MUC, uma descrição detalhada do cenário e quais informações a serem extraidas era dado aos participantes, junto com um conjunto de documentos e o modelo a ser extraido dos documentos. Os participantes tinham um tempo limitado\footnote{Geralmente de 1 mês a 6 meses.} para adaptar os sistemas para um novo cenário. Então uma nova coleção de documentos era passado para os participantes, e estes enviavam para os organizadores os resultados extraídos. E assim a avaliação era feita, comparando o gabarito com os resultados extraídos.
+		Observamos dois fatores principais que impulsionaram os estudos em Extração de Informação: o crescimento exponencial de informação conjuntamente com a popularização da internet e um grande alavancador nas pesquisas em Extração da Informação, os congressos \textit{MUC(Message Understanding Conferences)}\cite{Gaizauskas1998}. Eram congressos financiadas pelo \textit{DARPA\footnote{Defense Advanced Research Projects Agency - http://www.darpa.mil/}}, e fora assim batizado por se tratar do processamento de entendimento de mensagens. Surgindo em meados dos anos noventa, ela instaurou métricas e algoritmos estatísticos para auxiliar o governo na avaliação de novos sistemas de Extração de Informação\cite{Sundheim1991}. 
+						
+		Na avaliação dos MUC, uma descrição detalhada do cenário e quais informações a serem extraidas era dado aos participantes(formados por grupos de pesquisa academicos e particulares), junto com um conjunto de documentos e o modelo a ser extraido dos documentos. Os participantes tinham um tempo limitado\footnote{Geralmente de 1 mês a 6 meses.} para adaptar os sistemas para um novo cenário. Então uma nova coleção de documentos era passado para os participantes, e estes enviavam para os organizadores os resultados extraídos. E assim a avaliação era feita, comparando o gabarito com os resultados extraídos\cite{Appelt1999}.
 	
-		Na tabela~\ref{tab:MUC} temos as conferências, e os temas. 
+		Podemos observar na tabela~\ref{tab:MUC} as edições e o ano da conferências, bem como as fontes de texto a serem extraidas e os temas(cenario). 
 		% Tabela dos MUC
 		\begin{table}[htbp]
 		  \centering   
@@ -29,27 +29,91 @@
 		    \toprule
 		    {\bf Conferência} & {\bf Ano} & {\bf Fonte de Texto} & {\bf Tópico(Dominio)} \\
 		    \midrule
-		    MUC-1 & 1987  & Artigos Militares &  Operações de fuga\\
-		    MUC-2 & 1989  & Artigos Militares &  Operações de fuga\\
+		    MUC-1 & 1987  & Artigos Militares & Operações de fuga\\
+		    MUC-2 & 1989  & Artigos Militares & Operações de fuga\\
 		    MUC-3 & 1991  & Artigos de Jornais & Atividades Terroristas na América Latina \\
 		    MUC-4 & 1992  & Artigos de Jornais & Atividades Terroristas na América Latina \\
-		    MUC-4 & 1993  & Artigos de Jornais &  \\
-		    MUC-6 & 1995  & Artigos de Jornais &  \\
-		    MUC-7 & 1997  & Artigos de Jornais & Acidente de aviões e lançamento de foguetes \\
+		    MUC-5 & 1993  & Artigos de Jornais & Corporate Joint Ventures\\ %Microelectronic production \\		     
+		    MUC-6 & 1995  & Artigos de Jornais & Negotiation of Labor Disputes \\%and Corporate management Succession \\
+		    MUC-7 & 1997  & Artigos de Jornais & Acidente de aviões \\%lançamento de foguetes \\
 		    \bottomrule
 		    \end{tabular}
 			\caption{MUC}
 		  \label{tab:MUC}
 		\end{table}
 				
-		Os participantes puderam optar pelo formato de saída apenas no MUC-1. Da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. Existiam cinco tarefas importantes para a Extração de Informação dentro das \emph{MUC}: Named Entity Recognition, Coreference resolution, template element construction, template relation construction e scenario template production\cite{Chang2006}.
+		O formato de saída era livre na primeira edição da conferência, da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. Existiam cinco tarefas importantes para a Extração de Informação dentro das \emph{MUC}: Named Entity Recognition, Coreference resolution, template element construction, template relation construction e scenario template production\cite{Chang2006}.
 
-\section{Fundamentos}\label{EI:fundamentos}
+\section{Conceitos Básicos}\label{EI:conceitos}
 
-		Nós podemos dividir o processo de Extração de Informação em duas grandes partes. Primeiramente extraimos \emph{fatos} individuais do texto através de uma analise textual. Então, integramos estes fatos, aumentando os fatos ou criando fatos novos. E por fim, os fatos pertinentes ao cenário, nós transformamos para o formato de saída\cite{Grishman1997}.
+		Extração de Informação deriva de Processamento de Linguagem Natural e tem como tarefa extrair informações especificas de documentos, muitas vezes encontrado em Linguagem Natural. Muitos sistemas de Extração de Informação seguem sequências de passos como analise léxica, semântica, morfologica, reconhecimento de nomes, entre outras tarefas\cite{Appelt1999}.
 		
-		O alvo da extração de uma Extração de Informação pode ser uma relação de \emph{n-tuplas} ou muito mais complexa considerando a hierarquia e organização dos dados. Programas que realizam a tarefa de Extração de Informação são usualmente chamados de \emph{extratores} ou \emph{wrappers}. Sistemas de Extração da Informação são \textit{softwares} que geram \emph{wrappers}. Um \emph{wrapper} geralmente executa a tarefa de encontrar padrões, e estes dependem de um conjunto de regras. Adaptar um sistema de Extração da Informação tem muitos pontos a serem observados: tipo de texto, domínio, cenário, conjunto de regras\cite{Chang2006}.
+		A meta de um sistema de Extração de Informação não é entender o texto do documento em si, e sim analisar porções do texto e extrair informações pertinentes. A pertinencia é determinada pelo dominio e cenário, na maioria das vezes, explicitada pelo usuario\cite{Eikvil1999}. A Extração de Informação é útil para quando se tem um conjunto de documentos e existe a necessidade de extrair fatos especificos, como por exemplo, extrair nome de destinos para se viajar em blogs especializados em viagens.  
+
+	\subsection{Abordagens}\label{EI:abordagem}
+
+		Na Extração de Informação, observamos claramente a distinção de duas abordagens\cite{Appelt1999}: \emph{Knowledge Engineering} e \emph{Automatic Training}. 
 		
+		Em \emph{Knowledge Engineering} o sistema é praticamente construido manualmente pelo \emph{knowledge engineer}\footnote{É a pessoa mais familiarizada com o sistema de Extração de Informação, e conhece melhor o formalismo para expressar as regraspara o sistema.}. Sua construção se baseia no conhecimento que o engenheiro possui  do cenário e dominio com o qual vai se trabalhar. As habilidades do engenheiro que construirá o sistema é crucial para a perfomance da mesma. O processo de desenvolvimento é muito trabalhoso, geralmente, após feito a analise dos documentos e criada e aplicada as regras no sistema, o engenheiro executa o sistema sobre os textos de treino. De acordo com o resultado, ele modifica as regras do sistema e refaz o processo. 
+		
+		A abordagem de \emph{automatic training} não necessita de um especialista, mas alguém que tenha o conhecimento suficiente do dominio da aplicação. Uma vez que os documentos de \emph{corpus} foram anotados, um algoritmo de treino é executado, treinando o sistema para novos textos. Esta abordagem tem uma resposta mais eficaz, mas depende do conjunto de documentos selecionados para treino. Utilizam métodos estatisticos, e aprendem regras com a interação com o usuario.
+		
+		Nenhuma das duas abordagens é superior a outra, pois a extração depende de muitas variaveis, e muitas vezes, variaveis externas, logo, não podemos apontar nenhuma abordagem como completa. Ambas utilizadas em conjunto caminha para um sistema ideal.
+				
+	\subsection{Tipos de texto}\label{EI:tipo_texto}
+		
+		A Extração se dá em documentos, e eles são categorizados em três tipos\cite{Eikvil1999}:
+		
+		\begin{itemize}
+          \item \emph{\textbf{Textos livres(sem estruturas)}} : Texto livre é basicamente o texto onde não encontramos nenhuma forma de estrutura, e é o tipo mais encontrado. Originalmente o objetivo de Extração de Informação era desenvolver sistemas capazes de extrair informações chaves de textos em linguagem natural.   
+           
+          O estado da arte em Extração da Informação em textos livres muito comumente utiliza tecnicas de Processamento de Linguagens Naturais, e as regras de extração são tipicamente baseada em padrões envolvendo o aspecto sintatico e semântico. A capacidade do homem de processamento ainda é melhor, mas resultados expressivos vem sendo obtidos no processamento em textos sem estrutura. O entendimento de textos sem restrição em Linguagem Natural ainda está longe de ser resolvido por completo, entretando, métodos de Extração de Informação funcionam porque dependem de restrições e padrões que desejamos extrair dos textos\cite{Soderland1999}. 
+
+          \item \emph{\textbf{Textos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. Técnicas de Processamento de Linguagens Naturais concebem regras para a extração de textos livres, contudo, estas regras funcionam perfeitamente para gramaticas livre de contexto ondem encontramos sentenças inteiras para analisar, fato que nem sempre ocorre em textos semi-estruturados. Regras muito simples utilizadas em textos puramente estruturados não serão eficientes também.
+          
+          Encontramos ainda, em algumas literaturas,\cite{Abiteboul1997}
+          \begin{itemize}
+            \item Estrutura irregular;
+            \item Estrutura implicita;
+            \item estrutura parcial;
+            \item estrutura indicativa;
+            \item estrutura flexivel.
+          \end{itemize}
+          
+          Entretanto, como apresenta um minino de estruturação, alguns padrões podem ser construidos, limitando sua utilização na extração. 
+          
+          \item \emph{\textbf{Textos estruturados}} : Informações textuais contidas em banco de dados ou qualquer outro gênero de documento com uma estruturação rigida, são a base de textos estruturados. Como seguem uma moldura sem grandes diferenças de um documento para outro, sua informação é facilmente extraida.
+                    
+        \end{itemize} 	
+
+	\subsection{Estruturação}\label{EI:estrutura}
+
+		A estrutução de um sistema de Extração de Informação basea-se em alguns passos: Tokenização, Processamento Léxico e Morfológico, Análise Sintatica e Analise do Domínio. O sistema pode possuir apenas algumas das etapas, e não necessariamente deve cobrir todas as etapas para ser um sistema de Extração de Informação. As necessidades da aplicação que implicam quais passos o sistema deve cobrir. Na figura~\ref{fig:EI-estrutura} ilustramos os quatro principais módulos\cite{Appelt1999}.
+		
+			\begin{figure}[htb]
+				\begin{center}				
+					\includegraphics[scale=0.5]{./figuras/EI-estrutura.png}				
+				\end{center}
+				\caption{Principais módulos de um sistema de Extração de Informação}
+                \label{fig:EI-estrutura}
+			\end{figure}
+
+		Nós podemos dividir o processo de Extração de Informação em duas grandes partes. Primeiramente extraimos \emph{fatos} individuais do texto através de uma analise textual. Então, integramos estes fatos, aumentando os fatos ou criando fatos novos. E por fim, os fatos pertinentes ao cenário, nós transformamos para o formato de saída\cite{Grishman1997}. Para isto, o processo passa por algumas complexidades que se relacionam diretamente com os módulos que utilizaremos.
+		
+		      
+		\paragraph{Fatores de complexidade}	Como a Extração de Informação trabalha com textos, enfrentamos dificuldades como a lingua na qual é escrita, o gênero do documento, propriedades e a própria tarefa que efetuaremos sobre o documento.
+			\subparagraph{Idioma} Os documentos se encontram escritos em algum idioma, tão logo nos defrontamos com nossa primeira dificuldade. Algumas linguas necessitam de tratamento morfológico, espaçamento entre palavras e segmentação de palavras.
+			
+			\subparagraph{Gênero} O gênero do documento com o qual se vai trabalhar influência também. Se limitarmos nossa ferramenta a textos de anúncios de jornais, não é o mesmo que extrairmos informações de artigos cientificos. Como consequencia, o uso da linguagem formal ou informal é extremamente ligada ao documento também.
+			
+			\subparagraph{Propriedades} Os textos podem conter tabelas, imagens, gráficos entre outros tipos de informação não textual que necessitam de formas especiais de tratamento.
+			
+			\subparagraph{Tarefas} As tarefas efetuadas pelo sistema também entram na nossa analise de complexidade. Uma ferramenta que apenas procura entidades, possui uma abordagem diferente de uma que procura propriedades a mais de um entidade.
+			
+		Sistemas de Extração de Informação trabalham com o processamento de muitos documentos e um espaço muito curto de tempo. Então, para não prejudicar o desempenho, utiliza-se maquinas de estado finito em abundância. O alvo da extração de uma Extração de Informação pode ser uma relação de \emph{n-tuplas} ou muito mais complexa considerando a hierarquia e organização dos dados. 
+		
+		Programas que realizam a tarefa de Extração de Informação são usualmente chamados de \emph{extratores} ou \emph{wrappers}. Um \emph{wrapper} geralmente executa a tarefa de encontrar padrões, e estes dependem de um conjunto de regras. Adaptar um sistema de Extração de Informação tem muitos pontos a serem observados: tipo de texto, domínio, cenário, conjunto de regras\cite{Chang2006}.
+						
 		O processo da Extração de Informação, geralmente, inicia-se com uma analise lexica e reconhecimento de nomes. Seguidamente por uma analise sintatica completa ou por formas parciais para identificar grupo de nomes, grupo de verbos. Após completado estes passos, damos inicio a procura de fatos interessantes através de padrões. A fase de integração examina e combina os fatos do documento inteiro\cite{Grishman1997}.
 		
 		A maior parte da analise do texto é feita através de um conjunto de expressões regulares. Se a expressão encontrada estiver inserida no conjunto de expressões regulares, tão logo ela receberá um marcador, e dependendo do sistema, outros recursos.
@@ -81,7 +145,6 @@
 		
 		Construir uma estrutura completa de analise sintática é extremamente dificil. Algumas decisões são particularmente difíceis e dependem do contexto. \emph{Parsers} que buscam avaliar sentenças inteiras pecam no aspecto das decisões locais. Se as relações sintaticas forem corretamente para o passo seguinte da analise, a interpretação dos modelos de cenário serão mais simples e corretas.
 		
-		 
 
 \section{Avaliação}\label{EI:avaliacao} 
 		
@@ -94,7 +157,7 @@
               Cobertura = \frac{N_{extraido-correto}}{N_{total-extraidos}}              
             \end{equation}            
     	
-          	\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas($N_{resposta}$).
+          	\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas ($N_{resposta}$).
           	
           	\begin{equation}\label{formula:precisao}
               Precisão = \frac{N_{extraido-correto}}{N_{resposta}}
@@ -105,13 +168,13 @@
   		 	\item \textbf{\textit{F-measure}} : A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. 
   		 	
   		 	\begin{equation}\label{formula:F-measure}
-              F-measure = \frac{(\beta^2 + 1)*C*P}{\beta^2 * (C + P)}
+              F-measure = \frac{(\beta^2 + 1)*Cobertura*Precisão}{\beta^2 * (Cobertura + Precisão)}
             \end{equation}
 
 			Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas, e aplicando na fórmula~\ref{formula:F-measure} temos:
 			 
   		 	\begin{equation}\label{formula:F1}
-              F_1 = \frac{2*C*P}{C + P}
+              F_1 = \frac{2*Cobertura*Precisão}{\beta^2 * (Cobertura + Precisão)}
             \end{equation}			   
   		 		 
         \end{itemize} 
@@ -120,7 +183,7 @@
 		
 			\begin{figure}[htb]
 				\begin{center}				
-					\includegraphics[scale=0.25]{./figuras/site_nome_grifado.png}				
+					\includegraphics[scale=0.35]{./figuras/site_nome_grifado.png}				
 				\end{center}
                 \label{fig:siteAssociationAlzheimer}
 			\end{figure}
@@ -138,8 +201,7 @@
                                 Nomes identificados pelo programa (usando expressões) & 83 \\
                                 Nomes corretamente identificados (usando expressões) & 16 \\
                                 Precisão – Precision & 100\% \\
-                                Cobertura(Abrangência) – Recall & 19\% \\
-                              &  \\
+                                Cobertura(Abrangência) – Recall & 19\% \\                              
                         \bottomrule
                     \end{tabular}
                 \caption{Resultados da extração}
