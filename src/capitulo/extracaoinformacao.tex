@@ -71,20 +71,22 @@
 
           \item \emph{\textbf{Textos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. Técnicas de Processamento de Linguagens Naturais concebem regras para a extração de textos livres, contudo, estas regras funcionam perfeitamente para gramaticas livre de contexto ondem encontramos sentenças inteiras para analisar, fato que nem sempre ocorre em textos semi-estruturados. Regras muito simples utilizadas em textos puramente estruturados não serão eficientes também.
           
-          O pesquisador Sergel Abiteboul diferencia dentro do contexto de semi-estruturados, em cinco categorias\cite{Abiteboul1997}:
+          O pesquisador Sergel Abiteboul diferencia dentro do contexto de semi-estruturados, em cinco categorias\cite{Abiteboul1997}\cite{Silveira2001}:
           \begin{itemize}
-            \item \textbf{Estrutura irregular} - Quando uma informação está disposta de mais de uma maneira na estruturação do documento,e.g., o campo de endereço, o qual poderiamos encontrar como uma única \emph{string} representando todo o endereço, ou vários campos como \emph{string} para o nome da rua, um campo de inteiro para o número do logradouro, etc.;
-            \item \textbf{Estrutura implicita} - A estrutura existe, mas não é algo natural e possivelmente necessita de algum processamento, e a representação lógica dos dados não é de imediato obtida. Podemos configurar as paginas em \emph{HTML} nesta categoria, que é puramente texto, mesmo contendo \emph{tags}, não deixa de ser um documento semi-estruturado de puro texto, onde é necessário um processamento de suas \emph{tags} para a obtenção de alguma informação preliminar.;
-            \item \textbf{estrutura parcial} - ;
-            \item \textbf{estrutura indicativa} - ;
-            \item \textbf{estrutura flexivel} - .
+            \item \textbf{Estrutura Irregular} - Quando uma informação está disposta de mais de uma maneira na estruturação do documento,e.g., o campo de endereço, o qual poderiamos encontrar como uma única \emph{string} representando todo o endereço, ou vários campos como \emph{string} para o nome da rua, um campo de inteiro para o número do logradouro, etc.;
+            \item \textbf{Estrutura Implícita} - A estrutura existe, mas não é algo natural e possivelmente necessita de algum processamento, e a representação lógica dos dados não é de imediato obtida. Podemos configurar as paginas em \emph{HTML} nesta categoria, que é puramente texto, mesmo contendo \emph{tags}, não deixa de ser um documento semi-estruturado de puro texto, onde é necessário um processamento de suas \emph{tags} para a obtenção de alguma informação preliminar.;
+            \item \textbf{Estrutura Parcial} - Identificamos parte da estrutura de dados, mas a outra parte, muitas vezes não é necessária ou não é passivel de identificação, necessitando uma extração;
+            \item \textbf{Estrutura Indicativa} - Existem vários tipos de dados para o mesmo objeto relacionado nas várias instâncias\cite{Silveira2001};
+            \item \textbf{Estrutura Flexível} - A instância do objeto consegue assumir outras formas de dados, sendo isso nativo da estrutura em si.
           \end{itemize}
           
+          Algumas ferramentas pioneiras em pequisas de dados semi-estruturados na \emph{World Wide Web} foram:  \emph{Yahoo\footnote{Yahoo - http://www.yahoo.com}} e \emph{Altavista\footnote{Altavista - http://www.altavista.com}}. utilizam uma técnica chamada \emph{full text search}, que desconsidera a semântica, comparando o texto completo com as entradas do usuário\cite{Silveira2001}.
+            
           Entretanto, como apresenta um minino de estruturação, alguns padrões podem ser construidos, limitando sua utilização na extração. 
           
           \item \emph{\textbf{Textos estruturados}} : Informações textuais contidas em banco de dados ou qualquer outro gênero de documento com uma estruturação rigida, são a base de textos estruturados. Como seguem uma moldura sem grandes diferenças de um documento para outro, sua informação é facilmente extraida.
-                    
-        \end{itemize} 	
+
+        \end{itemize}
 
 	\subsection{Estruturação}\label{EI:estrutura}
 
@@ -98,10 +100,10 @@
                 \label{fig:EI-estrutura}
 			\end{figure}
 
-		Nós podemos dividir o processo de Extração de Informação em duas grandes partes. Primeiramente extraimos \emph{fatos} individuais do texto através de uma analise textual. Então, integramos estes fatos, aumentando os fatos ou criando fatos novos. E por fim, os fatos pertinentes ao cenário, nós transformamos para o formato de saída\cite{Grishman1997}. Para isto, o processo passa por algumas complexidades que se relacionam diretamente com os módulos que utilizaremos.
-		
+		Nós podemos dividir o processo de Extração de Informação em duas grandes partes. Primeiramente extraimos \emph{fatos} individuais do texto através de uma analise textual. Então, integramos estes fatos, aumentando os fatos ou criando fatos novos. E por fim, os fatos pertinentes ao cenário, nós transformamos para o formato de saída\cite{Grishman1997}. Para isto, o processo passa por algumas complexidades que se relacionam diretamente com os módulos que utilizaremos.		
 		      
 		\paragraph{Fatores de complexidade}	Como a Extração de Informação trabalha com textos, enfrentamos dificuldades como a lingua na qual é escrita, o gênero do documento, propriedades e a própria tarefa que efetuaremos sobre o documento\cite{Appelt1999}.
+		
 			\subparagraph{Idioma} Os documentos se encontram escritos em algum idioma, tão logo nos defrontamos com nossa primeira dificuldade. Algumas linguas necessitam de tratamento morfológico, espaçamento entre palavras e segmentação de palavras.
 			
 			\subparagraph{Gênero} O gênero do documento com o qual se vai trabalhar influência também. Se limitarmos nossa ferramenta a textos de anúncios de jornais, não é o mesmo que extrairmos informações de artigos cientificos. Como consequencia, o uso da linguagem formal ou informal é extremamente ligada ao documento também.
@@ -114,9 +116,11 @@
 		
 		Programas que realizam a tarefa de Extração de Informação são usualmente chamados de \emph{extratores} ou \emph{wrappers}. Um \emph{wrapper} geralmente executa a tarefa de encontrar padrões, e estes dependem de um conjunto de regras. Adaptar um sistema de Extração de Informação tem muitos pontos a serem observados: tipo de texto, domínio, cenário, conjunto de regras\cite{Chang2006}.
 						
-		O processo da Extração de Informação, geralmente, inicia-se com uma analise lexica e reconhecimento de nomes. Seguidamente por uma analise sintatica completa ou por formas parciais para identificar grupo de nomes, grupo de verbos. Após completado estes passos, damos inicio a procura de fatos interessantes através de padrões. A fase de integração examina e combina os fatos do documento inteiro\cite{Grishman1997}.
-		
-		A maior parte da analise do texto é feita através de um conjunto de expressões regulares. Se a expressão encontrada estiver inserida no conjunto de expressões regulares, tão logo ela receberá um marcador, e dependendo do sistema, outros recursos.
+		%\paragraph{Analise Morfológica} 
+		Muitos sistemas de Extração de Informação são construídos em cima da língua inglesa, que não necessita uma análise morfológica muito aprofundada onde uma lista com as variações das palavras seria o suficiente. O idioma alemão por sua vez, é essencial fazer uma análise morfológica, pois é composto por palavras aglutinadas\cite{Appelt1999}. 
+						
+		%\paragraph{Análise Lexica}		
+		A maior parte da analise do texto é feita através de um conjunto de expressões regulares. Se a expressão encontrada estiver inserida no conjunto de expressões regulares, tão logo ela receberá um marcador, e dependendo do sistema, outros recursos\cite{Grishman1997}.
 		
 		O Reconhecimento de Nomes em um texto é uma tarefa de destaque, uma vez que nomes aparecem frequentemente em todos os tipos de texto, e de muitas maneiras. Os nomes aparecem em um conjunto de padrão, podendo conter prefixo ou sufixo, estar escrito com letras maíusculas, facilitando assim sua extração. Observando a tabela~\ref{tab:exemplos_nome}, temos algumas maneiras de como o nome João José da Silva Pereira Junior pode aparecer em um texto.
 
@@ -148,7 +152,7 @@
 
 \section{Avaliação}\label{EI:avaliacao} 
 		
-		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration})\cite{Sundheim1991}. As conferência \textit{MUC} têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas\cite{Wilks1998}.
+		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration})\cite{Sundheim1991}. As conferência \textit{MUC} têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas\cite{Gaizauskas1998}.
 		 
 		\begin{itemize}
           	\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) : Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_{extraido-correto}$) sobre a informação relevante na página($N_{total-extraidos}$). Representada pela fórmula~\ref{formula:cobertura}
@@ -160,7 +164,7 @@
           	\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas ($N_{resposta}$).
           	
           	\begin{equation}\label{formula:precisao}
-              Precisão = \frac{N_{extraido-correto}}{N_{resposta}}
+              Precis\~{a}o = \frac{N_{extraido-correto}}{N_{resposta}}
             \end{equation}
 						
 			Importante ressaltar que $N_{total-extraido}$ e $N_{resposta}$ são inversamente proporcionais, isto é, quando a \emph{Cobertura} aumenta, a \emph{Precisão} tende a diminuir e vice-cersa. \emph{Precisão} e \emph{Cobertura} estão sempre no intervalo de $[0, 1]$, sendo 0 o pior resultado e 1 o melhor.
