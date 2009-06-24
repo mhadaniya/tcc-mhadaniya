@@ -60,16 +60,16 @@
 		
 		Nenhuma das duas abordagens é superior a outra, pois a extração depende de muitas variaveis, e muitas vezes, variaveis externas, logo, não podemos apontar nenhuma abordagem como completa. Ambas utilizadas em conjunto caminha para um sistema ideal.
 				
-	\subsection{Tipos de texto}\label{EI:tipo_texto}
+	\subsection{Tipos de Dado}\label{EI:tipo_dado}
 		
 		A Extração se dá em documentos, e eles são categorizados em três tipos\cite{Eikvil1999}:
 		
 		\begin{itemize}
-          \item \emph{\textbf{Textos livres(sem estruturas)}} : Texto livre é basicamente o texto onde não encontramos nenhuma forma de estrutura, e é o tipo mais encontrado. Originalmente o objetivo de Extração de Informação era desenvolver sistemas capazes de extrair informações chaves de textos em linguagem natural.   
+          \item \emph{\textbf{Documentos livre/sem estruturação)}} : Texto livre é basicamente o texto onde não encontramos nenhuma forma de estrutura, e é o tipo mais encontrado. Originalmente o objetivo de Extração de Informação era desenvolver sistemas capazes de extrair informações chaves de textos em linguagem natural.   
            
           O estado da arte em Extração da Informação em textos livres muito comumente utiliza tecnicas de Processamento de Linguagens Naturais, e as regras de extração são tipicamente baseada em padrões envolvendo o aspecto sintatico e semântico. A capacidade do homem de processamento ainda é melhor, mas resultados expressivos vem sendo obtidos no processamento em textos sem estrutura. O entendimento de textos sem restrição em Linguagem Natural ainda está longe de ser resolvido por completo, entretando, métodos de Extração de Informação funcionam porque dependem de restrições e padrões que desejamos extrair dos textos\cite{Soderland1999}. 
 
-          \item \emph{\textbf{Textos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. Técnicas de Processamento de Linguagens Naturais concebem regras para a extração de textos livres, contudo, estas regras funcionam perfeitamente para gramaticas livre de contexto ondem encontramos sentenças inteiras para analisar, fato que nem sempre ocorre em textos semi-estruturados. Regras muito simples utilizadas em textos puramente estruturados não serão eficientes também.
+          \item \emph{\textbf{Documentos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. Técnicas de Processamento de Linguagens Naturais concebem regras para a extração de textos livres, contudo, estas regras funcionam perfeitamente para gramaticas livre de contexto ondem encontramos sentenças inteiras para analisar, fato que nem sempre ocorre em textos semi-estruturados. Regras muito simples utilizadas em textos puramente estruturados não serão eficientes também.
           
           O pesquisador Sergel Abiteboul diferencia dentro do contexto de semi-estruturados, em cinco categorias\cite{Abiteboul1997}\cite{Silveira2001}:
           \begin{itemize}
@@ -84,11 +84,11 @@
             
           Entretanto, como apresenta um minino de estruturação, alguns padrões podem ser construidos, limitando sua utilização na extração. 
           
-          \item \emph{\textbf{Textos estruturados}} : Informações textuais contidas em banco de dados ou qualquer outro gênero de documento com uma estruturação rigida, são a base de textos estruturados. Como seguem uma moldura sem grandes diferenças de um documento para outro, sua informação é facilmente extraida.
+          \item \emph{\textbf{Documentos estruturados}} : Informações textuais contidas em banco de dados ou qualquer outro gênero de documento com uma estruturação rigida, são a base de textos estruturados. Como seguem uma moldura sem grandes diferenças de um documento para outro, sua informação é facilmente extraida.
 
         \end{itemize}
 
-	\subsection{Estruturação}\label{EI:estrutura}
+	\subsection{Fluxo Geral}\label{EI:fluxo}
 
 		A estrutução de um sistema de Extração de Informação basea-se em alguns passos: Tokenização, Processamento Léxico e Morfológico, Análise Sintatica e Analise do Domínio. O sistema pode possuir apenas algumas das etapas, e não necessariamente deve cobrir todas as etapas para ser um sistema de Extração de Informação. As necessidades da aplicação que implicam quais passos o sistema deve cobrir. Na figura~\ref{fig:EI-estrutura} ilustramos os quatro principais módulos\cite{Appelt1999}.
 		
