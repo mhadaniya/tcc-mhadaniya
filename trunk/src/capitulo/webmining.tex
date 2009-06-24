@@ -9,7 +9,7 @@
 		 
 		Alguns problemas podem ser encontrados pelos usuários quando interagem com a \textit{Web}\cite{Kosala2000}:
   
-		 \begin{itemize}
+		 \begin{itemize} 
 		   \item[a.] \textbf{Achar informações relevantes} - Os usuários quando utilizam serviços de pesquisa, procuram através de palavras-chaves alguma informação na \textit{Web}. O resultado da busca, as vezes, é enorme e com isso temos: resultados relevantes, pouco relevantes ou sem relevância;
 		   
 		   \item[b.] \textbf{Personalização da informação} - Usuários diferentes, interagem diferentemente e querem conteúdos diferentes, logo, temos o problema no lado do usuário e do próprio provedor;   
@@ -26,16 +26,56 @@
 		
 \section{Descoberta do Conhecimento}
 
-		Muitas são as definições que os pesquisadores adotam para \emph{KDD(Knowledge Discovery Database)} ou Mineração de Dados, a mais adotada é encontrada nos trabalhos de Fayyad e seu grupo de pesquisa\cite{Fayyad1996a}. 
+		Muitas são as definições que os pesquisadores adotam para \emph{KDD(Knowledge Discovery Database)} ou Mineração de Dados, a mais difundida e adotada é encontrada nos trabalhos de Fayyad e seu grupo de pesquisa\cite{Fayyad1996a}. 
 		\begin{quote}
         	\emph{Knowledge Discovery Database} é o processo não trivial de identificação de padrões válidos, novos, potencialmente úteis e compreensiveis que estejam presentes nos dados.
         \end{quote}
 
-	 	Tomamos como definição que: os \emph{dados} são um conjunto de fatos, e padrões são definidos em uma linguagem e descrevem um subconjunto dos dados ou um modelo aplicável aquele conjunto.
+	 	Tomamos como definição que: os \emph{dados} são um conjunto de fatos, e \emph{padrões} são definidos em uma linguagem e descrevem um subconjunto dos dados ou um modelo aplicável aquele conjunto.
 	 	
-	 	O processo de \emph{Knowledge Discovery Database} é um processo interativo e iterativo, composto por algumas etapas, resultando na extração de padrões. As etapas sofreram mudanças no decorrer de seus estudos, alcançando nove etapas\cite{Fayyad1996b}, sendo reduzida para quatro [Weiss1998] e maturando-se num ciclo [Rezende2003].
+	 	O processo de \emph{Knowledge Discovery Database} é um processo interativo e iterativo, composto por algumas etapas, resultando na extração de padrões. As etapas sofreram mudanças no decorrer de seus estudos, alcançando nove etapas\cite{Fayyad1996b}, sendo reduzida para quatro \cite{Weiss1998} e maturando-se num ciclo [Rezende2003]. Atualmente, este ciclo se divide em: Identificação do problema, Pré-Processamento, Extração de Padrões, Pós-Processamento e Utilização do Conhecimento\cite{Alvarez2007}. A figura~\ref{fig:WM-KDD} ilustra a última abordagem utilizada.
+	 	
+	 	\begin{figure}[htb]
+				\begin{center}				
+					\includegraphics[scale=0.5]{./figuras/processo-kdd.png}				
+				\end{center}
+				\caption{Etapas do processo KDD}
+                \label{fig:WM-KDD}
+			\end{figure}
 	 	 
-\section{}		
+	 	 \paragraph{Identificação do Problema} Para iniciarmos o todo o processo, precisamos ter um conhecimento mínimo que seja do dominio com o qual iremos trabalhar, e devemos ter claro o objetivo que almejamos. Nesta fase, construimos nosso conhecimento e todas as etapas posteriores são dependentes de uma análise que cubra as metas, objetivos e restrições. Criamos o conceito de útil para o sistema e para o úsuario nesta fase.
+	 	 
+	 	 \paragraph{Pré-Processamento} Muitas vezes os dados não se encontram formatados adequadamente para a utilização na etapa de extração de padrões, ou outras características limitam a aplicação. Para adequá-los alguma tarefas podem ser inseridas no Pré-Processamento: Integração, Transformação, Limpeza e Redução de Dados.
+	 	 
+	 	 	\begin{itemize}
+                \item \textbf{Integração:} Os dados muitas vezes são provenientes de diversas fontes, precisando uma unificação. Obtemos nesta fase, uma fonte única de dados para utilizar nas estapas posteriores\cite{Alvarez2007}.
+                \item \textbf{Transformação:} Para minimizar as diferenças encontradas nos dados para melhorar sua extração, algumas transformações aplicadas são: normalização, transformação de tipo, discretização de atributos quantitativos, entre outros\cite{Batista2003}.
+                \item \textbf{Limpeza:} Com o conhecimento adquirido no passo de Identificação do problema, temos um embasamento melhor para remover dados indesejáveis. Alguns atributos podem estar preenchidos incorretamente\cite{Alvarez2007}.
+                \item \textbf{Redução:} Muitas vezes somos obrigados a limitar nossa ação diretamente ligados a inúmeros fatores. O volume pode ultrapassar a capacidade de processamento, sendo isto observado quando executamos muitas vezes os experimentos\cite{Weiss1998}. 
+              \end{itemize}
+	 	 	
+	 	 \paragraph{Extração de Padrões} Os objetivos definidos na Identificação do Problema direcionam este passo. A execução deste passo pode ser necessária muitas vezes para procurar o resultado mais perto do objetivo. As tarefas de Mineração de Dados como classificação, \emph{clustering} e regras de associação são empregadas nesta etapa de acordo com o modelo escolhido para ser gerado\cite{Alvarez2007}.
+	 	 
+	 	 \paragraph{Pós-Processamento} Depois de extraídos os padrões, o ciclo do processo ainda não é fechado, pois se apresentarmos todos os padrões ao usuário como extraimos, podemos mostrar padrões muito complicados ou que fujam dos objetivos. Com a qualidade questionável podemos executar novamente algumas etapas ou o processo inteiro. Para mensurar a qualidade temos alguns artificios como interessabilidade, compreensibilidade, precisão, cobertura e taxa de erro\cite{Alvarez2007}.
+	 	 
+	 	 \paragraph{Utilização do Conhecimento} Última fase do processo e onde expomos o conhecimento extraído para o usuário, ou integrar a um sistema.
+	 	 
+	 	 A utilização dos termos Mineração de Dados ou \emph{Knowledge Discovery Database} na literatura é muito nebulosa. Alguns autores consideram como sendo processos distintos, outros processos que se complementam ou nomeia o mesmo processo. Adoto neste trabalho como sendo tarefas complementares.
+
+\section{Etapas do Web Mining}
+
+		Basicamente utilizamos os mesmos conceitos de \emph{Knowledge Discovery Database} alterando a fonte de dados. Como nossa única fonte, utilizamos a \emph{World Wide Web}. No inicio das pesquisas muitos acreditavam, e ainda acreditam, que a \emph{Web} é muito instável como fonte de dados, devido a suas proporções e falta de estruturação. Muitas informações são encontradas em Linguagem Natural pois o público-alvo são os humanos. Alguns defenderam a posição de transformar a \emph{Web} em um banco de dados, mas foram vencidos pelo temperamento caótico e dinâmico\cite{Etzione1996}.
+
+	\subsection{Coleta de Documentos}
+	
+	\subsection{Pré-Processamento}
+	
+	\subsection{Extração de Padrões}
+	
+	\subsection{Avaliação e Interpretação de Resultados}
+
+\section{Categorias de WEB Mining}
+	
 		\subsection{Mineração na WEB de Conteúdo}\label{webmining:conteudo} - áudio, vídeo, dados simbólicos, metadados e vínculos de hipertexto fazem parte do conteúdo de documentos da \textit{Web} atualmente, e como tal, na mineração de conteúdos também são analisados. Existem áreas de pesquisas destinadas a mineração de dados multimídias, entretanto, como uma enorme parte da \textit{Web} é constituída de texto e hipertexto, portanto o foco permanece em dados de texto. Estes podem ser encontrados em três tipos: desestruturados (textos), semi-estruturados (\textit{HTML}) e estruturados (\textit{XML}).
 	 
 		A área de mineração de textos está bem esclarecida, com muitas técnicas, uma das quais seria reestruturar o documento para uma linguagem entendida pela maquina. Uma mineração que vem ganhando destaque em pesquisas é a mineração em serviços da Web tais como grupo de noticias, grupos de e-mails, lista de discussão. Outro conceito é introduzido por estes pesquisadores, chamado de \textit{Web Intelligence}, que promete transformar os serviços da \textit{Web} em entidades inteligentes, de forma que elas possam interagir e se comunicar através de uma linguagem comum. A mineração de conteúdo e a recuperação de informação são muitas vezes utilizadas em conjunto. Enquanto uma realiza a mineração diretamente do conteúdo dos documentos a outra incrementa o poder de busca de outras ferramentas e serviços. 
