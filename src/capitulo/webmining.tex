@@ -1,4 +1,4 @@
-\chapter{Mineração de Dados na WEB} \label{capitulo2}
+\chapter{Mineração de Dados na WEB} \label{WebMining}
 
 % \section{}
 		No inicio, a \textit{Web} continha páginas estáticas objetivando um acesso cômodo as informações. Muitas páginas eram manualmente implementadas, sem contemplar muito a interação com o usuário. Geralmente seguiam a direção servidor-usuário.
@@ -26,7 +26,7 @@
 		
 \section{Descoberta do Conhecimento}
 
-		Muitas são as definições que os pesquisadores adotam para \emph{KDD(Knowledge Discovery Database)} ou Mineração de Dados, a mais difundida e adotada é encontrada nos trabalhos de Fayyad e seu grupo de pesquisa\cite{Fayyad1996a}. 
+		Muitas são as definições que os pesquisadores adotam para \emph{KDD(Knowledge Discovery Database)} ou Mineração de Dados, a mais difundida e adotada é encontrada nos trabalhos de Fayyad e seu grupo de pesquisa\cite{Fayyad1996a}: 
 		\begin{quote}
         	\emph{Knowledge Discovery Database} é o processo não trivial de identificação de padrões válidos, novos, potencialmente úteis e compreensiveis que estejam presentes nos dados.
         \end{quote}
@@ -36,12 +36,12 @@
 	 	O processo de \emph{Knowledge Discovery Database} é um processo interativo e iterativo, composto por algumas etapas, resultando na extração de padrões. As etapas sofreram mudanças no decorrer de seus estudos, alcançando nove etapas\cite{Fayyad1996b}, sendo reduzida para quatro \cite{Weiss1998} e maturando-se num ciclo [Rezende2003]. Atualmente, este ciclo se divide em: Identificação do problema, Pré-Processamento, Extração de Padrões, Pós-Processamento e Utilização do Conhecimento\cite{Alvarez2007}. A figura~\ref{fig:WM-KDD} ilustra a última abordagem utilizada.
 	 	
 	 	\begin{figure}[htb]
-				\begin{center}				
-					\includegraphics[scale=0.5]{./figuras/processo-kdd.png}				
-				\end{center}
-				\caption{Etapas do processo KDD}
-                \label{fig:WM-KDD}
-			\end{figure}
+			\begin{center}				
+				\includegraphics[scale=0.5]{./figuras/processo-kdd.png}				
+			\end{center}
+			\caption{Etapas do processo KDD\cite{Rezende2003}}
+            \label{fig:WM-KDD}
+		\end{figure}
 	 	 
 	 	 \paragraph{Identificação do Problema} Para iniciarmos o todo o processo, precisamos ter um conhecimento mínimo que seja do dominio com o qual iremos trabalhar, e devemos ter claro o objetivo que almejamos. Nesta fase, construimos nosso conhecimento e todas as etapas posteriores são dependentes de uma análise que cubra as metas, objetivos e restrições. Criamos o conceito de útil para o sistema e para o úsuario nesta fase.
 	 	 
@@ -65,13 +65,75 @@
 \section{Etapas do Web Mining}
 
 		Basicamente utilizamos os mesmos conceitos de \emph{Knowledge Discovery Database} alterando a fonte de dados. Como nossa única fonte, utilizamos a \emph{World Wide Web}. No inicio das pesquisas muitos acreditavam, e ainda acreditam, que a \emph{Web} é muito instável como fonte de dados, devido a suas proporções e falta de estruturação. Muitas informações são encontradas em Linguagem Natural pois o público-alvo são os humanos. Alguns defenderam a posição de transformar a \emph{Web} em um banco de dados, mas foram vencidos pelo temperamento caótico e dinâmico\cite{Etzione1996}.
+		
+		\begin{figure}[htb]
+			\begin{center}				
+				\includegraphics[scale=0.5]{./figuras/kdd.png}				
+			\end{center}
+			\caption{Etapas do processo de Web Mining}
+            \label{fig:WM-processo_WebMining}
+		\end{figure}
 
 	\subsection{Coleta de Documentos}
 	
+		A Coleta de Documentos é uma etapa essencial para todo o processo. Definimos com quais documentos o trabalho sera efetuado. Em algumas situações os documentos fazem parte do problema como um todo, logo estarão disponiveis de inicio. Porém, em outras situações, é necessário o processo de Coleta de Documentos\cite{Alvarez2007}.
+		
+		Na grande rede mundial interligando computadores, desde seu inicio, houve uma comoção para facilitar a busca de documentos. Dois grandes grupos são observados na construção de indexadores: Motor de Busca e Diretório WWW\cite{Baeza-Yates1998}.
+		
+		\begin{itemize}
+          \item \textbf{Motor de Busca(\emph{Search Engine}):} Este grupo são formados por motores de busca que utilizam abordagens baseados em rôbos, mega-indexadores, entre outras abordagens automatizadas. O índice criado é centralizado para responder consultas do mundo inteiro. Em 1998, os indexadores que cobriam a maior área eram: \emph{HotBot\footnote{HotBot - http://www.hotbot.com}}, \emph{AltaVista\footnote{AltaVista - http://www.altavista.com}}, \emph{Nothern Light\footnote{Nothern Light - http://www.nothernlight.com}}\cite{Lawrence1998}. Atualmente, o ranking é composto por: \emph{Google\footnote{Google - http://www.google.com}}, \emph{AlltheWeb\footnote{AlltheWeb - http://www.alltheweb.com}}, \emph{AltaVista}\cite{Vaughan2004}. Alguns \emph{search engines} se especializam em tópicos, como o \emph{SearchBroker\footnote{SearchBroker - http://www.searchbroker.com}}. Neste grupo, incluimos também os \emph{metaseachers}, que são serviços disponiveis que coletam respostas de diversos \emph{search engines} e unificam. Como exemplos, temos o \emph{MetaCrawler\footnote{MetaCrawler - http://metacrawler.com}} e \emph{SavvySearch\footnote{SavvySearch - http://www.savvysearch.com}}\cite{Baeza-Yates1998}.
+ 
+          \item \textbf{Diretório WWW:} Utiliza uma classificação próxima do conhecimento humano, na representação de diretórios de assunto, que se estruturam como árvores. Uma grande vantagem desta técnica é a resposta ser, na maiora dos casos, útil. A desvantagem é a falta de especialização e volume de páginas classificadas, esta última desvantagem se deve ao crescimento exponencial de informações que são inseridas na \emph{WWW} todos os dias. Um grande exemplo deste grupo é o \emph{Yahoo!\footnote{Yahoo! - http://www.yahoo.com}}\cite{Baeza-Yates1998}.
+          
+        \end{itemize} 
+        
+        Um ponto muito importante nesta etapa, é que os documentos coletados estarão na sua maioria em muitos formatos, sendo necessário um tratamento para unificar um padrão.
+	
 	\subsection{Pré-Processamento}
 	
+		Após a coleta de todos os documentos possiveis, na etapa anterior, partimos para o pré-processamento destes documentos. É nesta etapa que transformamos uma coleção de documentos em uma representação estruturada adequada. O custo computacional é elevado. Constantemente é adotado a representação de um documento como um conjunto de palavras, chamado de abordagem \emph{bag-of-words}\cite{Alvarez2007}.
+		
+		\paragraph{Representação de Documentos} A abordagem \emph{bag-of-words} consiste em representar cada documento da coleção como um vetor de termos contidos no mesmo. Cada termo que ocorre no documento pode ser composto por apenas uma palavra ou várias palavras. Para identificar todos os termos presentes, é efetuado uma \emph{tokenização} dos termos\cite{Alvarez2007}. 
+		
+		\paragraph{Redução de Representação} Feita a representação, podemos ter em mãos um volume enorme para processar, e as vezes, somos limitados no processamento e armazenamento de tanta informação. Com esta finalidade, utilizamos algumas técnicas para auxiliar na redução:
+		
+			\subparagraph{Filtragem} Na filtragem, almejamos a remoção de termos com pouca ou nenhuma relevância para a análise. Em geral, removemos artigos, preposições e conjunções.
+			
+			Podemos também supor que termos que aparecem muitas vezes no documento, não revelam muitas informações sobre o documeto. Analogamente, termos que aparecem pouco também podem ser excluidos\cite{Yang1997}.
+			
+			\subparagraph{\textit{Stemming}} Nos documentos, as palavras podem ser encontradas flexionadas em diversas formas e as vezes compartilham a mesma raiz semântica. O processo de \emph{steamming} consiste em reduzir estas formas encontradas na raiz(\emph{stem}). Podemos citas Porter\cite{Porter1997} e Lovins\cite{Lovins1968} como grandes pesquisadores nesta área. Para a lingua portuguesa, temos o STEMBR : A stemming algorithm for the brazilian portuguese language.
+
+		Filtragem e \emph{Stemming} são apenas algumas das técnicas envolvidas no Pré-Processamento, podemos adotar muitas outras que trabalham no âmbito semântico, hierarquico, com atributos relevantes, etc.
+		
+		\paragraph{Pré-processamento Linguístico} Esta etapa é essencial em cenários onde a mineração tem como objetivo o reconhecimento de nomes próprios, lugares e organizações, e se faz necessário um pré-processamento linguístico. As seguintes tarefas são adotadas no processo:
+		
+		\begin{itemize}
+		  \item \textbf{Etiquetagem morfossintática(\emph{Part-Of-Speech Tagging})} No texto, encontramos palavras, símbolos, fórmulas matematicas, entre outros termos. A etiquetagem morfossintática tem como tarefa atribuir uma etiqueta para cada termo encontrado de acordo com sua categoria. 
+		  
+		  \item \textbf{Reconhecimento de frases} Com o agrupamento de termos, analisando o documento, tem como objetivo formar sentenças\cite{Weiss1998}.
+		  
+		  \item \textbf{Desambiguação no sentido de palavras} A ambiguidade pode gerar transtornos em análises futuras, por isto, procura-se eliminar qualquer ambiguidade no sentido das palavras. Em algumas linguas essa eliminação é facilmente alcançada, porém, outras precisam de um conhecimento muito mais aprofundado na própria lingua e o dominio da aplicação.
+		  
+		  \item \textbf{\emph{Parsing}} Com a geração da árvore sintática de uma sentença, criamos a possibilidade de analisarmos a relação existente entre as palavras da sentença. Podemos extrair o sujeito, objeto, entre outros, analisando a função exercida pela palavra no contexto da senteça\cite{Alvarez2007}. 
+		   
+        \end{itemize}
+        
+        As técnicas são frequentemente utilizadas visando uma melhoria para a utilização na Mineração de Dados.
+						
 	\subsection{Extração de Padrões}
 	
+		Após o tratamento dos documentos e seus dados, temos como resultado um conjunto em formatos que terão um aproveitamento melhor para a Extração de Padrões. Com a aplicação da Extração de Padrões a obtenção de um conhecimento útil e interessante para o usuário será possivel.
+		
+		Algumas tarefas relacionadas com a Mineração de Dados, utilizam muitos algoritmos de Aprendizado de Maquiná, que também são utilizados na Extração de Padrões.
+		
+		\paragraph{\emph{Clustering} de Documentos}
+		
+		\paragraph{Categorização}
+		
+		\paragraph{Extração de Informação}
+		
+		\paragraph{Sumarização}
+			
 	\subsection{Avaliação e Interpretação de Resultados}
 
 \section{Categorias de WEB Mining}
@@ -86,6 +148,6 @@
 
  		\subsection{Mineração de uso}\label{webmining:uso} - A mineração de uso utiliza os dados secundários provindos de logs de servidores, logs de browsers, perfis de usuário, cookies, seções ou transações de usuários, pasta favoritos, consultas do usuário, cliques de mouse e qualquer outro dado gerado pela interação do usuário com a \textit{Web}. As aplicações da mineração de dados de uso são classificadas em duas categorias: aprendizado de perfil de usuário (modelagem em interfaces adaptativas) e aprendizado de padrões de navegação de usuário. Talvez umas das técnicas em mais utilização atualmente, devido ao grande número de e-commerce, pois com isto podemos adaptar sites de acordo com o cliente, recomendar produtos de acordo com compras passadas ou baseadas nas similaridades entre perfis de usuários. 
 
-        \subsection{Web Semantica}\label{webminig:semantica}
+        \subsection{Web Semântica}\label{webminig:semantica}
 
 		A mineração em dados provindos da Web é multidisciplinar, pois muitas áreas são utilizadas como: recuperação de dados, aprendizagem de maquina, agentes de informação. Uma área muito vasta de interessante pesquisa, e com um futuro muito promissor, pois dia após dia vemos a Web crescer e por enquanto, seu horizonte parece não ter fim. 
