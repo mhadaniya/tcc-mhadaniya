@@ -126,19 +126,39 @@
 		
 		Algumas tarefas relacionadas com a Mineração de Dados, utilizam muitos algoritmos de Aprendizado de Maquiná, que também são utilizados na Extração de Padrões.
 		
-		\paragraph{\emph{Clustering} de Documentos}
+		\paragraph{\emph{Clustering} de Documentos} Com a coleção de documentos em mão, o processo de agrupar os documentos similares, agrupando assim documentos com conteúdos relativamente similares. Estes grupos recebem o nome de \emph{cluster}, e o processo de \emph{Clustering} de Documentos. No final deste processo, teremos cluster com documentos similares, mas clusters distintos entre si\cite{Zhong2003}.
 		
-		\paragraph{Categorização}
+		\paragraph{Categorização} A partir de um conjunto de classificação pré-definido, com um documento novo induzimos um classificador a enquadra-lo numa categoria. Muitas dificuldades são encontradas, pois o documento pode pertencer a nenhum, uma ou mais categorias\cite{Yang1997}.
 		
-		\paragraph{Extração de Informação}
+		\paragraph{Extração de Informação} Como Wilks define, Extração de Informação, extrai informação de textos em documentos, utilizando computadores numa velocidade alta, e normalmente encontrada de fontes eletrônicas. Prece de uma fase de Recuperação de Informação, que seleciona um conjunto apropriado para a extração\cite{Wilks1997}. Extração de Informação é discutido no capítulo~\ref{EI}.
 		
-		\paragraph{Sumarização}
+		\paragraph{Sumarização} O processo de Sumarização consiste em construir um terceiro documento contendo um sumário com as informações mais importantes do documento análisado, buscando sempre que este sumário contenha metade ou menos do tamanho do documento original. Identificar partes importantes no documento continuam sendo um grande desafio nesta área\cite{Radev2002}.
+		
+		Extração de Informação e Mineração de Dados partilham algumas dificuldades como a estruturação do documento, a língua e o estilo de linguagem utilizada na formatação do documento, e o próprio conteúdo do documento.  
 			
 	\subsection{Avaliação e Interpretação de Resultados}
+	
+		Para concluirmos o ciclo ou refazer algumas etapas, avaliamos o quanto o processo se aproximou do objetivo almejado. A avaliação pode ser feita pelos usuários finais ou especialistas, que possuem um conhecimento profundo do dominio\cite{Alvarez2007}.
+		
+		Algumas das métricas são compartilhadas com a Extração de Informação, como Precisão, Cobertura ou \emph{F-measure}. Elas são abordadas no capitulo~\ref{EI} na seção~\ref{EI:avaliacao}.
+		
+		Para melhor avaliação a ilustração dos dados em elementos gráficos pode, e muito, auxiliar a análise e compreensão dos dados por seres-humanos. Conseguimos interpretar, armazenar muito mais informações gráficas do que tabelas, diferentemente das máquinas. Podemos trabalhar com dados muito mais complexos através de gráficos, podendo assim interagir com decisões muito mais rápidas. O tipo de gráfico empregado para a visualização é de extrema importância, uma vez que se escolhermos gráficos que sejam difíceis de interpretar, em nada ajudarão na avaliação\cite{Keim2002}.
 
 \section{Categorias de WEB Mining}
+		
+		Com o crescimento exponencial das fontes de informação disponiveis na \emph{World Wide Web} ao nosso redor, cresce a necessidade de automatizar ferramentas que busquem as informações desejadas e corretamente. Ferramentas mais eficazes no rastreamento, tanto do lado dos servidores como dos clientes, são comumente alvos de pesquisas e projetos na busca de uma mineração de dados. Do lado dos servidores, temos extesas listas de \emph{logs}, registros de usuários ou perfil de usuário, entre outros itens que podem ser análisados\cite{Cooley1997}. Na figura~\ref{fig:WM-toxonomia} podemos observar um esboço da taxonomia.  
+		
+		\begin{figure}[htb]
+			\begin{center}				
+				\includegraphics[scale=0.6]{./figuras/WB-taxonomia.png}				
+			\end{center}
+			\caption{Taxonomia da Mineração na WEB}
+            \label{fig:WM-toxonomia}
+		\end{figure}
+
+		Esta taxonomia pode ser montada através da junção dos trabalhos de Cooley\cite{Cooley1997} e Kolari\cite{Kolari2004}.
 	
-		\subsection{Mineração na WEB de Conteúdo}\label{webmining:conteudo} - áudio, vídeo, dados simbólicos, metadados e vínculos de hipertexto fazem parte do conteúdo de documentos da \textit{Web} atualmente, e como tal, na mineração de conteúdos também são analisados. Existem áreas de pesquisas destinadas a mineração de dados multimídias, entretanto, como uma enorme parte da \textit{Web} é constituída de texto e hipertexto, portanto o foco permanece em dados de texto. Estes podem ser encontrados em três tipos: desestruturados (textos), semi-estruturados (\textit{HTML}) e estruturados (\textit{XML}).
+		\subsection{Mineração de Conteúdo}\label{webmining:conteudo} - áudio, vídeo, dados simbólicos, metadados e vínculos de hipertexto fazem parte do conteúdo de documentos da \textit{Web} atualmente, e como tal, na mineração de conteúdos também são analisados. Existem áreas de pesquisas destinadas a mineração de dados multimídias, entretanto, como uma enorme parte da \textit{Web} é constituída de texto e hipertexto, portanto o foco permanece em dados de texto. Estes podem ser encontrados em três tipos: desestruturados (textos), semi-estruturados (\textit{HTML}) e estruturados (\textit{XML}).
 	 
 		A área de mineração de textos está bem esclarecida, com muitas técnicas, uma das quais seria reestruturar o documento para uma linguagem entendida pela maquina. Uma mineração que vem ganhando destaque em pesquisas é a mineração em serviços da Web tais como grupo de noticias, grupos de e-mails, lista de discussão. Outro conceito é introduzido por estes pesquisadores, chamado de \textit{Web Intelligence}, que promete transformar os serviços da \textit{Web} em entidades inteligentes, de forma que elas possam interagir e se comunicar através de uma linguagem comum. A mineração de conteúdo e a recuperação de informação são muitas vezes utilizadas em conjunto. Enquanto uma realiza a mineração diretamente do conteúdo dos documentos a outra incrementa o poder de busca de outras ferramentas e serviços. 
 			
