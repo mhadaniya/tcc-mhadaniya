@@ -2,11 +2,12 @@
 % Trabalho de Conclusão de Curso
 % Aluno: Mario Henrique A. C. Adaniya
 % Orientador: Prof. Dr. Mario Lemos Proença Jr.
-% 
+% Curso: Ciência da Computação - Universidade Estadual de Londrina
 % Estrutura Principal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
-\documentclass[12pt,a4paper]{abnt}
+%\documentclass[12pt,a4paper]{abnt}
+\documentclass[12pt,a4paper,ruledheader,tocpage=prefix,floatnumber=continuous,pagestart=folhaderosto,font=times]{abnt}
 %\usepackage[utf8]{inputenc}
 \usepackage[latin1]{inputenc}
 \usepackage[brazil]{babel}
@@ -26,7 +27,7 @@
 
 %\usepackage{chngcntr} %pacote para alterar contadores 
  
-%======= Códigos Fonte =======
+%======= Códigos Fonte =========
 \newenvironment{codeverbatim}{\VerbatimEnvironment \small
    \begin{Verbatim}[xleftmargin=20mm]}
    {\end{Verbatim}}
@@ -40,14 +41,14 @@
 
 \begin{document}
 
-%	\include{./capa}	
-%	\include{./folhaderosto}
-%	\include{./aprovacao}
+	\include{./capa}	
+	\include{./folhaderosto}
+	\include{./aprovacao}
 	 
 	\sumario \label{sumario}
 %	\addcontentsline{toc}{chapter}{\listofcodename}
-%	\listoftables
-%	\listadesiglas
+	\listoftables
+	\listadefiguras
 %	\listof{codigo}{\listofcodename}  % Lista de Códigos 
    
     \include{./capitulo/intro}
@@ -55,10 +56,11 @@
 	\include{./capitulo/extracaoinformacao}
 %    \include{./capitulo/namedentityrecognition}
 	\include{./capitulo/webmining}
-	\include{./capitulo/saluscyted}
-%	\include{./conclusao}
+	\include{./capitulo/saluscyted}	
+	\include{./conclusao}
 	
 	\bibliographystyle{abnt-alf}
+	\def\refname{Referências Bibliográficas}
 	\bibliography{./bibliografia/bibliografia}
 
 \end{document}
