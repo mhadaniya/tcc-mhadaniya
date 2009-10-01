@@ -5,13 +5,14 @@
 						
 		Recuperação de Informação possui limites muito bem delimitados, e qualquer tarefa além de prover ao usuário os documentos, não é um sistema de recuperação de informação. Muitas técnicas são utilizadas como agentes com componentes de busca, filtragem, roteamento, categorização e clusterização\cite{Smeaton1997}.
 				
-		A operação de recuperação em sistemas de RI objetiva computar graus de coincidência entre a consulta do usuário e os documentos para ordenar cada documento. Smeaton\cite{Smeaton1997} sugere algumas métricas heurísticas para tal ordenamento (coeficiente de Dice e de Cosine) e enumera áreas onde a pesquisa de recuperação de informação são bem ativas tais como a recuperação baseada em clusters, a recuperação pela combinação de diversas estratégias, indexação semântica latente, recuperação de passagem, e documentos de comprimento heterogêneo.
+		A operação de recuperação em sistemas de RI objetiva computar graus de coincidência entre a consulta do usuário e os documentos para ordenar cada documento. Smeaton\cite{Smeaton1997} sugere algumas métricas heurísticas para tal ordenamento (coeficiente de Dice e de Cosine)\footnote{Os estudos abordados quanto aos modelos matematicos descritos pelo autor foram no âmbito superficial.} e enumera áreas onde a pesquisa de recuperação de informação são bem ativas tais como a recuperação baseada em clusters, a recuperação pela combinação de diversas estratégias, indexação semântica latente, recuperação de passagem, e documentos de comprimento heterogêneo.
 				
+		Sistemas de RI são estruturados através da definição da fonte de informação com a qual se trabalha. Posteriormente, as operações que serão executadas no momento das buscas devem ser determinadas, estruturando os documentos de acordo com as tarefas a serem executadas. Em seguida, um índice com os termos contidos nos documentos é criado\cite{Baeza-Yates1999}. Com uma consulta, o usuário descreve suas necessidades através de termos, e o processo de recuperação de informação é iniciado\cite{Beppler2008}.
+		
 		O problema da aquisição de conhecimento de textos vem sendo questionado pela comunidade de RI em função da rápida pulverização de informação impulsionada pela Internet. A pesquisa sobre atividades baseadas em corpus de textos tem sido encorajada, facilitando o desenvolvimento de soluções.
 
 		As soluções proporcionadas pela pesquisa em corpus de textos trazidas pela comunidade de RI são um aspecto da afinidade deste campo com RBC. O ponto fundamental desta afinidade trata-se do interesse da comunidade de RBC pelo fato da tarefa de RI ser essencialmente a recuperação de informação a partir de uma consulta. Na RI, a tarefa resume-se em combinar a consulta do usuário com um conjunto de documentos. De fato, o que se pretende é combinar representações de uma consulta com representações de documentos. Basicamente, os textos são representados em sistemas de RI por conjuntos de índices, e a comparação é baseada por uma equivalência no nível de palavra ou por uma equivalência conceitual.
-
-		
+	
 
 		Motivado pela forte interdependência entre a RI e o processamento de linguagem natural, Smeaton (1995, 1995a, 1995b) questiona a real utilidade do processamento de linguagem e dos demais recursos lingüísticos para a RI. O autor alega que o processamento de linguagem natural oferece um auxílio modesto para a eficiência da RI pelo fato das técnicas de processamento de LN terem sido desenvolvidas visando aplicações de tradução automática e interfaces de linguagem natural. Uma característica que limita a ajuda oferecida pelas técnicas de processamento de LN oriunda-se na complexidade destas técnicas tornando-as eficientes apenas quando aplicadas sobre uma pequena quantidade de textos. Uma solução para este problema é proposta em Zhai (1997) que apresenta um método para indexação de documentos testado num conjunto de documentos de 250 mega bytes. Neste método, o autor propõe um modelo probabilístico para realizar um parsing de expressões ao invés da indexação por palavras, demonstrando uma significativa melhora na recuperação.
 
@@ -21,14 +22,55 @@
 
 		O método de relevance feedback do sistema INQUERY foi utilizado por Daniels & Rissland (1995) em uma pesquisa que também ressalta a importância do uso do paradigma de RBC na recuperação da informação. As autoras propõem um sistema híbrido de RBC-RI que realiza a busca por documentos similares em uma pequena base de conhecimento de casos em função das fortes necessidades de representação de conhecimento que ofereceria uma base maior. O resultado gerado pelo sistema baseado em casos é um conjunto de textos que sugerem uma lista de termos que é usada para definir uma consulta que conduz a recuperação de documentos baseada em textos.
   
-  	%\section{Processamento de Linguagem Natural}\label{RI:PLN}
+  	\section{Modelos de Recuperação de Informação}\label{RI:Modelos}
+  	
+  		De acordo com Baeza-Yates e Ribeiro-Neto\cite{Baeza-Yates1999}, podemos decompor um modelo de RI em\cite{Beppler2008}:
+  		\begin{itemize}
+  		  \item um conjunto de visões lógicas de documentos de uma coleção;
+  		  \item um conjunto de visões lógicas da informação prestada pelo usuário;
+  		  \item um framework para modelar documentos, consultas e suas relações;
+  		  \item uma função de ordenação.
+  		\end{itemize}
+  		
+  		Greengrass\cite{Greengrass2000} propõem duas categorias para os modelos de RI: semânticos e estátisticos. Os semânticos tem a preocupação de \" entender \" um texto em linguagem natural. Quanto aos modelos estátisticos, são atribuidos medidas estatísticas mensurando a comparação entre uma consulta e um documento. 
+  	
+  	\subsection{Modelo Booleano}
+  		
+  		Utilizando-se da teoria dos conjuntos e algebra booleana, as consultas são construidas através de expressões booleanas e conectores lógicos: AND, OR, NOT. A recuperação de um determinado documento só é efetuada mediante um valor verdadeiro das expressões, no nosso caso, uma consulta. Devido a simplicidade e ao formalismo, temos um resultado não ordenado, acarretando também à recuperação de muitos ou poucos documentos\cite{Baeza-Yates1999}.
+  		
+  	\subsection{Modelo Booleano Estendido}
+  	
+  		Este modelo é proposto com algumas melhorias em relação seu predescessor, implementando uma função de ordenação e a utilização de diferentes operadores. Este modelo atribui valores no intervalo $[0,1]$, que equivale ao grau de comparação de uma expressão com um documento\cite{Lee1994}.
+  	
+  	\subsection{Modelo Vetorial}
+  	
+  		Este modelo é representado por um vetor ou uma lista de termos ordenados. O grau de similaridade de um documento em relação a uma consulta é a avaliação entre os vetores que representam o documento e a consulta. Com isto, uma ordenação de acordo com o grau de similaridade é executada dada uma consulta\cite{Baeza-Yates1999}.
+  		
+  	\subsection{Modelo Probabilístico}
+  	
+  		Fazendo-se uso de cálculos probabilísticos, usando a teoria da probabilidade, o modelo probabilístico calcula a probabilidade condicional em que um determinado documento é relevante a uma dada consulta. Consulta e documentos são representados por meio de um conjunto de termos, calculando-se a probabilidade de ocorrência dos termos de uma consulta em documentos relevante e não-relevantes. A função probabilistica depende do modelo a ser usado, bem como os termos estão distribuidos entre os documentos\cite{Greengrass2000}.
+  		
+	\subsection{Modelo Difuso}
+	
+		É um modelo extendido do modelo booleano e possui uma função de ordenação cujo resultado da comparação entre um documento e uma consulta é aproximado. Como Zadeh redefiniu o intervalo fechado do conceito clássico da pertinência de $[0,1]EI$ para o intervalo continuo $[0,1]ER$\cite{Baeza-Yates1999}. 
+		
+		A aproximação considera que cada termo de uma consulta define um conjunto difuso e cada documento possui um grau de participação nesse conjunto. Muitas criticas são lançadas a este modelo por gerar medidas similaridades incorretas\cite{Lee1994}.
+		
+		A principal justificativa para o método difuso é a falta de informação frequente do usuário e do próprio sistema em saber se o documento possui a informação consultada ou não\cite{Lee1994}.
+
+	%\subsection{Modelo de Indexação Semântica Latente}	
+		  	
+  	\subsection{Modelo Processamento de Linguagem Natural}
+  	
+  		O modelo que usa processamento em linguagem natural pode ser categorizado como modelo semântico, porque a estrutura e o significado dos documentos estão intimamente ligados ao modelo. Raramente são utilizadas em RI, mas geralmente são empregadas em conjunto com outros modelos estatísticos\cite{Greengrass2000}. 
+  		
   	
   	\section{Recuperação de Informação na WEB}\label{RI:webRI}
 		
 		Muitas caracteristicas devem ser levadas em conta quando estamos recuperando documentos na \emph{WEB}\cite{Huang2000}:
 		
 		\begin{itemize}
-          \item \textbf{Tamanho da Internet} - O tamanho da \emph{Internet}, segundo Zhang e seu grupo de pesquisa\cite{Zhang2008}, estima-se que em Janeiro de 2008 a Internet continha 62400000 hostnames ativos. De acordo com a pesquisa, a Lei de Moore\footnote{A Lei de Moore foi predita por um dos fundadores da Intel, Gordon Moore, e sugere que a cada dezoito meses a capacidade de transitores no CPU dobra. Apareceu em 1965 e se manteve como verdade por quase meio século, e costuma ser utilizada para prever modelos futuros de tecnologias.}, exceto que para a Internet, foi visto que a cada cinco anos, ela dobra de tamanho;
+          \item \textbf{Tamanho da Internet} - O tamanho da \emph{Internet}, segundo Zhang e seu grupo de pesquisa\cite{Zhang2008}, estima-se que em Janeiro de 2008 a Internet continha 62400000 hostnames ativos. De acordo com a pesquisa, a Lei de Moore\footnote{A Lei de Moore foi predita por um dos fundadores da Intel, Gordon Moore, e sugere que a cada dezoito meses a capacidade de transitores no CPU dobra. Apareceu em 1965 e se manteve como verdade por quase meio século, e costuma ser utilizada para prever modelos futuros de tecnologias.} é observada, exceto que para a Internet, foi visto que a cada cinco anos, ela dobra de tamanho;
           \item \textbf{Dinamismo da Internet} - As tecnicas de Recuperação de Informação são geralmenta estatica, enquanto a \emph{Web} está em constante metamorfose;
           \item \textbf{Duplicação} - 30\% do contéudo da \emph{Internet} é uma cópia de algum conteúdo existente;
           \item \textbf{Comportamentos especificos} - É estimado que 85\% dos usuários utilizam apenas a primeira página retornada das \emph{search engines}, e 28\% modificam sua consulta original;
