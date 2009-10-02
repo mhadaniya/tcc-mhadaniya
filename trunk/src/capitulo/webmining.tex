@@ -32,7 +32,7 @@
 
 	 	Tomamos como definição que: os \emph{dados} são um conjunto de fatos, e \emph{padrões} são definidos em uma linguagem e descrevem um subconjunto dos dados ou um modelo aplicável aquele conjunto.
 	 	
-	 	O processo de \emph{Knowledge Discovery Database} é um processo interativo e iterativo, composto por algumas etapas, resultando na extração de padrões. As etapas sofreram mudanças no decorrer de seus estudos, alcançando nove etapas\cite{Fayyad1996b}, sendo reduzida para quatro \cite{Weiss1998} e maturando-se num ciclo [Rezende2003]. Atualmente, este ciclo se divide em: Identificação do problema, Pré-Processamento, Extração de Padrões, Pós-Processamento e Utilização do Conhecimento\cite{Alvarez2007}. A figura~\ref{fig:WM-KDD} ilustra a última abordagem utilizada.
+	 	O processo de \emph{Knowledge Discovery Database} é um processo interativo e iterativo, composto por algumas etapas, resultando na extração de padrões. As etapas sofreram mudanças no decorrer de seus estudos, alcançando nove etapas\cite{Fayyad1996b}, sendo reduzida para quatro \cite{Weiss1998} e maturando-se num ciclo\cite{Rezende2003}. Atualmente, este ciclo se divide em: Identificação do problema, Pré-Processamento, Extração de Padrões, Pós-Processamento e Utilização do Conhecimento\cite{Alvarez2007}. A figura~\ref{fig:WM-KDD} ilustra a última abordagem utilizada.
 	 	
 	 	\begin{figure}[htb]
 			\begin{center}				
@@ -42,9 +42,13 @@
             \label{fig:WM-KDD}
 		\end{figure}
 	 	 
-	 	 \paragraph{Identificação do Problema} Para iniciarmos o todo o processo, precisamos ter um conhecimento mínimo que seja do dominio com o qual iremos trabalhar, e devemos ter claro o objetivo que almejamos. Nesta fase, construimos nosso conhecimento e todas as etapas posteriores são dependentes de uma análise que cubra as metas, objetivos e restrições. Criamos o conceito de útil para o sistema e para o úsuario nesta fase.
+	 	 \subsection{Identificação do Problema} %\paragraph{Identificação do Problema}
 	 	 
-	 	 \paragraph{Pré-Processamento} Muitas vezes os dados não se encontram formatados adequadamente para a utilização na etapa de extração de padrões, ou outras características limitam a aplicação. Para adequá-los alguma tarefas podem ser inseridas no Pré-Processamento: Integração, Transformação, Limpeza e Redução de Dados.
+	 	 Para iniciarmos todo o processo, precisamos ter um conhecimento mínimo que seja do dominio com o qual iremos trabalhar, e devemos ter claro o objetivo que almejamos. Nesta fase, construimos nosso conhecimento e todas as etapas posteriores são dependentes de uma análise que cubra as metas, objetivos e restrições. Criamos o conceito de útil para o sistema e para o usúario nesta fase.
+	 	 
+	 	 \subsection{Pré-Processamento} %\paragraph{Pré-Processamento}
+	 	 
+	 	 Muitas vezes os dados não se encontram formatados adequadamente para a utilização na etapa de extração de padrões, ou outras características limitam a aplicação. Para adequá-los alguma tarefas podem ser inseridas no Pré-Processamento: Integração, Transformação, Limpeza e Redução de Dados.
 	 	 
 	 	 	\begin{itemize}
                 \item \textbf{Integração:} Os dados muitas vezes são provenientes de diversas fontes, precisando uma unificação. Obtemos nesta fase, uma fonte única de dados para utilizar nas estapas posteriores\cite{Alvarez2007}.
@@ -52,12 +56,18 @@
                 \item \textbf{Limpeza:} Com o conhecimento adquirido no passo de Identificação do problema, temos um embasamento melhor para remover dados indesejáveis. Alguns atributos podem estar preenchidos incorretamente\cite{Alvarez2007}.
                 \item \textbf{Redução:} Muitas vezes somos obrigados a limitar nossa ação diretamente ligados a inúmeros fatores. O volume pode ultrapassar a capacidade de processamento, sendo isto observado quando executamos muitas vezes os experimentos\cite{Weiss1998}. 
               \end{itemize}
+	 	 
+	 	 \subsection{Extração de Padrões}%\paragraph{Extração de Padrões}
 	 	 	
-	 	 \paragraph{Extração de Padrões} Os objetivos definidos na Identificação do Problema direcionam este passo. A execução deste passo pode ser necessária muitas vezes para procurar o resultado mais perto do objetivo. As tarefas de Mineração de Dados como classificação, \emph{clustering} e regras de associação são empregadas nesta etapa de acordo com o modelo escolhido para ser gerado\cite{Alvarez2007}.
+	 	 Os objetivos definidos na Identificação do Problema direcionam este passo. A execução deste passo pode ser necessária muitas vezes para procurar o resultado mais perto do objetivo. As tarefas de Mineração de Dados como classificação, \emph{clustering} e regras de associação são empregadas nesta etapa de acordo com o modelo escolhido para ser gerado\cite{Alvarez2007}.
 	 	 
-	 	 \paragraph{Pós-Processamento} Depois de extraídos os padrões, o ciclo do processo ainda não é fechado, pois se apresentarmos todos os padrões ao usuário como extraimos, podemos mostrar padrões muito complicados ou que fujam dos objetivos. Com a qualidade questionável podemos executar novamente algumas etapas ou o processo inteiro. Para mensurar a qualidade temos alguns artificios como interessabilidade, compreensibilidade, precisão, cobertura e taxa de erro\cite{Alvarez2007}.
+	 	 \subsection{Pós-Processamento} %\paragraph{Pós-Processamento}
 	 	 
-	 	 \paragraph{Utilização do Conhecimento} Última fase do processo e onde expomos o conhecimento extraído para o usuário, ou integrar a um sistema.
+	 	 Depois de extraídos os padrões, o ciclo do processo ainda não é fechado, pois se apresentarmos todos os padrões ao usuário como extraimos, podemos mostrar padrões muito complicados ou que fujam dos objetivos. Com a qualidade questionável podemos executar novamente algumas etapas ou o processo inteiro. Para mensurar a qualidade temos alguns artificios como interessabilidade, compreensibilidade, precisão, cobertura e taxa de erro\cite{Alvarez2007}.
+	 	 
+	 	 \subsection{Utilização do Conhecimento} %\paragraph{Utilização do Conhecimento}
+	 	 
+	 	 Última fase do processo é onde expomos o conhecimento extraído para o usuário, ou ocorre a integração a um sistema.
 	 	 
 	 	 A utilização dos termos Mineração de Dados ou \emph{Knowledge Discovery Database} na literatura é muito nebulosa. Alguns autores consideram como sendo processos distintos, outros processos que se complementam ou nomeia o mesmo processo. Adoto neste trabalho como sendo tarefas complementares.
 
@@ -145,7 +155,7 @@
 
 \section{Categorias de WEB Mining}
 		
-		Com o crescimento exponencial das fontes de informação disponiveis na \emph{World Wide Web} ao nosso redor, cresce a necessidade de automatizar ferramentas que busquem as informações desejadas e corretamente. Ferramentas mais eficazes no rastreamento, tanto do lado dos servidores como dos clientes, são comumente alvos de pesquisas e projetos na busca de uma mineração de dados. Do lado dos servidores, temos extesas listas de \emph{logs}, registros de usuários ou perfil de usuário, entre outros itens que podem ser análisados\cite{Cooley1997}. Na figura~\ref{fig:WM-toxonomia} podemos observar um esboço da taxonomia.  
+		Com o crescimento exponencial das fontes de informação disponiveis na \emph{World Wide Web} ao nosso redor, cresce a necessidade de automatizar ferramentas que busquem as informações desejadas e corretamente. Ferramentas mais eficazes no rastreamento, tanto do lado dos servidores como dos clientes, são comumente alvos de pesquisas e projetos na busca de uma mineração de dados. Do lado dos servidores, temos extensas listas de \emph{logs}, registros de usuários ou perfil de usuário, entre outros itens que podem ser análisados\cite{Cooley1997}. Na figura~\ref{fig:WM-toxonomia} podemos observar um esboço da taxonomia.  
 		
 		\begin{figure}[htb]
 			\begin{center}				
@@ -193,7 +203,7 @@
  		 
 		As organizações estão confiando e conduzindo muitos negócios através da \emph{Internet} e como tal, é necessário técnicas diferentes das tradicionais, pois estas precisam ser revistas. O volume de dados operados diariamente é enorme, tanto dentro quanto fora da empresa. Muito destes dados são gerados automaticamente, e analisar tudo manualmente é um trabalho muito dispendioso, e ao mesmo tempo crucial, pois dados muito importantes estão contidos e podem ser essenciais para uma tomada de decisão para a empresa quanto a estratégia de mercado. Analisando estes dados, as oganizações conseguem estipular vida útil e valor de um determinado produto ao consumidor, estratégias de marketing, campanhas promocionais, entre outros. Dentro das organizações também auxiliam na produtividade, melhorando a comunicação entre os diversos setores através da analise dos dados de intranet\cite{Cooley1997}.
 		
-		As ferramentas para análise da \emph{Web} praticamente nasceram com elas, tendo mecanismos para medir as atividades do servidor desde os famigerados contadores de visitação. Atualmente, estas ferramentas acoplaram muito mais tarefas como determinar o tempo e o intervalo de visitas além de determinar o número de acessos. Pode-se descobrir quais são os arquivos mais acessados, podendo assim mapear um fluxo de navegação dentro um determinado domínio\cite{Cooley1997}.
+		As ferramentas para análise da \emph{Web} praticamente nasceram com elas, tendo mecanismos para medir as atividades do servidor desde os famigerados contadores de visitação. Atualmente, estas ferramentas acoplaram muito mais tarefas como determinar o tempo e o intervalo de visitas além de determinar o número de acessos. Pode-se descobrir quais são os arquivos mais acessados, podendo assim mapear um fluxo de navegação dentro de um determinado domínio\cite{Cooley1997}.
 		
  		\paragraph{Ferramentas de Descobrimento de Padrões(\emph{Pattern Discovery Tools})} Com uma combinação sofisticada de muitas áreas como Inteligência Artificial, Mineração de Dados, Psicologia, Teoria da Informação, Economia, Estatística para a mineração do conhecimento e interpretação em um conjunto de dados. Como exemplo, temos a ferramenta \emph{WEBMINER}\cite{Mobasher1997}\cite{Mobasher1996} que descobre automaticamente regras e sequência de padrões através de \emph{logs} de acesso do servidor.
 
@@ -205,3 +215,5 @@
 
 		 A Web Semântica é uma extens˜ao da web já existente, onde a informaç˜ão ganha melhores
 significados, proporcionando aos humanos trabalhar melhor em conjunto com os computadores \cite{Berners-Lee2001}. Acredita-se muito que a Web Semântica será o próximo passo evolutivo da Web, pois possui uma linguagem semântica muito rica, e.g., \emph{Web Ontology Language\footnote{Web Ontology Language - http://www.w3.org/TR/owl-feature}}.
+
+		A falta de mecanismos capazes de captar a semântica das páginas Web criou uma forte demanda de serviços que se ajusta adequadamente à classe de serviços estudadas em Inteligência Artificial, que passou a ser vista como uma alternativa bastante factivel para um melhor tratamento 
