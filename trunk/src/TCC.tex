@@ -9,8 +9,18 @@
 %\documentclass[12pt,a4paper]{abnt}
 \documentclass[12pt,a4paper,ruledheader,tocpage=prefix,floatnumber=continuous,pagestart=folhaderosto,font=times]{abnt}
 %\usepackage[utf8]{inputenc}
+
+\usepackage[top=3cm,left=3cm,right=2cm,bottom=2cm]{geometry}
+
 \usepackage[latin1]{inputenc}
 \usepackage[brazil]{babel}
+\usepackage[T1]{fontenc} % usa fontes postscript com acentos
+
+\usepackage{latexsym}
+\hyphenchar\font=-1
+
+\usepackage{url}
+\usepackage{breakurl}
 
 \usepackage[pdftex]{graphicx}
 
@@ -28,11 +38,7 @@
 
 %\usepackage{chngcntr} %pacote para alterar contadores 
  
-%======= Códigos Fonte =========
-\newenvironment{codeverbatim}{\VerbatimEnvironment \small
-   \begin{Verbatim}[xleftmargin=20mm]}
-   {\end{Verbatim}}
-%=============================
+
 \floatstyle{plain}  % tipos: plain, boxed, ruled
 \newfloat{codigo}{tbp}{lop}[section]  % numera os captions com  número de seção.
 \floatname{codigo}{Código}
@@ -63,5 +69,7 @@
 	\bibliographystyle{abnt-alf}
 	\def\refname{Referências Bibliográficas}
 	\bibliography{./bibliografia/bibliografia}
+	
+	\include{anexos/codigos/codes}
 
 \end{document}

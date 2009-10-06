@@ -1,25 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Trabalho de Conclusão de Curso
+% Aluno: Mario Henrique A. C. Adaniya
+% Orientador: Prof. Dr. Mario Lemos Proença Jr.
+% Curso: Ciência da Computação - Universidade Estadual de Londrina
+% 
+%  Capitulo sobre um Caso de Uso - Projeto Salus Cyted
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Caso de Uso - Projeto Salus Cyted}\label{Capitulo 5}
 
 		O projeto Salus Cyted nasceu com o objetivo de estimular a participação coletiva e estruturar uma sólida cooperação entre os grupos participantes, e para tanto, as atividades foram centralizadas em um ambiente específico: um Portal Web com acesso adaptável aos diferentes usuários em função de seu nível cultural e peculiaridades regionais.
 	
-\section{Criação do Parser}
+		\section{Tecnologias Empregadas}
 	
-		\textbf{Parser} - é um componente de um programa que analisa a estrutura léxica de uma entrada de acordo com regras pré-definidas. E para a criação do 
-	
-		A ferramenta para a implementação do NameParser foi o JavaCC(Java Compiler Compiler[tm]). É um gerador de parser \textit{open-source} inicialmente desenvolvido pela \textit{Sun}. Utiliza uma sintaxe próxima do Java, e trabalha \textit{top-down}.
-	 
-		Um Parser é um programa de computador (ou apenas um componente de um programa) que serve para analisar a estrutura gramatical de uma entrada, manipulando os tokens, que são segmentos de texto ou símbolos que podem ser manipulados. Em XML, o parser pode ser um leitor que ajuda na conversão do arquivo para manipulação dos dados contidos no mesmo.
-	
-		A criação do Parser para a extração de nomes em paginas, foi desenvolvida em várias etapas. No primeiro momento, foi criado a Expressão Regular para a extração de nomes. A Expressão foi concebida analisando como os nomes aparecem em nossa escrita. Por exemplo: Pedro de Alcântara Francisco Antônio, podemos encontrar ele escrito nas seguintes formas: Pedro de A. F. Antonio, Pedro A. F. Antônio, Pedro de A. Francisco Antônio. Ainda temos que relevar se ele publicou algum artigo ou outro documento do gênero, onde segue-se uma regra específica, logo, podemos encontrar o nome escrito nas seguintes formas: "de A. F. A, Pedro.", 
- 
-	\renewcommand{\baselinestretch}{0.5}  % distância entre linhas
-	\begin{codigo}[htb]
-	   \tiny  % tamanho da fonte
-	   \begin{boxit}  % coloca o código dentro de um Box
-	      \vspace{2mm}
-	      \VerbatimInput[xleftmargin=8mm,numbers=left,obeytabs=true]{./codigos/Teste.java}
-	   \end{boxit}
-	   \caption{\it Código de teste Java }
-	   \label{code:Teste}
-	\end{codigo}
+		Um Parser é um programa de computador (ou apenas um componente de um programa) que serve para analisar a estrutura gramatical de uma entrada, manipulando os tokens, que são segmentos de texto ou símbolos que podem ser manipulados.
 		
+		A ferramenta para a implementação do NameParser foi o JavaCC(Java Compiler Compiler[tm]). É um gerador de parser \textit{open-source} inicialmente desenvolvido pela \textit{Sun}. Utiliza uma sintaxe próxima do Java, e trabalha \textit{top-down}.
+		
+		\textbf{Parser} - é um componente de um programa que analisa a estrutura léxica de uma entrada de acordo com regras pré-definidas. E para a implementação do \emph{NameParser} foi utilizado o JavaCC que utiliza o Java como linguagem.
+		
+		\subsection{Java}
+		
+		A linguagem Java foi concebida na década de 90, onde Patrick Naughton, Mike Sheridan e James Gosling projetaram uma linguagem de programação orientada a objetos onde a intenção verdadeira era antecipar novas tendências em tecnologia. Eles preconizavam um futuro onde computadores estariam embutidos em eletrodomésticos e outros aparelhos dentro dos lares, sendo utilizados no cotidiano.
+		
+		Um protótipo desta da utopia almejada foi o StarSeven ou *7, um controle remoto com interface touchscreen. A linguagem utilizada para este protótipo foi batizada por seu inventor James Gosling de 'Oak'. Tentaram vender a idéia, mas sem muito sucesso, pois como muitas invenções, aquela nasceu no tempo errado, pois a infraestutura da época não permitia os serviços disponibilizados pelo StarSeven.
+		
+		Não muito por acaso, na mesma época, a Internet teve seu \emph{boom}. Como a rede que a Internet funcionava era exatamente a infra-estrutura que o StarSeven procurava, Gosling teve a tarefa de adaptar o Oak para Internet, e em Janeiro de 1995 nascia o Java. Sua disseminação pelo mundo afora foi incrivel, e muito se deve também ao crescimento da Internet.
+		
+		A linguagem tem as seguintes caracteristicas:
+		
+		\begin{itemize}
+		  \item Orientação a objeto;
+		  \item Portabilidade, independência de plataforma;
+		  \item Recursos de Rede
+		  \item Segurança
+		  \item Sintaxe similar a linguagens conhecidas como C/C++;		  
+		  \item Garbage Collector;		  
+		\end{itemize}
+    
+		Por estas e muitas outras características, Java foi tão bem aceita pela comunidade e grandes empresas. A Sun Microsystems tornou a maior parte do Java um software livre sob os termos da GNU/GPL, apenas as partes que a Sun não possui direitos continua está fora. Atualmente Java ainda é um \emph{standard} mantida pela comunidade JCP(Java Community Process).
+				
+		\subsection{JavaCC}
+		
+		JavaCC (Java Compiler Compiler) é um gerador de analisador sintático, similar ao yacc. O formalismo que tratato é o Backus-Naur Estendido, e a saída gerada é na linguagem Java. Um limitante do JavaCC é a geração de analisadores sintáticos descendentes, limitando as gramaticas analisadas(LL(k)).
+		
+		JavaCC é comumente utilizado quando precisamos tratar outras linguagens, mas não é seu único uso. O programador necessita especificar uma coleção de "expressões regulares" que serão as regras utilizadas para a leitura e quebra dos tokens. O analisador consome a sequência de tokens, analisa a estrutura e como resultado produz o que o programador especificou, e assim gera o analisador em Java.
+										
+		
+		\section{NameParser}
+		
+		A aplicação funciona da seguinte maneira:
+		
+		\begin{itemize}
+          \item 1. É executado uma varredura do HtmlParser na página escolhida, e obtemos como resultado uma arvore da página;
+          \item 2. Analisamos nós que possuem nós filhos textos, onde temos maior probabilidade de encontrar nomes;
+          \item 3. Sob o conteúdo destes nós textos, executamos o NameParser para a extração de possiveis nomes;
+          \item 4. Com os possiveis nomes extraidos, eliminamos aqueles que estão presentes no dicionário;
+          \item 5. Lista final com os nomes extraidos pela aplicação.                   
+        \end{itemize}
+        
+		O projeto SalusParser contem seus pacotes listados na figura\ref{fig:NameParserClasses}, sendo o nameparser o pacote da implementação do parser própriamente dito, contendo o código para o JavaCC com as regras e as classes geradas no mesmo pacote.
+		
+		\begin{figure}[htb]
+			\begin{center}				
+				\includegraphics[scale=0.5]{./figuras/name_parser_classes.png}
+			\end{center}
+			\caption{Classes do projeto SalusParser}
+            \label{fig:NameParserClasses}
+		\end{figure}
+
+		Como no nosso cenário, utilizamos páginas Web como documentos para extração, no pacote htmlparser contém o parser de HtmlParser que implementa uma classe para o tratamento das tags HTML. Não implementamos o parser html em si, pois utilizamos um HTML Parser\footnote{HtmlParser - http://htmlparser.sourceforge.net} implementado e que possui uma gama de funções, inclusive o retorno de uma página na estruturação de uma arvore, estrutura que facilita para uma posterior analise de dados.
+		
+		Implementamos o NameParser a partir das regras que criamos e que podem ser vistas nas figuras ~\ref{fig:tokens01} e \ref{fig:tokens02} . Criamos alguns tokens para tratar letras minusculas, maiusculas, digitos e caracteres especiais.
+		
+		\begin{figure}[htb]
+			\begin{center}				
+				\includegraphics[scale=0.6]{./figuras/regras01.png}
+			\end{center}
+			\caption{Declaração das regras de tokens}
+            \label{fig:tokens01}
+		\end{figure}
+
+		Definimos ainda o que seria um token <NOME>, seguindo uma regra simples, que é a formação de uma palavra sendo a primeira letra maiuscula e seguida de letras minusculas e/ou digito. Isto para um nome simples. Por fim, temos a nossa regra principal para a aceitação de nomes que podem ser observada na figura~\ref{fig:tokens02}.
+		
+		\begin{figure}[htb]
+			\begin{center}				
+				\includegraphics[scale=0.7]{./figuras/regras02.png}
+			\end{center}
+			\caption{Declaração da regra do NOME COMPLETO}
+            \label{fig:tokens02}
+		\end{figure}
+		
+		Definimos a regra para ser um <NOME COMPLETO>, onde para a extração de nomes em paginas, foi concebida analisando como os nomes aparecem escritos. A simplificação da regra se deve ao fato da não regionalização ao buscar pelos nomes apenas em Português, mas abranger nomes de uma forma geral incluindo outras linguas. Na tabela ~\ref{tab:Regras e exemplos de nomes} temos alguns exemplos de nomes que a regra aceita corretamente.
+		
+		% Tabela das regras e nomes.
+		\begin{table}[htbp]
+		  \centering   
+		    \begin{tabular}{rr}
+		    \addlinespace
+		    \toprule
+		    {\bf REGRA} & {\bf Exemplo de Nome} \\
+		    \midrule
+		    (<NOME>" ")+ (<PREFIXO>" ")* <NOME> & Pedro de Alcântara \\
+		    (<NOME>" ")+ (<MAIUSCULA>"."" ")* (<MAIUSCULA>(".")*) & Pedro A. F. \\
+		    (<NOME>" ")+ (<MAIUSCULA>"."" ")* \\ (<NOME>|<PREFIXO>)* " "<NOME>	& Pedro A. Francisco da Silva \\
+		    (<MAIUSCULA>"."" ")+ (<NOME>)+ & P. A. Francisco \\
+			(<NOME>","" ") (<MAIUSCULA>"."" ")* <MAIUSCULA>"." & Francisco, P. S. \\
+			(<NOME>","" ") (<NOME>" ")* <MAIUSCULA>"." & Francisco, Pedro A. \\
+			(<NOME>","" ") (<NOME>" ")* <NOME> & Francisco, Pedro \\		    
+		    \bottomrule
+		    \end{tabular}
+			\caption{tab:regrasenomes}
+		  \label{tab:Regras e exemplos de nomes}
+		\end{table}
+		
+		Nas primeiras versões, fizemos alguns testes e coletamos muitos dados desnecessários como inicio de parágrafo, e deixamos alguns de fora como nomes com símbolos, e.g. Carlos-Eduardo. Corrigimos algumas regras, e criamos um dicionário para mitigar o sobressalto de informações que pudessem ocorrer. Refizemos alguns testes e fomos ajustando de acordo com algumas páginas.
+		
+		O resultado foi satisfatório para um inicio de pesquisa, mas muitas outras abordagens e implementações podem ser feitas. Como queremos um resultado mais universal, uma opção é de integrarmos com alguma search engine, e.g. Google, e buscarmos informações. No primeiro momento com \emph{queries} do tipo: <NOME COMPLETO> is author, <NOME COMPLETO> was born in, <NOME COMPLETO> é autor, <NOME COMPLETO> é nascido em. Com isto, descartamos o dicionario a principio mas é algo a ser avaliado num futuro projeto.
+		
+		Todo o código utilizado para implementação da ferramenta se encontra disponivel no final do trabalho como anexo e no repositório http://tcc-mhadaniya.googlecode.com/svn/trunk/. Está disponivel sob as licensas GNU General Public License Versão 3 e seu conteúdo sob a Creative Commons 3.0 BY-SA.
