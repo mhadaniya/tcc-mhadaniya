@@ -8,7 +8,6 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \chapter{Mineração de Dados na WEB} \label{WebMining}
 
 		No inicio, a \textit{Web} continha páginas estáticas objetivando um acesso cômodo as informações. Muitas páginas eram manualmente implementadas, sem contemplar muito a interação com o usuário. Geralmente seguiam a direção servidor-usuário.
@@ -223,29 +222,60 @@
 		A personalização é um dos pontos chaves na Mineração de Uso. Como exemplo, podemos visualizar grandes sites de E-Commerce que sempre buscam personalizar seu site de acordo com as preferências de cada cliente, e.g., se eu sempre procuro livros de informática, o site sempre procura me mostrar ofertas em livros de informática e afins. \emph{Web sites} que demonstram um comportamento de mudar a organização de seu conteúdo e apresentação de acordo com as preferências do usuário são chamados sites adaptativos\cite{Kolari2004}.
 
         \subsection{Web Semântica}\label{webminig:semantica}
-
-		 A Web Semântica é uma extens˜ao da web já existente, onde a informaç˜ão ganha melhores
+		 
+		 A Web Semântica é uma extens˜ão da web já existente, onde a informaç˜ão ganha melhores
 significados, proporcionando aos humanos trabalhar melhor em conjunto com os computadores \cite{Berners-Lee2001}. Acredita-se muito que a Web Semântica será o próximo passo evolutivo da Web, pois possui uma linguagem semântica muito rica, e.g., \emph{Web Ontology Language\footnote{Web Ontology Language - http://www.w3.org/TR/owl-feature}}.
 
-		Como somos expostos a muitas informações de diversas maneiras, não sabemos lidar com o que exatamente é correto ou útil para nós, resultando em uma "sobrecarga de informação". Observamos duas características importantes para este fenomeno: demasiado volume e a falta de uma definição semântica interpretável por programas e sistemas[FREITAS].
+		Como somos expostos a muitas informações de diversas maneiras, não sabemos lidar com o que exatamente é correto ou útil para nós, resultando em uma "sobrecarga de informação". Observamos duas características importantes para este fenomeno: demasiado volume e a falta de uma definição semântica interpretável por programas e sistemas\cite{Freitas}[FREITAS].
 
 		Algumas areas estudadas na Inteligencia Artificial casou muito bem, pelo fato de serem mecanismos que captam a semantica do contéudo e se ajustam de acordo com as necessidades. Uma das abordagens propostas era de dotar a Internet de inteligência própria, construindo paginas mais elaboradas e ricas semânticamente e onde agentes pudessem raciocinar sobre semântica, logo, modelando uma Web Semântica.
 
 		A semântica é obtida através de ontologias, que são modelos de dados representando o conhecimento adquirido sobre um mundo ou parte deste em um conjunto de conceitos existentes em um dominio e os relacionamentos entre estes. As ontologias descrevem geralmente: individuos, classes, atributos e relacionamentos.
 
-		\subsubsection{Camadas da Web Semântica} 
+		\subsubsection{Camadas da Web Semântica}
 
-		O orgão W3C(World-Wide Web Consortium) tem contribuido na questão de manter padrões para a World-Wide Web, inclusive para a Web Semântica. Tem padronizado linguagens para definição de ontologias.
-
-	1-CAMADA(UNICODE/URI)
-Primeira cada temos o Unicode e o URI. Unicode para a padronização dos conjuntos de caracteres e o URI para a identificação e localização de páginas.
-
-	2-CAMADA(XML)
-Na segunda camada, encontramos o XML. É uma meta-linguagem de editoração, permitindo a representação de outras linguagens padronizadas.
-
-	3-CAMADA(RDF)
-Na terceira camada é adicionada mais semântica a um documento, descrevendo recursos da Web.
-
+		O orgão W3C(World-Wide Web Consortium) tem contribuido na questão de manter padrões para a World-Wide Web, inclusive para a Web Semântica. Tem padronizado linguagens para definição de ontologias. A figura~\ref{fig:camadasW3C} é uma ilustração das camadas propostas pela W3C para a Web Semântica.
 		
+		\begin{figure}[htb]
+			\begin{center}				
+				\includegraphics[scale=0.6]{./figuras/camadas-w3c.png}				
+			\end{center}
+			\caption{Camadas propostas pela W3C}
+            \label{fig:camadasW3C} 
+		\end{figure}
+		
+	\begin{itemize}	  
 
-		A falta de mecanismos capazes de captar a semântica das páginas Web criou uma forte demanda de serviços que se ajusta adequadamente à classe de serviços estudadas em Inteligência Artificial, que passou a ser vista como uma alternativa bastante factivel para um melhor tratamento 
+		\item \textbf{CAMADA UNICODE/URI}
+		Primeira cada temos o Unicode e o URI. Unicode para a padronização dos conjuntos de caracteres e o URI para a identificação e localização de páginas.
+
+		\item \textbf{CAMADA XML}
+		Na segunda camada, encontramos o XML. É uma meta-linguagem de editoração, permitindo a representação de outras linguagens padronizadas.
+		
+		\item \textbf{CAMADA RDF}
+		Na terceira camada é adicionada mais semântica a um documento, descrevendo recursos da Web sem se referir a estruturação. Descreve os recursos por meio de sentenças. Os recursos podem ser partes de um documento ou dados, geralmente descritos como um trio com sujeito(recurso)-predicato(atributo)-objeto(valor do atributo). Comumente são ilustradas como um grafo direto rotulado ou através de XML.
+		
+	 
+		\item \textbf{CAMADA de ONTOLOGIA}
+		É a camada responsável pela expressividade e representação das ontologias através da extensibilidade do RDF. Existem algumas linguagens padronizadas: DAML, OIL, OWL entre outras.
+		
+		Permitem definir propriedades como: listas, restrições, cardinalidades, tipos de dados, etc
+	
+		\item \textbf{CAMADA de LÓGICA, PROVA e CONFIANÇA}
+		Esta camada ainda não possui caracteristicas certas, pois ainda estão sendo estudadas. A parte lógica tem como objetivo especificar regras que atuam sobre instâncias e recursos. A camada de prova executa e a camada de confiança verifica se a prova está correta ou não.
+		
+		Alguns protótipos disponiveis são DAML-L e RuleML.
+		
+	\end{itemize}
+		
+		Teoricamente, podemos dar um exemplo simples de como a Web Semântica funcionaria em nossas vidas. Por exemplo, assistindo ao filme \emph{Star Wars I} na sessão da tarde, ficamos nostalgiados e gostariamos de comprar o Box completo. A Web Semântica nos auxiliaria da seguinte maneira: em vários sites teriamos os datos já existentes para nós, seres humanos, lermos e metadados para os computadores tratarem. Com os metadados e todas as camadas acima explicadas, toda a rede estaria escrita através de regras, RDF e tags de XML. Então poderiamos utilizar um aplicativo e este nos retornaria lojas onde os preços estariam baratos, ou ainda mais, ele compraria e já debitaria em nossas contas. 		
+		
+		\begin{figure}[htb]
+			\begin{center}				
+				\includegraphics[scale=0.6]{./figuras/semanticweb-starwars.png}				
+			\end{center}
+			\caption{Ilustração simples de uma semântica baseado em StarWars.}
+            \label{fig:starwars}
+		\end{figure}
+				
+		Muitos problemas são enfrentados nesta area de estudo, mas grandes avanços vem ocorrendo. Como fazer a ontologia chegar ao usuário comum sem ser tão complicado, como assegurar que o conteúdo será sempre preciso e claro, padrões ontológicos, entre outros são as discussões atualmente na area.
