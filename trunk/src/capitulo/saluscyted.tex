@@ -10,7 +10,7 @@
 
 \chapter{Caso de Uso - Projeto Salus Cyted}\label{Capitulo 5}
 
-		O projeto Salus Cyted nasceu com o objetivo de estimular a participação coletiva e estruturar uma sólida cooperação entre os grupos participantes, e para tanto, as atividades foram centralizadas em um ambiente específico: um Portal Web com acesso adaptável aos diferentes usuários em função de seu nível cultural e peculiaridades regionais.
+		O projeto \emph{Salus Cyted} nasceu com o objetivo de estimular a participação coletiva e estruturar uma sólida cooperação entre os grupos participantes, e para tanto, as atividades foram centralizadas em um ambiente específico: um Portal Web com acesso adaptável aos diferentes usuários em função de seu nível cultural e peculiaridades regionais.			
 	
 		\section{Tecnologias Empregadas}
 	
@@ -46,8 +46,7 @@
 		JavaCC (Java Compiler Compiler) é um gerador de analisador sintático, similar ao yacc. O formalismo que tratato é o Backus-Naur Estendido, e a saída gerada é na linguagem Java. Um limitante do JavaCC é a geração de analisadores sintáticos descendentes, limitando as gramaticas analisadas(LL(k)).
 		
 		JavaCC é comumente utilizado quando precisamos tratar outras linguagens, mas não é seu único uso. O programador necessita especificar uma coleção de "expressões regulares" que serão as regras utilizadas para a leitura e quebra dos tokens. O analisador consome a sequência de tokens, analisa a estrutura e como resultado produz o que o programador especificou, e assim gera o analisador em Java.
-										
-		
+												
 		\section{NameParser}
 		
 		A aplicação funciona da seguinte maneira:
@@ -92,7 +91,7 @@
             \label{fig:tokens02}
 		\end{figure}
 		
-		Definimos a regra para ser um <NOME COMPLETO>, onde para a extração de nomes em paginas, foi concebida analisando como os nomes aparecem escritos. A simplificação da regra se deve ao fato da não regionalização ao buscar pelos nomes apenas em Português, mas abranger nomes de uma forma geral incluindo outras linguas. Na tabela ~\ref{tab:Regras e exemplos de nomes} temos alguns exemplos de nomes que a regra aceita corretamente.
+		Definimos a regra para ser um <NOME COMPLETO>, onde para a extração de nomes em paginas, foi concebida analisando como os nomes aparecem escritos. A simplificação da regra se deve ao fato da não regionalização ao buscar pelos nomes apenas em Português, mas abranger nomes de uma forma geral incluindo outras linguas. Na tabela ~\ref{tab:regrasexemplos} temos alguns exemplos de nomes que a regra aceita corretamente.
 		
 		% Tabela das regras e nomes.
 		\begin{table}[htbp]
@@ -111,8 +110,8 @@
 			(<NOME>","" ") (<NOME>" ")* <NOME> & Francisco, Pedro \\		    
 		    \bottomrule
 		    \end{tabular}
-			\caption{tab:regrasenomes}
-		  \label{tab:Regras e exemplos de nomes}
+			\caption{Regras e exemplos de nomes}
+		  \label{tab:regrasexemplos}
 		\end{table}
 		
 		Nas primeiras versões, fizemos alguns testes e coletamos muitos dados desnecessários como inicio de parágrafo, e deixamos alguns de fora como nomes com símbolos, e.g. Carlos-Eduardo. Corrigimos algumas regras, e criamos um dicionário para mitigar o sobressalto de informações que pudessem ocorrer. Refizemos alguns testes e fomos ajustando de acordo com algumas páginas.
