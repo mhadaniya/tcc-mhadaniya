@@ -17,7 +17,7 @@
 \usepackage[T1]{fontenc} % usa fontes postscript com acentos
 
 \usepackage{latexsym}
-\hyphenchar\font=-1
+\hyphenchar\font=-1 
 
 \usepackage{url}
 \usepackage{breakurl}
@@ -38,7 +38,6 @@
 
 %\usepackage{chngcntr} %pacote para alterar contadores 
  
-
 \floatstyle{plain}  % tipos: plain, boxed, ruled
 \newfloat{codigo}{tbp}{lop}[section]  % numera os captions com  número de seção.
 \floatname{codigo}{Código}
@@ -48,9 +47,14 @@
 
 \begin{document}
 
-	\include{./capa}	
-	\include{./folhaderosto}
-	\include{./aprovacao}
+\doublespacing
+
+	\include{./estruturas/capa}
+	\include{./estruturas/folhaderosto}
+	\include{./estruturas/aprovacao}
+	
+	\include{./estruturas/resumo}
+	\include{./estruturas/abstract}
 	 
 	\sumario \label{sumario}
 %	\addcontentsline{toc}{chapter}{\listofcodename}
@@ -63,13 +67,14 @@
 	\include{./capitulo/extracaoinformacao}
 %    \include{./capitulo/namedentityrecognition}
 	\include{./capitulo/webmining}
-	\include{./capitulo/saluscyted}	
-	\include{./conclusao}
+	\include{./capitulo/saluscyted}
+	
+	\include{./estruturas/conclusao}
 	
 	\bibliographystyle{abnt-alf}
 	\def\refname{Referências Bibliográficas}
 	\bibliography{./bibliografia/bibliografia}
 	
-	\include{anexos/codigos/codes}
+	%\include{./codigos/codes}
 
 \end{document}
