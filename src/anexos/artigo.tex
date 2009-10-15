@@ -5,7 +5,6 @@
 % Curso: Ciência da Computação - Universidade Estadual de Londrina
 % Estrutura Principal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
 \documentclass[12pt]{article}
 
 \usepackage{sbc-template}
@@ -21,52 +20,34 @@
 
 \author{Mario Henrique A. C. Adaniya\inst{1}}
 
-\address{Departamento de Computação -- Universidade Estadual de Londrina
-  (UEL)\\
-  Caixa Postal 15.064 -- 91.501-970 -- Londrina -- PR -- Brazil
+\address{Departamento de Computação -- Universidade Estadual de Londrina(UEL)\\  
+  Caixa Postal 6001 -- 86051-990 -- Londrina -- PR -- Brazil
   \email{\{mhadaniya\}@dc.uel.br}
 }
 
 \begin{document} 
 
 \maketitle
-
-\begin{abstract}
-  This meta-paper describes the style to be used in articles and short papers
-  for SBC conferences. For papers in English, you should add just an abstract
-  while for the papers in Portuguese, we also ask for an abstract in
-  Portuguese (``resumo''). In both cases, abstracts should not have more than
-  10 lines and must be in the first page of the paper.
-\end{abstract}
-     
+    
 \begin{resumo} 
-  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
-  resumos de artigos para publicação nos anais das conferências organizadas
-  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
-  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
-  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
-  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
-  página do artigo.
+  	É observado um crescimento exponencial nas informações contidas naWeb, e toda este crescimento tendendo ao infnito, nós seres humanos, não somos capazes de tratar e por muitas razões deixamos de agregar valor ao nosso conhecimento ou utilizar informações pelo simples fato de não termos a capacidade de processar demasiado volume. Para tanto, estudos das mais variadas area tem se concentrado em tratar os documentos em si, a informação contida nestes documentos e transformar tais informações em algo útil para nós.
 \end{resumo}
 
 
 \section{Introdução}
 
-
+		Cada vez mais encontramos toda e qualquer informação que precisamos disponíveis \textit{online}. É uma tendência que grandes editoras com revistas e publicações impressas estão aderindo, mantendo os impressos tradicionais e publicando virtualmente os mesmos conteúdos e adicionando outros exclusivos na edição \textit{online}. A \textit{World Wide Web (Web)} é um meio de comunicação popular e interativo para disseminar informação atualmente\cite{Kosala2000}. Todo dia, mais e mais páginas são indexadas pelos motores de buscas. \textit{Blogs} surgem aos milhares com pessoas expressando suas idéias, opiniões e experiências. Sites de relacionamento, fóruns, \textit{Wikis} armazenam conteúdos imensos dos mais diversificados assuntos. E neste pandemônio, como encontrar o que estamos procurando? Como descobrir se a informação recuperada é confiavel?
 
 \section{Recuperação de Informação} \label{sec:ri}
-		Recuperação de Informação (RI) é a tarefa de encontrar documentos relevantes a partir de um corpus ou conjunto de textos em resposta a uma necessidade de informação de um usuário\cite{Smeaton1997}. Um dos maiores problemas enfrentados desde seu inicio, e que continua atualmente é a informação estar contida em linguagem natural. Quando a \emph{WWW} foi concebida, a comunidade acadêmica que tratavam de RI voltaram suas atenções para uma melhoria dos motores de busca, voltando a impulsionar o crescimento da RI.
-		%Abordaremos brevemente sobre isto no final deste capítulo, na seção~\ref{RI:PLN}.
-						
-		Recuperação de Informação possui limites muito bem delimitados, e qualquer tarefa além de prover ao usuário os documentos, não é um sistema de recuperação de informação. Muitas técnicas são utilizadas como agentes com componentes de busca, filtragem, roteamento, categorização e clusterização\cite{Smeaton1997}.
+		Recuperação de Informação (RI) é a tarefa de encontrar documentos relevantes a partir de um corpus ou conjunto de textos em resposta a uma necessidade de informação de um usuário\cite{Smeaton1997}. Recuperação de Informação possui limites muito bem delimitados, e qualquer tarefa além de prover ao usuário os documentos, não é um sistema de recuperação de informação.
 		
 		\subsection{Recuperação de Informação na WEB}\label{RI:webRI}
 		
 		Muitas caracteristicas devem ser levadas em conta quando estamos recuperando documentos na \emph{WEB}\cite{Huang2000}:
 		
 		\begin{itemize}
-          \item \textbf{Tamanho da Internet} - O tamanho da \emph{Internet}, segundo Zhang e seu grupo de pesquisa\cite{Zhang2008}, estima-se que em Janeiro de 2008 a Internet continha 62400000 hostnames ativos. De acordo com a pesquisa, a Lei de Moore\footnote{A Lei de Moore foi predita por um dos fundadores da Intel, Gordon Moore, e sugere que a cada dezoito meses a capacidade de transitores no CPU dobra. Apareceu em 1965 e se manteve como verdade por quase meio século, e costuma ser utilizada para prever modelos futuros de tecnologias.} é observada, exceto que para a Internet, foi visto que a cada cinco anos, ela dobra de tamanho;
-          \item \textbf{Dinamismo da Internet} - As tecnicas de Recuperação de Informação são geralmenta estatica, enquanto a \emph{Web} está em constante metamorfose;
+          \item \textbf{Tamanho da Internet} - O tamanho da \emph{Internet}, segundo Zhang e seu grupo de pesquisa\cite{Zhang2008}, estima-se que em Janeiro de 2008 a Internet continha 62400000 hostnames ativos. É observada que para a Internet a cada cinco anos ela dobra de tamanho;
+          \item \textbf{Dinamismo da Internet} - As técnicas de Recuperação de Informação são geralmenta estática, enquanto a \emph{Web} está em constante metamorfose;
           \item \textbf{Duplicação} - 30\% do contéudo da \emph{Internet} é uma cópia de algum conteúdo existente;
           \item \textbf{Comportamentos especificos} - É estimado que 85\% dos usuários utilizam apenas a primeira página retornada das \emph{search engines}, e 28\% modificam sua consulta original;
           \item \textbf{Multiplos tipos de usuário} - Possui muitos tipos de usuários e cada usuário utiliza a \emph{Internet} para uma tarefa especifica;
@@ -78,15 +59,15 @@
 
 \section{Extração de Informação} \label{sec:ei}
 
-O contraste entre os objetivos dos sistemas de Extração da Informação e Recuperação de Informação podem ser descritos como seguem: Recuperação de Informação recupera documentos relevantes de uma coleção, enquanto Extração de Informação extrai informações relevantes de documentos. Consequentemente, as duas tecnicas se complementam, e usadas em combinação podem prover uma ferramenta poderosa\cite{Eikvil1999}.
+		O contraste entre os objetivos dos sistemas de Extração da Informação e Recuperação de Informação podem ser descritos como seguem: Recuperação de Informação recupera documentos relevantes de uma coleção, enquanto Extração de Informação extrai informações relevantes de documentos. Consequentemente, as duas técnicas se complementam, e usadas em combinação podem prover uma ferramenta poderosa\cite{Eikvil1999}.
 
 \subsection{Abordagens}\label{EI:abordagem}
 
 		Na Extração de Informação, observamos claramente a distinção de duas abordagens\cite{Appelt1999}: \emph{Knowledge Engineering} e \emph{Automatic Training}. 
 		
-		Em \emph{Knowledge Engineering} o sistema é praticamente construido manualmente pelo \emph{knowledge engineer}\footnote{É a pessoa mais familiarizada com o sistema de Extração de Informação, e conhece melhor o formalismo para expressar as regraspara o sistema.}. Sua construção se baseia no conhecimento que o engenheiro possui  do cenário e dominio com o qual vai se trabalhar. As habilidades do engenheiro que construirá o sistema é crucial para a perfomance da mesma. O processo de desenvolvimento é muito trabalhoso, geralmente, após feito a analise dos documentos e criada e aplicada as regras no sistema, o engenheiro executa o sistema sobre os textos de treino. De acordo com o resultado, ele modifica as regras do sistema e refaz o processo. 
-		
-		A abordagem de \emph{automatic training} não necessita de um especialista, mas alguém que tenha o conhecimento suficiente do dominio da aplicação. Uma vez que os documentos de \emph{corpus} foram anotados, um algoritmo de treino é executado, treinando o sistema para novos textos. Esta abordagem tem uma resposta mais eficaz, mas depende do conjunto de documentos selecionados para treino. Utilizam métodos estatisticos, e aprendem regras com a interação com o usuario.
+		Em \emph{Knowledge Engineering} o sistema é praticamente construido manualmente pelo \emph{knowledge engineer}\footnote{É a pessoa mais familiarizada com o sistema de Extração de Informação, e conhece melhor o formalismo para expressar as regraspara o sistema.}. Sua construção se baseia no conhecimento que o engenheiro possui do cenário e dominio com o qual vai se trabalhar.
+
+		A abordagem de \emph{automatic training} não necessita de um especialista, mas alguém que tenha o conhecimento suficiente do dominio da aplicação. Uma vez que os documentos de \emph{corpus} foram anotados, um algoritmo de treino é executado, treinando o sistema para novos textos. Utilizam métodos estatísticos, e aprendem regras com a interação com o usuario.
 		
 		Nenhuma das duas abordagens é superior a outra, pois a extração depende de muitas variaveis, e muitas vezes, variaveis externas, logo, não podemos apontar nenhuma abordagem como completa. Ambas utilizadas em conjunto caminha para um sistema ideal.
 				
@@ -95,197 +76,184 @@ O contraste entre os objetivos dos sistemas de Extração da Informação e Recupera
 		A Extração se dá em documentos, e eles são categorizados em três tipos\cite{Eikvil1999}:
 		
 		\begin{itemize}
-          \item \emph{\textbf{Documentos livre/sem estruturação}} : Texto livre é basicamente o texto onde não encontramos nenhuma forma de estrutura, e é o tipo mais encontrado. Originalmente o objetivo de Extração de Informação era desenvolver sistemas capazes de extrair informações chaves de textos em linguagem natural.   
-           
-          O estado da arte em Extração da Informação em textos livres muito comumente utiliza tecnicas de Processamento de Linguagens Naturais, e as regras de extração são tipicamente baseada em padrões envolvendo o aspecto sintatico e semântico. A capacidade do homem de processamento ainda é melhor, mas resultados expressivos vem sendo obtidos no processamento em textos sem estrutura. O entendimento de textos sem restrição em Linguagem Natural ainda está longe de ser resolvido por completo, entretando, métodos de Extração de Informação funcionam porque dependem de restrições e padrões que desejamos extrair dos textos\cite{Soderland1999}. 
+          \item \emph{\textbf{Documentos livre/sem estruturação}} : Texto livre é basicamente o texto onde não encontramos nenhuma forma de estrutura, e é o tipo mais encontrado. Originalmente o objetivo de Extração de Informação era desenvolver sistemas capazes de extrair informações chaves de textos em linguagem natural.                    
 
-          \item \emph{\textbf{Documentos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. Técnicas de Processamento de Linguagens Naturais concebem regras para a extração de textos livres, contudo, estas regras funcionam perfeitamente para gramaticas livre de contexto ondem encontramos sentenças inteiras para analisar, fato que nem sempre ocorre em textos semi-estruturados. Regras muito simples utilizadas em textos puramente estruturados não serão eficientes também.
+          \item \emph{\textbf{Documentos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. 
           
-          O pesquisador Sergel Abiteboul diferencia dentro do contexto de semi-estruturados, em cinco categorias\cite{Abiteboul1997}\cite{Silveira2001}:
-          \begin{itemize}
-            \item \textbf{Estrutura Irregular} - Quando uma informação está disposta de mais de uma maneira na estruturação do documento,e.g., o campo de endereço, o qual poderiamos encontrar como uma única \emph{string} representando todo o endereço, ou vários campos como \emph{string} para o nome da rua, um campo de inteiro para o número do logradouro, etc.;
-            \item \textbf{Estrutura Implícita} - A estrutura existe, mas não é algo natural e possivelmente necessita de algum processamento, e a representação lógica dos dados não é de imediato obtida. Podemos configurar as paginas em \emph{HTML} nesta categoria, que é puramente texto, mesmo contendo \emph{tags}, não deixa de ser um documento semi-estruturado de puro texto, onde é necessário um processamento de suas \emph{tags} para a obtenção de alguma informação preliminar.;
-            \item \textbf{Estrutura Parcial} - Identificamos parte da estrutura de dados, mas a outra parte, muitas vezes não é necessária ou não é passivel de identificação, necessitando uma extração;
-            \item \textbf{Estrutura Indicativa} - Existem vários tipos de dados para o mesmo objeto relacionado nas várias instâncias\cite{Silveira2001};
-            \item \textbf{Estrutura Flexível} - A instância do objeto consegue assumir outras formas de dados, sendo isso nativo da estrutura em si.
-          \end{itemize}
+          O pesquisador Sergel Abiteboul diferencia dentro do contexto de semi-estruturados, em cinco categorias\cite{Abiteboul1997}\cite{Silveira2001}: \textbf{Estrutura Irregular,Estrutura Implícita, Estrutura Parcial, Estrutura Indicativa} e \textbf{Estrutura Flexível}.
+          %\begin{itemize}
+           % \item \textbf{Estrutura Irregular} - Quando uma informação está disposta de mais de uma maneira na estruturação do documento,e.g., o campo de endereço, o qual poderiamos encontrar como uma única \emph{string} representando todo o endereço, ou vários campos como \emph{string} para o nome da rua, um campo de inteiro para o número do logradouro, etc.;
+            %\item \textbf{Estrutura Implícita} - A estrutura existe, mas não é algo natural e possivelmente necessita de algum processamento, e a representação lógica dos dados não é de imediato obtida. Podemos configurar as paginas em \emph{HTML} nesta categoria, que é puramente texto, mesmo contendo \emph{tags}, não deixa de ser um documento semi-estruturado de puro texto, onde é necessário um processamento de suas \emph{tags} para a obtenção de alguma informação preliminar.;
+            %\item \textbf{Estrutura Parcial} - Identificamos parte da estrutura de dados, mas a outra parte, muitas vezes não é necessária ou não é passivel de identificação, necessitando uma extração;
+            %\item \textbf{Estrutura Indicativa} - Existem vários tipos de dados para o mesmo objeto relacionado nas várias instâncias\cite{Silveira2001};
+            %\item \textbf{Estrutura Flexível} - A instância do objeto consegue assumir outras formas de dados, sendo isso nativo da estrutura em si.
+          %\end{itemize}
           
-          Algumas ferramentas pioneiras em pequisas de dados semi-estruturados na \emph{World Wide Web} foram:  \emph{Yahoo\footnote{Yahoo - http://www.yahoo.com}} e \emph{Altavista\footnote{Altavista - http://www.altavista.com}}. Utilizam uma técnica chamada \emph{full text search}, que desconsidera a semântica, comparando o texto completo com as entradas do usuário\cite{Silveira2001}.
-            
-          Entretanto, como apresenta um minino de estruturação, alguns padrões podem ser construidos, limitando sua utilização na extração. 
+          %Algumas ferramentas pioneiras em pequisas de dados semi-estruturados na \emph{World Wide Web} foram:  \emph{Yahoo\footnote{Yahoo - http://www.yahoo.com}} e \emph{Altavista\footnote{Altavista - http://www.altavista.com}}. Utilizam uma técnica chamada \emph{full text search}, que desconsidera a semântica, comparando o texto completo com as entradas do usuário\cite{Silveira2001}.                      
           
           \item \emph{\textbf{Documentos estruturados}} : Informações textuais contidas em banco de dados ou qualquer outro gênero de documento com uma estruturação rigida, são a base de textos estruturados. Como seguem uma moldura sem grandes diferenças de um documento para outro, sua informação é facilmente extraida.
 
         \end{itemize}
         
-        \section{Avaliação}\label{EI:avaliacao} 
+        \subsection{Avaliação}\label{EI:avaliacao} 
 		
-		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration})\cite{Sundheim1991}. As conferência \textit{MUC} têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas\cite{Gaizauskas1998}.
+		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration})\cite{Sundheim1991}. 
 		 
-		\begin{itemize}
-          	\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) : Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_{extraido-correto}$) sobre a informação relevante na página($N_{total-extraidos}$). Representada pela fórmula~\ref{formula:cobertura}
+		%\begin{itemize}
+          	%\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) : Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_{extraido-correto}$) sobre a informação relevante na página($N_{total-extraidos}$). Representada pela fórmula~\ref{formula:cobertura}
           	
-          	\begin{equation}\label{formula:cobertura}
-              Cobertura = \frac{N_{extraido-correto}}{N_{total-extraidos}}              
-            \end{equation}            
+          	%\begin{equation}\label{formula:cobertura}
+            %  Cobertura = \frac{N_{extraido-correto}}{N_{total-extraidos}}              
+            %\end{equation}            
     	
-          	\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas ($N_{resposta}$).
+          	%\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas ($N_{resposta}$).
           	
-          	\begin{equation}\label{formula:precisao}
-              Precis\~{a}o = \frac{N_{extraido-correto}}{N_{resposta}}
-            \end{equation}
+          	%\begin{equation}\label{formula:precisao}
+            %  Precis\~{a}o = \frac{N_{extraido-correto}}{N_{resposta}}
+            %\end{equation}
 						
-			Importante ressaltar que $N_{total-extraido}$ e $N_{resposta}$ são inversamente proporcionais, isto é, quando a \emph{Cobertura} aumenta, a \emph{Precisão} tende a diminuir e vice-cersa. \emph{Precisão} e \emph{Cobertura} estão sempre no intervalo de $[0, 1]$, sendo 0 o pior resultado e 1 o melhor.
+			%Importante ressaltar que $N_{total-extraido}$ e $N_{resposta}$ são inversamente proporcionais, isto é, quando a \emph{Cobertura} aumenta, a \emph{Precisão} tende a diminuir e vice-cersa. \emph{Precisão} e \emph{Cobertura} estão sempre no intervalo de $[0, 1]$, sendo 0 o pior resultado e 1 o melhor.
+			Quando a \emph{Cobertura} aumenta, a \emph{Precisão} tende a diminuir e vice-cersa, pois são inversamente proporcionais. \emph{Precisão} e \emph{Cobertura} estão sempre no intervalo de $[0, 1]$, sendo 0 o pior resultado e 1 o melhor.
 			  
-  		 	\item \textbf{\textit{F-measure}} : A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. 
+  		 	\item \textbf{\textit{F-measure}} : A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas. 
   		 	
-  		 	\begin{equation}\label{formula:F-measure}
+  		 	\begin{equation} \label{formula:F-measure}
               F-measure = \frac{(\beta^2 + 1)*Cobertura*Precisão}{\beta^2 * (Cobertura + Precisão)}
             \end{equation}
 
-			Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas, e aplicando na fórmula~\ref{formula:F-measure} temos:
+			%, e aplicando na fórmula~\ref{formula:F-measure} temos:
 			 
-  		 	\begin{equation}\label{formula:F1}
-              F_1 = \frac{2*Cobertura*Precisão}{(Cobertura + Precisão)}
-            \end{equation}			   
+  		 	%\begin{equation}\label{formula:F1}
+            %  F_1 = \frac{2*Cobertura*Precisão}{(Cobertura + Precisão)}
+            %\end{equation}			   
   		 		 
-        \end{itemize}
+        %\end{itemize}
         
 \section{Web Mining}
 
 	\textit{Web Mining} é o uso das técnicas de Mineração de Dados para descobrir e extrair automaticamente a informação de documentos na \emph{Web}\cite{Etzione1996}. A Mineração de Dados refere-se ao processo não trivial de identificação de padrões válidos, previamente desconhecidos e potencialmente úteis de dados\cite{Frawley1992}. Seguindo o conceito de Etzione, que utiliza da Descoberta do Conhecimento(\textit{Knowledge Discovery Database}) como base, ele decompõe a Web Mining em 4(quatro) tarefas: \emph{Resource finding}(Coleta de Documentos), \emph{Information selection and pre-processing}(Pré-processamento), \emph{Generalization}(Extração de Padrões) e 
 \emph{Analysis}(Análise).        		
 		
-		É importante ressaltar que \emph{Web Mining} é diferente de Recuperação da Informação(\emph{Information Retrieval}) e Extração da Informação(\emph{Information Extraction}). Mas uma combinação das técnicas em si são utilizadas nas etapas do \emph{Web Mining}.
+%		É importante ressaltar que \emph{Web Mining} é diferente de Recuperação da Informação(\emph{Information Retrieval}) e Extração da Informação(\emph{Information Extraction}). Mas uma combinação das técnicas em si são utilizadas nas etapas do \emph{Web Mining}.
 		
-\section{Categorias de WEB Mining}
+\subsection{Categorias de WEB Mining}
 		
-		Com o crescimento exponencial das fontes de informação disponiveis na \emph{World Wide Web} ao nosso redor, cresce a necessidade de automatizar ferramentas que busquem as informações desejadas e corretamente. Ferramentas mais eficazes no rastreamento, tanto do lado dos servidores como dos clientes, são comumente alvos de pesquisas e projetos na busca de uma mineração de dados. Do lado dos servidores, temos extensas listas de \emph{logs}, registros de usuários ou perfil de usuário, entre outros itens que podem ser análisados\cite{Cooley1997}. Na figura~\ref{fig:WM-toxonomia} podemos observar um esboço da taxonomia.  
+		Com o crescimento exponencial das fontes de informação disponiveis na \emph{World Wide Web} ao nosso redor, cresce a necessidade de automatizar ferramentas que busquem as informações desejadas e corretamente. Ferramentas mais eficazes no rastreamento, tanto do lado dos servidores como dos clientes, são comumente alvos de pesquisas e projetos na busca de uma mineração de dados. Do lado dos servidores, temos extensas listas de \emph{logs}, registros de usuários ou perfil de usuário, entre outros itens que podem ser análisados\cite{Cooley1997}. %Na figura~\ref{fig:WM-toxonomia} podemos observar um esboço da taxonomia.  
 		
-		\begin{figure}[htb]
-			\begin{center}				
-				\includegraphics[scale=0.6]{./figuras/WB-taxonomia.png}				
-			\end{center}
-			\caption{Taxonomia da Mineração na WEB}
-            \label{fig:WM-toxonomia}
-		\end{figure}
+%		\begin{figure}[htb]
+%			\begin{center}				
+%				\includegraphics[scale=0.6]{./figuras/WB-taxonomia.png}				
+%			\end{center}
+%			\caption{Taxonomia da Mineração na WEB}
+%            \label{fig:WM-toxonomia}
+%		\end{figure}
 
-		Esta taxonomia pode ser montada através da junção dos trabalhos de Cooley\cite{Cooley1997} e Kolari\cite{Kolari2004}.
+%		Esta taxonomia pode ser montada através da junção dos trabalhos de Cooley\cite{Cooley1997} e Kolari\cite{Kolari2004}.
 	
-		\subsection{Mineração de Conteúdo}\label{webmining:conteudo} 
+		\subsubsection{Mineração de Conteúdo}\label{webmining:conteudo} 
 		
-		A falta de estruturação que domina as fontes de informação na \emph{Internet} dificulta a organização, administração, manutenção e busca automatizada de informação. As \emph{search engines} são ferramentas que provêm algum conforto, mas geralmente não filtram, interpretam os documentos que retornam nas buscas\cite{Cooley1997}.
+		%A falta de estruturação que domina as fontes de informação na \emph{Internet} dificulta a organização, administração, manutenção e busca automatizada de informação. As \emph{search engines} são ferramentas que provêm algum conforto, mas geralmente não filtram, interpretam os documentos que retornam nas buscas\cite{Cooley1997}.
 		 
 		 A Mineração de Conteúdo e a Recuperação de Informação são muitas vezes utilizadas em conjunto. Enquanto uma realiza a mineração diretamente do conteúdo dos documentos a outra incrementa o poder de busca de outras ferramentas e serviços. Áudio, vídeo, dados simbólicos, metadados e vínculos de hipertexto fazem parte do conteúdo de documentos da \textit{Web} atualmente, e como tal, na mineração de conteúdos também são analisados. Existem áreas de pesquisas destinadas a mineração de dados multimídias, entretanto, como uma enorme parte da \textit{Web} é constituída de texto e hipertexto, permanecendo assim o foco em dados de texto.
 		
 		Com o continuo crescimento da \emph{Web}, as pesquisas voltadas para ferramentas mais eficazes, melhorias nas técnicas de mineração e extração de dados se desenvolveram. Podemos observar duas grandes abordagens quando tratamos de Mineração de Conteúdo: Baseado em Agente(\emph{Agent-Based}) e Banco de Dados(\emph{Database}).
 		 
-		\paragraph{Baseado em Agente(\emph{Agent-Based})} Esta abordagem de mineração de dados trabalha diretamente com o campo de Inteligência Artificial, provendo um sistema autônomo ou semi-autônomo, que trabalha para a coleta de conhecimento e organização das informações na \emph{WEB} delimitado pelo escopo do sistema. Dentro desta abordagem, temos as seguintes categorias: 		
+		\paragraph{Baseado em Agente(\emph{Agent-Based})} Esta abordagem de mineração de dados trabalha diretamente com o campo de Inteligência Artificial, provendo um sistema autônomo ou semi-autônomo, que trabalha para a coleta de conhecimento e organização das informações na \emph{WEB} delimitado pelo escopo do sistema. %Dentro desta abordagem, temos as seguintes categorias: 		
 		
-			\subparagraph{Agentes de Busca Inteligentes(\emph{Intelligent Search Agents})} Muitos sistemas de Agentes Inteligentes utilizam informações caracteristicas de um domínio para organizar e interpretar essas informações de uma forma totalmente autônoma. Como exemplo, temos alguns trabalhos como o \emph{Harvest}\cite{Bowman1995}, \emph{FAQ-Finder}\cite{Hammond1994}, \emph{OCCAM}\cite{Kwok1996} e \emph{ParaSite}\cite{Spertus1997} que extraem e interpretam documentos através de um dominio específico. Outros agente como \emph{ShopBot}\cite{Etzione1997} e \emph{ILA(Internet Learning Agent)}\cite{Etzione1995} através de estruturas de fontes de informação não familiares tentam através da interação, aprender novos comportamentos. \emph{ShopBot} coleta informações de produtos em vários sites de venda utilizando apenas informações gerais dos produtos, enquanto o \emph{ILA} aprende com os modelos e traduz para um conceito interno do sistema\cite{Cooley1997}.
+			%\subparagraph{Agentes de Busca Inteligentes(\emph{Intelligent Search Agents})} Muitos sistemas de Agentes Inteligentes utilizam informações caracteristicas de um domínio para organizar e interpretar essas informações de uma forma totalmente autônoma. Como exemplo, temos alguns trabalhos como o \emph{Harvest}\cite{Bowman1995}, \emph{FAQ-Finder}\cite{Hammond1994}, \emph{OCCAM}\cite{Kwok1996} e \emph{ParaSite}\cite{Spertus1997} que extraem e interpretam documentos através de um dominio específico. Outros agente como \emph{ShopBot}\cite{Etzione1997} e \emph{ILA(Internet Learning Agent)}\cite{Etzione1995} através de estruturas de fontes de informação não familiares tentam através da interação, aprender novos comportamentos. \emph{ShopBot} coleta informações de produtos em vários sites de venda utilizando apenas informações gerais dos produtos, enquanto o \emph{ILA} aprende com os modelos e traduz para um conceito interno do sistema\cite{Cooley1997}.
 								
-			\subparagraph{Categorização e Filtragem de Informação} Muitos agentes \emph{Web} utilizam tecnicas de Recuperação de Informação para automaticamente filtrar e categorizar documentos da Web. O \emph{BO(Bookmark Organizer)} combina técnicas de \emph{clustering} e interação com o usuário para orgazinar o conjunto de documentos baseado em informação conceitual\cite{Maarek1996}. O HyPursuit usa informação semântica embutida nos links e no conteúdo em si dos documentos para criar uma hierarquia de \emph{cluster} de hipertextosm e estruturar as informações\cite{Weiss1996}. \emph{Google News\footnote{GoogleNews - http://news.google.com}} atualmente é uma das ferramentas mais populares que classifica noticias de mais de 4.000 fontes\cite{Kolari2004}.
+			%\subparagraph{Categorização e Filtragem de Informação} Muitos agentes \emph{Web} utilizam tecnicas de Recuperação de Informação para automaticamente filtrar e categorizar documentos da Web. O \emph{BO(Bookmark Organizer)} combina técnicas de \emph{clustering} e interação com o usuário para orgazinar o conjunto de documentos baseado em informação conceitual\cite{Maarek1996}. O HyPursuit usa informação semântica embutida nos links e no conteúdo em si dos documentos para criar uma hierarquia de \emph{cluster} de hipertextosm e estruturar as informações\cite{Weiss1996}. \emph{Google News\footnote{GoogleNews - http://news.google.com}} atualmente é uma das ferramentas mais populares que classifica noticias de mais de 4.000 fontes\cite{Kolari2004}.
 			
-			\subparagraph{Personalização} Outra categoria de agentes Web incluem aqueles que obtêm ou aprendem as preferencias do usuário e procuram fontes de informação na \emph{Web} que correspondam aquelas preferências, e possivelmente, utilizando filtragem colaborativa, procuram interesses similares. Exemplos que utilizam esta abordagem são \emph{WebWatcher}\cite{Freitag1995}, \emph{PAINT}\cite{Wiggins1994}, \emph{Firefly}\cite{Shardanand1995} e \emph{Syskill\&Webert}\cite{Pasani1996}.
+			%\subparagraph{Personalização} Outra categoria de agentes Web incluem aqueles que obtêm ou aprendem as preferencias do usuário e procuram fontes de informação na \emph{Web} que correspondam aquelas preferências, e possivelmente, utilizando filtragem colaborativa, procuram interesses similares. Exemplos que utilizam esta abordagem são \emph{WebWatcher}\cite{Freitag1995}, \emph{PAINT}\cite{Wiggins1994}, \emph{Firefly}\cite{Shardanand1995} e \emph{Syskill\&Webert}\cite{Pasani1996}.
 						 
 		\paragraph{Banco de Dados(\emph{Database})} A abordagem de Banco de Dados, como o nome pressupõem, trabalha com a organização e integração dos documentos semi-estruturados para um documento estruturado, como em um banco de dados relacional, usando inclusive consultas e mecanismos de banco de dados para acesso e analise das informações.
 		
-			\subparagraph{Banco de Dados em Multiníveis} Uma organização das informações em multiníveis é proposto por muitos pesquisadores. No nível principal são encontrados informações armazenadas de forma semi-estruturadas em vários repositórios na \emph{Web}. Em níveis acima do principal, encontramos meta-dados ou generalizações que são extraídas das camadas abaixo e organizadas de forma com uma estrutura rigida como um modelo relacional ou orientado objeto\cite{Cooley1997}. Em uma das pesquisas desenvolvidas por Han e seu grupo de pesquisa, utilizam um banco de dados de multi-camadas onde cada camada é obtida com operações de transformações e generalização das camadas inferiores\cite{Han1995}. O sistema ARANEUS extrai informações relevantes de documentos de hipertexto e integra em documentos derivados de hipertexto que são generalizações de \emph{views} de banco de dados\cite{Merialdo1997}.
+			%\subparagraph{Banco de Dados em Multiníveis} Uma organização das informações em multiníveis é proposto por muitos pesquisadores. No nível principal são encontrados informações armazenadas de forma semi-estruturadas em vários repositórios na \emph{Web}. Em níveis acima do principal, encontramos meta-dados ou generalizações que são extraídas das camadas abaixo e organizadas de forma com uma estrutura rigida como um modelo relacional ou orientado objeto\cite{Cooley1997}. Em uma das pesquisas desenvolvidas por Han e seu grupo de pesquisa, utilizam um banco de dados de multi-camadas onde cada camada é obtida com operações de transformações e generalização das camadas inferiores\cite{Han1995}. O sistema ARANEUS extrai informações relevantes de documentos de hipertexto e integra em documentos derivados de hipertexto que são generalizações de \emph{views} de banco de dados\cite{Merialdo1997}.
 			
-			\subparagraph{Sistemas de Consulta Web(\emph{Web Query Systems})} Nesta abordagem, a utilização de \emph{queries} são utilizadas procurando uma aproximação das linguagens de consulta como SQL. Cria-se uma abstração para o usuário final que consulta como se estivesse consultado um banco de dados, quando na realidade existe uma estruturação semântica em cima da semi-estruturada \emph{Web}. Como exemplo, podemos citar \emph{WebLog}\cite{Lakshmanan1996} que utiliza uma linguagem de consulta baseado em lógica para reconstruir a informação extraida das fontes na \emph{Web}. Seguindo a mesma vertente, temos o \emph{WebSQL}\cite{Milo1996}.				
+			%\subparagraph{Sistemas de Consulta Web(\emph{Web Query Systems})} Nesta abordagem, a utilização de \emph{queries} são utilizadas procurando uma aproximação das linguagens de consulta como SQL. Cria-se uma abstração para o usuário final que consulta como se estivesse consultado um banco de dados, quando na realidade existe uma estruturação semântica em cima da semi-estruturada \emph{Web}. Como exemplo, podemos citar \emph{WebLog}\cite{Lakshmanan1996} que utiliza uma linguagem de consulta baseado em lógica para reconstruir a informação extraida das fontes na \emph{Web}. Seguindo a mesma vertente, temos o \emph{WebSQL}\cite{Milo1996}.				
 	 
 		A área de mineração de textos está bem esclarecida, com muitas técnicas, uma das quais seria reestruturar o documento para uma linguagem entendida pela maquina. Uma mineração que vem ganhando destaque em pesquisas é a mineração em serviços da Web tais como grupo de noticias, grupos de e-mails, lista de discussão. Outro conceito é introduzido por estes pesquisadores, chamado de \textit{Web Intelligence}, que promete transformar os serviços da \textit{Web} em entidades inteligentes, de forma que elas possam interagir e se comunicar através de uma linguagem comum. 
 
-		\subsection{Mineração de Estrutura}\label{webmining:estrutura} 
+		\subsubsection{Mineração de Estrutura}\label{webmining:estrutura} 
 		
 		Como o próprio nome descreve, nesta categoria de mineração estamos preocupados com a estrutura dos documentos \textit{Web} e como estes estão ligados entre si. Os vínculos de ligação de hipertexto são os principais objetos de estudos nesta categoria. Podemos visualizar a \textit{Web} como um grafo orientado, onde os nós representam páginas e as setas entre os pares de nós representam os vínculos entre as paginas. Como ocorre em citações bibliográficas quando um artigo é bastante citado indicando que provavelmente este artigo tem um peso importante perante outros que abordam o mesmo tema, o mesmo pode ser observado entre os documentos \textit{Web}. Podemos drasticamente comparar que se uma pagina contém muitas setas entrando, ela teria certa relevância quanto ao seu conteúdo ser confiável.
 		
-		Hyperlink-induced topic search(HITS) é um algoritmo para mapear a \emph{Web} e identifica os \emph{hubs} e \emph{authorities}.  \emph{Authorities} são páginas bem rankeadas sobre um determinado tópico, e \emph{hubs} são páginas com links para os \emph{authorities}. Como exemplo fundamental, temos que citar o \emph{PageRank} \cite{Page1999} largamente difundido graças ao \emph{Google}. 
+		%Hyperlink-induced topic search(HITS) é um algoritmo para mapear a \emph{Web} e identifica os \emph{hubs} e \emph{authorities}.  \emph{Authorities} são páginas bem rankeadas sobre um determinado tópico, e \emph{hubs} são páginas com links para os \emph{authorities}. Como exemplo fundamental, temos que citar o \emph{PageRank} \cite{Page1999} largamente difundido graças ao \emph{Google}. 
 
- 		 \subsection{Mineração de Uso}\label{webmining:uso}
+ 		 \subsubsection{Mineração de Uso}\label{webmining:uso}
  		 
  		 A mineração de uso utiliza os dados secundários provindos de logs de servidores, logs de browsers, perfis de usuário, cookies, seções ou transações de usuários, pasta favoritos, consultas do usuário, cliques de mouse e qualquer outro dado gerado pela interação do usuário com a \textit{Web}. As aplicações da mineração de dados de uso são classificadas em duas categorias: aprendizado de perfil de usuário (modelagem em interfaces adaptativas) e aprendizado de padrões de navegação de usuário. Talvez umas das técnicas em mais utilização atualmente, devido ao grande número de \emph{E-Commerce}, pois com isto podemos adaptar sites de acordo com o cliente, recomendar produtos de acordo com compras passadas ou baseadas nas similaridades entre perfis de usuários.
  		 
-		As organizações estão confiando e conduzindo muitos negócios através da \emph{Internet} e como tal, é necessário técnicas diferentes das tradicionais, pois estas precisam ser revistas. O volume de dados operados diariamente é enorme, tanto dentro quanto fora da empresa. Muito destes dados são gerados automaticamente, e analisar tudo manualmente é um trabalho muito dispendioso, e ao mesmo tempo crucial, pois dados muito importantes estão contidos e podem ser essenciais para uma tomada de decisão para a empresa quanto a estratégia de mercado. Analisando estes dados, as oganizações conseguem estipular vida útil e valor de um determinado produto ao consumidor, estratégias de marketing, campanhas promocionais, entre outros. Dentro das organizações também auxiliam na produtividade, melhorando a comunicação entre os diversos setores através da analise dos dados de intranet\cite{Cooley1997}.
+		%As organizações estão confiando e conduzindo muitos negócios através da \emph{Internet} e como tal, é necessário técnicas diferentes das tradicionais, pois estas precisam ser revistas. O volume de dados operados diariamente é enorme, tanto dentro quanto fora da empresa. Muito destes dados são gerados automaticamente, e analisar tudo manualmente é um trabalho muito dispendioso, e ao mesmo tempo crucial, pois dados muito importantes estão contidos e podem ser essenciais para uma tomada de decisão para a empresa quanto a estratégia de mercado. Analisando estes dados, as oganizações conseguem estipular vida útil e valor de um determinado produto ao consumidor, estratégias de marketing, campanhas promocionais, entre outros. Dentro das organizações também auxiliam na produtividade, melhorando a comunicação entre os diversos setores através da analise dos dados de intranet\cite{Cooley1997}.
 		
-		As ferramentas para análise da \emph{Web} praticamente nasceram com elas, tendo mecanismos para medir as atividades do servidor desde os famigerados contadores de visitação. Atualmente, estas ferramentas acoplaram muito mais tarefas como determinar o tempo e o intervalo de visitas além de determinar o número de acessos. Pode-se descobrir quais são os arquivos mais acessados, podendo assim mapear um fluxo de navegação dentro de um determinado domínio\cite{Cooley1997}.
+		%As ferramentas para análise da \emph{Web} praticamente nasceram com elas, tendo mecanismos para medir as atividades do servidor desde os famigerados contadores de visitação. Atualmente, estas ferramentas acoplaram muito mais tarefas como determinar o tempo e o intervalo de visitas além de determinar o número de acessos. Pode-se descobrir quais são os arquivos mais acessados, podendo assim mapear um fluxo de navegação dentro de um determinado domínio\cite{Cooley1997}.
 		
- 		\paragraph{Ferramentas de Descobrimento de Padrões(\emph{Pattern Discovery Tools})} Com uma combinação sofisticada de muitas áreas como Inteligência Artificial, Mineração de Dados, Psicologia, Teoria da Informação, Economia, Estatística para a mineração do conhecimento e interpretação em um conjunto de dados. Como exemplo, temos a ferramenta \emph{WEBMINER}\cite{Mobasher1997}\cite{Mobasher1996} que descobre automaticamente regras e sequência de padrões através de \emph{logs} de acesso do servidor.
+ 		%\paragraph{Ferramentas de Descobrimento de Padrões(\emph{Pattern Discovery Tools})} Com uma combinação sofisticada de muitas áreas como Inteligência Artificial, Mineração de Dados, Psicologia, Teoria da Informação, Economia, Estatística para a mineração do conhecimento e interpretação em um conjunto de dados. Como exemplo, temos a ferramenta \emph{WEBMINER}\cite{Mobasher1997}\cite{Mobasher1996} que descobre automaticamente regras e sequência de padrões através de \emph{logs} de acesso do servidor.
 
-		\paragraph{Ferramentas de Análise de Padrões(\emph{Pattern Analysis Tools})} Uma vez descobertos os padrões, é necessário uma análise sobre os dados extraidos para um aproveitamento do conhecimento obtido. Muitas dessas ferramentas utilizam técnicas onde analistas podem visualizar, interpretar e entender estes dados. A ferramenta \emph{WEBMINER} possui um mecanismo de consulta no estilo da linguagem \emph{SQL}, pois além de extrair o padrão, acopla em suas funcionalidades algumas possibilidades de visualização dos dados extraídos. Mas outras ferramentas como o \emph{WebViz}\cite{Pitkow1994} tem um dos pontos fundamentais para a interação com o usuário apresentando os resultados gráficamente.
+		%\paragraph{Ferramentas de Análise de Padrões(\emph{Pattern Analysis Tools})} Uma vez descobertos os padrões, é necessário uma análise sobre os dados extraidos para um aproveitamento do conhecimento obtido. Muitas dessas ferramentas utilizam técnicas onde analistas podem visualizar, interpretar e entender estes dados. A ferramenta \emph{WEBMINER} possui um mecanismo de consulta no estilo da linguagem \emph{SQL}, pois além de extrair o padrão, acopla em suas funcionalidades algumas possibilidades de visualização dos dados extraídos. Mas outras ferramentas como o \emph{WebViz}\cite{Pitkow1994} tem um dos pontos fundamentais para a interação com o usuário apresentando os resultados gráficamente.
 		
-		A personalização é um dos pontos chaves na Mineração de Uso. Como exemplo, podemos visualizar grandes sites de E-Commerce que sempre buscam personalizar seu site de acordo com as preferências de cada cliente, e.g., se eu sempre procuro livros de informática, o site sempre procura me mostrar ofertas em livros de informática e afins. \emph{Web sites} que demonstram um comportamento de mudar a organização de seu conteúdo e apresentação de acordo com as preferências do usuário são chamados sites adaptativos\cite{Kolari2004}.
+		%A personalização é um dos pontos chaves na Mineração de Uso. Como exemplo, podemos visualizar grandes sites de E-Commerce que sempre buscam personalizar seu site de acordo com as preferências de cada cliente, e.g., se eu sempre procuro livros de informática, o site sempre procura me mostrar ofertas em livros de informática e afins. \emph{Web sites} que demonstram um comportamento de mudar a organização de seu conteúdo e apresentação de acordo com as preferências do usuário são chamados sites adaptativos\cite{Kolari2004}.
 
-        \subsection{Web Semântica}\label{webminig:semantica}
+        \subsubsection{Web Semântica}\label{webminig:semantica}
 		 
 		 A Web Semântica é uma extens˜ão da web já existente, onde a informaç˜ão ganha melhores
 significados, proporcionando aos humanos trabalhar melhor em conjunto com os computadores \cite{Berners-Lee2001}. Acredita-se muito que a Web Semântica será o próximo passo evolutivo da Web, pois possui uma linguagem semântica muito rica, e.g., \emph{Web Ontology Language\footnote{Web Ontology Language - http://www.w3.org/TR/owl-feature}}.
 
-		Como somos expostos a muitas informações de diversas maneiras, não sabemos lidar com o que exatamente é correto ou útil para nós, resultando em uma "sobrecarga de informação". Observamos duas características importantes para este fenomeno: demasiado volume e a falta de uma definição semântica interpretável por programas e sistemas\cite{Freitas}[FREITAS].
+		Como somos expostos a muitas informações de diversas maneiras, não sabemos lidar com o que exatamente é correto ou útil para nós, resultando em uma "sobrecarga de informação". Observamos duas características importantes para este fenomeno: demasiado volume e a falta de uma definição semântica interpretável por programas e sistemas\cite{Freitas}.%[FREITAS].
 
 		Algumas areas estudadas na Inteligencia Artificial casou muito bem, pelo fato de serem mecanismos que captam a semantica do contéudo e se ajustam de acordo com as necessidades. Uma das abordagens propostas era de dotar a Internet de inteligência própria, construindo paginas mais elaboradas e ricas semânticamente e onde agentes pudessem raciocinar sobre semântica, logo, modelando uma Web Semântica.
 
 		A semântica é obtida através de ontologias, que são modelos de dados representando o conhecimento adquirido sobre um mundo ou parte deste em um conjunto de conceitos existentes em um dominio e os relacionamentos entre estes. As ontologias descrevem geralmente: individuos, classes, atributos e relacionamentos.
 
-		\subsubsection{Camadas da Web Semântica}
+		%\subsubsection{Camadas da Web Semântica}
 
-		O orgão W3C(World-Wide Web Consortium) tem contribuido na questão de manter padrões para a World-Wide Web, inclusive para a Web Semântica. Tem padronizado linguagens para definição de ontologias. A figura~\ref{fig:camadasW3C} é uma ilustração das camadas propostas pela W3C para a Web Semântica.
+		%O orgão W3C(World-Wide Web Consortium) tem contribuido na questão de manter padrões para a World-Wide Web, inclusive para a Web Semântica. Tem padronizado linguagens para definição de ontologias. A figura~\ref{fig:camadasW3C} é uma ilustração das camadas propostas pela W3C para a Web Semântica.
 		
-		\begin{figure}[htb]
-			\begin{center}				
-				\includegraphics[scale=0.6]{./figuras/camadas-w3c.png}				
-			\end{center}
-			\caption{Camadas propostas pela W3C}
-            \label{fig:camadasW3C} 
-		\end{figure}
+		%\begin{figure}[htb]
+		%	\begin{center}				
+		%		\includegraphics[scale=0.6]{./figuras/camadas-w3c.png}				
+		%	\end{center}
+		%	\caption{Camadas propostas pela W3C}
+        %    \label{fig:camadasW3C} 
+		%\end{figure}
 		
-	\begin{itemize}	  
+	%\begin{itemize}	  
 
-		\item \textbf{CAMADA UNICODE/URI}
-		Primeira cada temos o Unicode e o URI. Unicode para a padronização dos conjuntos de caracteres e o URI para a identificação e localização de páginas.
+%		\item \textbf{CAMADA UNICODE/URI}
+%		Primeira cada temos o Unicode e o URI. Unicode para a padronização dos conjuntos de caracteres e o URI para a identificação e localização de páginas.
 
-		\item \textbf{CAMADA XML}
-		Na segunda camada, encontramos o XML. É uma meta-linguagem de editoração, permitindo a representação de outras linguagens padronizadas.
+%		\item \textbf{CAMADA XML}
+%		Na segunda camada, encontramos o XML. É uma meta-linguagem de editoração, permitindo a representação de outras linguagens padronizadas.
 		
-		\item \textbf{CAMADA RDF}
-		Na terceira camada é adicionada mais semântica a um documento, descrevendo recursos da Web sem se referir a estruturação. Descreve os recursos por meio de sentenças. Os recursos podem ser partes de um documento ou dados, geralmente descritos como um trio com sujeito(recurso)-predicato(atributo)-objeto(valor do atributo). Comumente são ilustradas como um grafo direto rotulado ou através de XML.
+%		\item \textbf{CAMADA RDF}
+%		Na terceira camada é adicionada mais semântica a um documento, descrevendo recursos da Web sem se referir a estruturação. Descreve os recursos por meio de sentenças. Os recursos podem ser partes de um documento ou dados, geralmente descritos como um trio com sujeito(recurso)-predicato(atributo)-objeto(valor do atributo). Comumente são ilustradas como um grafo direto rotulado ou através de XML.
+		 
+%		\item \textbf{CAMADA de ONTOLOGIA}
+%		É a camada responsável pela expressividade e representação das ontologias através da extensibilidade do RDF. Existem algumas linguagens padronizadas: DAML, OIL, OWL entre outras.
 		
-	 
-		\item \textbf{CAMADA de ONTOLOGIA}
-		É a camada responsável pela expressividade e representação das ontologias através da extensibilidade do RDF. Existem algumas linguagens padronizadas: DAML, OIL, OWL entre outras.
-		
-		Permitem definir propriedades como: listas, restrições, cardinalidades, tipos de dados, etc
+%		Permitem definir propriedades como: listas, restrições, cardinalidades, tipos de dados, etc
 	
-		\item \textbf{CAMADA de LÓGICA, PROVA e CONFIANÇA}
-		Esta camada ainda não possui caracteristicas certas, pois ainda estão sendo estudadas. A parte lógica tem como objetivo especificar regras que atuam sobre instâncias e recursos. A camada de prova executa e a camada de confiança verifica se a prova está correta ou não.
+%		\item \textbf{CAMADA de LÓGICA, PROVA e CONFIANÇA}
+%		Esta camada ainda não possui caracteristicas certas, pois ainda estão sendo estudadas. A parte lógica tem como objetivo especificar regras que atuam sobre instâncias e recursos. A camada de prova executa e a camada de confiança verifica se a prova está correta ou não.
 		
-		Alguns protótipos disponiveis são DAML-L e RuleML.
+%		Alguns protótipos disponiveis são DAML-L e RuleML.
 		
-	\end{itemize}
+%	\end{itemize}
 		
-		Teoricamente, podemos dar um exemplo simples de como a Web Semântica funcionaria em nossas vidas. Por exemplo, assistindo ao filme \emph{Star Wars I} na sessão da tarde, ficamos nostalgiados e gostariamos de comprar o Box completo. A Web Semântica nos auxiliaria da seguinte maneira: em vários sites teriamos os dados já existentes para nós, seres humanos, lermos e metadados para os computadores tratarem. Com os metadados e todas as camadas acima explicadas, toda a rede estaria escrita através de regras, RDF e tags de XML. Então poderiamos utilizar um aplicativo e este nos retornaria lojas onde os preços estariam baratos, ou ainda mais, ele próprio avaliaria seguindo um critério custo-beneficio descrito pelo usuário, realizaria a compra e debitaria em nossa conta. 		
+%		Teoricamente, podemos dar um exemplo simples de como a Web Semântica funcionaria em nossas vidas. Por exemplo, assistindo ao filme \emph{Star Wars I} na sessão da tarde, ficamos nostalgiados e gostariamos de comprar o Box completo. A Web Semântica nos auxiliaria da seguinte maneira: em vários sites teriamos os dados já existentes para nós, seres humanos, lermos e metadados para os computadores tratarem. Com os metadados e todas as camadas acima explicadas, toda a rede estaria escrita através de regras, RDF e tags de XML. Então poderiamos utilizar um aplicativo e este nos retornaria lojas onde os preços estariam baratos, ou ainda mais, ele próprio avaliaria seguindo um critério custo-beneficio descrito pelo usuário, realizaria a compra e debitaria em nossa conta. 		
 		
-		\begin{figure}[htb]
-			\begin{center}				
-				\includegraphics[scale=0.6]{./figuras/semanticweb-starwars.png}				
-			\end{center}
-			\caption{Ilustração simples de uma semântica baseado em StarWars.}
-            \label{fig:starwars}
-		\end{figure}
+%		\begin{figure}[htb]
+%			\begin{center}				
+%				\includegraphics[scale=0.6]{./figuras/semanticweb-starwars.png}				
+%			\end{center}
+%			\caption{Ilustração simples de uma semântica baseado em StarWars.}
+%            \label{fig:starwars}
+%		\end{figure}
 				
 		Muitos problemas são enfrentados nesta area de estudo, mas grandes avanços vem ocorrendo. Como fazer a ontologia chegar ao usuário comum sem ser tão complicado, como assegurar que o conteúdo será sempre preciso e claro, padrões ontológicos, entre outros são as discussões atualmente na area.
 
-\section{References}
-
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
-
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
-
-\bibliographystyle{sbc}
+\bibliographystyle{acm}
+\def\refname{Referências Bibliográficas}
 \bibliography{bibliografia}
 %\bibliography{sbc-template}
 
