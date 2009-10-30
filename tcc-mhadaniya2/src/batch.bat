@@ -1,0 +1,8 @@
+@echo off
+makeindex -s "C:\Program Files\MiKTeX 2.7\makeindex\abntex\tabela-simbolos.ist" -o "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\src\TCC.greeklow" "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\tmp\TCC.greeklowx"
+makeindex -s "C:\Program Files\MiKTeX 2.7\makeindex\abntex\tabela-simbolos.ist" -o "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\src\TCC.greekupp" "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\tmp\TCC.greekuppx"
+makeindex -s "C:\Program Files\MiKTeX 2.7\makeindex\abntex\tabela-simbolos.ist" -o "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\src\TCC.miscelan" "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\tmp\TCC.miscelanx"
+makeindex -s "C:\Program Files\MiKTeX 2.7\makeindex\abntex\tabela-simbolos.ist" -o "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\src\TCC.romanlow" "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\tmp\TCC.romanlowx"
+makeindex -s "C:\Program Files\MiKTeX 2.7\makeindex\abntex\tabela-simbolos.ist" -o "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\src\TCC.romanupp" "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\tmp\TCC.romanuppx"
+makeindex -s "C:\Program Files\MiKTeX 2.7\makeindex\abntex\tabela-simbolos.ist" -o "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\src\TCC.sigla" "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\tmp\TCC.siglax"
+makeindex -s "C:\Program Files\MiKTeX 2.7\makeindex\abntex\tabela-simbolos.ist" -o "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\src\TCC.symbols" "C:\Users\uel\Desktop\thiago\tcc-mhadaniya2\tmp\TCC.symbolsx"
