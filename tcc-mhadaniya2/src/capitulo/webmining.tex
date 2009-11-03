@@ -14,7 +14,7 @@
 		
 		Com a expansão e o acesso crescente, as páginas começaram a evoluir, assim como a \textit{Web}. Tornando-se dinâmica, onde encontramos páginas construídas interagindo-se com o usuário. Nos encontramos neste estágio evolutivo, e caminhamos para um futuro muito mais brilhante.
 		
-		E como a evolução não tem fim, estamos observando a concepção da \textit{Web} Semântica. Onde apenas apresentar as informações para o usuário não é o suficiente, como é preciso, expressar de uma forma semântica também para o entendimento das máquinas.
+		E como a evolução não tem fim, estamos observando a concepção da \textit{Web} Semântica, discutida na seção~\ref{webminig:semantica}. Onde apenas apresentar as informações para o usuário não é o suficiente, como é preciso, expressar de uma forma semântica também para o entendimento das máquinas.
 		 
 		Alguns problemas podem ser encontrados pelos usuários quando interagem com a \textit{Web} \cite{Kosala2000}:
   
@@ -35,9 +35,14 @@
 \section{Descoberta do Conhecimento}
 
 		Muitas são as definições que os pesquisadores adotam para \emph{KDD(Knowledge Discovery Database)} ou Mineração de Dados, a mais difundida e adotada é encontrada nos trabalhos de Fayyad e seu grupo de pesquisa \cite{Fayyad1996a}: 
-		\begin{quote}
-        	\emph{Knowledge Discovery Database} é o processo não trivial de identificação de padrões válidos, novos, potencialmente úteis e compreensiveis que estejam presentes nos dados.
-        \end{quote}
+
+		\begin{flushright}
+		     \parbox{4.0in}{\footnotesize{\emph{Knowledge Discovery Database} é o processo não trivial de identificação de padrões válidos, novos, potencialmente úteis e compreensiveis que estejam presentes nos dados.}}
+		\end{flushright}
+ 
+%		\begin{quote}
+%        	\emph{Knowledge Discovery Database} é o processo não trivial de identificação de padrões válidos, novos, potencialmente úteis e compreensiveis que estejam presentes nos dados.
+%        \end{quote}
 
 	 	Tomamos como definição que: os \emph{dados} são um conjunto de fatos, e \emph{padrões} são definidos em uma linguagem e descrevem um subconjunto dos dados ou um modelo aplicável aquele conjunto.
 	 	
@@ -204,7 +209,7 @@
 		
 		Como o próprio nome descreve, nesta categoria de mineração estamos preocupados com a estrutura dos documentos \textit{Web} e como estes estão ligados entre si. Os vínculos de ligação de hipertexto são os principais objetos de estudos nesta categoria. Podemos visualizar a \textit{Web} como um grafo orientado, onde os nós representam páginas e as setas entre os pares de nós representam os vínculos entre as paginas. Como ocorre em citações bibliográficas quando um artigo é bastante citado indicando que provavelmente este artigo tem um peso importante perante outros que abordam o mesmo tema, o mesmo pode ser observado entre os documentos \textit{Web}. Podemos drasticamente comparar que se uma pagina contém muitas setas entrando, ela teria certa relevância quanto ao seu conteúdo ser confiável.
 		
-		Hyperlink-induced topic search(HITS) é um algoritmo para mapear a \emph{Web} e identifica os \emph{hubs} e \emph{authorities}.  \emph{Authorities} são páginas bem rankeadas sobre um determinado tópico, e \emph{hubs} são páginas com links para os \emph{authorities}. Como exemplo fundamental, temos que citar o \emph{PageRank}  \cite{Page1999} largamente difundido graças ao \emph{Google}. 
+		Hyperlink-induced topic search(HITS) é um algoritmo para mapear a \emph{Web} e identifica os \emph{hubs} e \emph{authorities}.  \emph{Authorities} são páginas bem rankeadas sobre um determinado tópico, e \emph{hubs} são páginas com links para os \emph{authorities}. Como exemplo fundamental, temos que citar o \emph{PageRank} \cite{Page1999} largamente difundido graças ao \emph{Google}. 
 
  		 \subsection{Mineração de Uso}\label{webmining:uso}
  		 
@@ -261,15 +266,15 @@ significados, proporcionando aos humanos trabalhar melhor em conjunto com os com
 		Permitem definir propriedades como: listas, restrições, cardinalidades, tipos de dados, etc
 	
 		\item \textbf{CAMADA de LÓGICA, PROVA e CONFIANÇA}
-		Esta camada ainda não possui caracteristicas certas, pois ainda estão sendo estudadas. A parte lógica tem como objetivo especificar regras que atuam sobre instâncias e recursos. A camada de prova executa e a camada de confiança verifica se a prova está correta ou não.
+		Esta camada ainda não possui características certas, pois ainda estão sendo estudadas. A parte lógica tem como objetivo especificar regras que atuam sobre instâncias e recursos. A camada de prova executa e a camada de confiança verifica se a prova está correta ou não.
 		
-		Alguns protótipos disponiveis são DAML-L e RuleML.
+		Alguns protótipos disponíveis são DAML-L e RuleML.
 		
 	\end{itemize}
 		
-		Teoricamente, podemos dar um exemplo simples de como a Web Semântica funcionaria em nossas vidas. Por exemplo, assistindo ao filme \emph{Star Wars I} na sessão da tarde, ficamos nostalgiados e gostariamos de comprar o Box completo. Uma ilustração de uma pequena parte da ontologia do universo de \emph{Star Wars} pode ser observada na figura~\ref{fig:starwars}. 
+		Teoricamente, podemos dar um exemplo simples de como a Web Semântica funcionaria em nossas vidas. Por exemplo, assistindo ao filme \emph{Star Wars I} na sessão da tarde, ficamos nostalgiados e gostariamos de comprar a coleção completa dos filmes. Uma ilustração de uma pequena parte da ontologia do universo de \emph{Star Wars} pode ser observada na figura~\ref{fig:starwars}. 
 		
-		A Web Semântica nos auxiliaria da seguinte maneira: em vários sites teriamos os dados já existentes para nós, seres humanos, lermos e metadados para os computadores tratarem. Com os metadados e todas as camadas acima explicadas, toda a rede estaria escrita através de regras, RDF e tags de XML. Então poderiamos utilizar um aplicativo e este nos retornaria lojas onde os preços estariam baratos, ou ainda mais, ele próprio avaliaria seguindo um critério custo-beneficio descrito pelo usuário, realizaria a compra e debitaria em nossa conta. 		
+		A Web Semântica nos auxiliaria da seguinte maneira: em vários sites teriamos os dados já existentes para nós, seres humanos, lermos e metadados para os computadores tratarem. Com os metadados e todas as camadas acima explicadas, toda a rede estaria escrita através de regras, RDF e tags de XML. Então poderiamos utilizar um aplicativo e este nos retornaria lojas onde os preços estariam baratos, ou ainda mais, ele próprio avaliaria seguindo um critério custo-beneficio descrito pelo usuário, realizaria a compra e debitaria em nossa conta.		
 		
 		\begin{figure}[htb]
 			\begin{center}				
@@ -279,4 +284,4 @@ significados, proporcionando aos humanos trabalhar melhor em conjunto com os com
             \label{fig:starwars}
 		\end{figure}
 				
-		Muitos problemas são enfrentados nesta área de estudo, mas grandes avanços vem ocorrendo. Como fazer a ontologia chegar ao usuário comum sem ser tão complicado, como assegurar que o conteúdo será sempre preciso e claro, padrões ontológicos, entre outros são as discussões atualmente na area.
+		Muitos problemas são enfrentados nesta área de estudo, mas grandes avanços vem ocorrendo. Como fazer a ontologia chegar ao usuário comum sem ser tão complicado, como assegurar que o conteúdo será sempre preciso e claro, padrões ontológicos, entre outros são as discussões atualmente direcionando as pesquisas nesta área.

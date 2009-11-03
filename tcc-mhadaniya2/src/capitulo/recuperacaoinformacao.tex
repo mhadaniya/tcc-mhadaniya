@@ -5,22 +5,25 @@
 
 		Recuperação de Informação (RI) é a tarefa de encontrar documentos relevantes a partir de um \textit{corpus} ou conjunto de textos em resposta a uma necessidade de informação de um usuário \cite{Smeaton1997}. Um dos maiores problemas enfrentados desde seu início, e que perpetua atualmente é a informação estar contida em linguagem natural. Quando a \emph{WWW} foi concebida, a comunidade acadêmica que tratava de RI concentraram suas atenções para uma melhoria dos motores de busca, voltando a impulsionar o crescimento da RI.
 				 		
-		RI possui limites muito bem delimitados, e qualquer tarefa além de prover ao usuário os documentos, não é um sistema de recuperação de informação. A tecnologia de RI é quase sempre encontrada no núcleo de suas funcionalidades dos sistemas de busca de informações de uma maneira imperceptível para o usuário. Muitos agentes autônomos incorporam técnicas como: filtragem, roteamento, categorização e clusterização \cite{Smeaton1997}.
+		RI possui limites bem delimitados, e qualquer tarefa além de prover ao usuário os documentos, não é um sistema de recuperação de informação. A tecnologia de RI é quase sempre encontrada no núcleo de funcionalidades dos sistemas de busca de informações de uma maneira imperceptível para o usuário. Técnicas como: filtragem, roteamento, categorização e clusterização  possuem em comum a busca e comparação dos documentos e as necessidades do usuário \cite{Smeaton1997}.
 		
-\begin{itemize}
-  \item filtragem - 
-  \item categorização - é a tarefa de categorizar o documento em um conjunto pré-definido de categorias;
-  \item roteamento - 
-  \item clusterização - é o agrupamento de documentos semelhantes para posterior busca;
-\end{itemize}		
+		\begin{itemize}
+		  \item filtragem - através do fluxo de documentos entre um certo perfil ou grupo de usuários, refletindo a informação desejada;
+		  \item categorização - é a tarefa de categorizar o documento em um conjunto pré-definido de categorias;
+		  \item roteamento - divide a entrada de documentos para grupos ou usuários baseado no conteúdo;
+		  \item clusterização - é o agrupamento de documentos semelhantes para posterior busca ou outra utilização;
+		\end{itemize}		
 				
-		A operação de recuperação em sistemas de RI objetiva computar graus de coincidência entre a consulta do usuário e os documentos para ordenar cada documento. Smeaton \cite{Smeaton1997} sugere algumas métricas heurísticas para tal ordenamento \footnote{Os estudos abordados quanto aos modelos matemáticos descritos pelo autor foram no âmbito superficial.} e enumera áreas onde a pesquisa de RI são bem ativas tais como a recuperação baseada em clusters, a recuperação pela combinação de diversas estratégias, indexação semântica latente, recuperação de passagem e documentos de comprimento heterogêneo.
+		%Resumidamente a operação de um sistema de RI ocorre com o usuário descrevendo suas necessidades para o sistema, então o sistema retorna os documentos que correspondem. Smeaton \cite{Smeaton1997} sugere algumas métricas heurísticas\footnote{Os estudos abordados quanto aos modelos matemáticos descritos pelo autor foram no âmbito superficial.} para tal ordenamento  e enumera áreas onde a pesquisa de RI são bem ativas.
+		
+%		A operação de recuperação em sistemas de RI objetiva computar graus de coincidência entre a consulta do usuário e os documentos para ordenar cada documento. Smeaton \cite{Smeaton1997} sugere algumas métricas heurísticas para tal ordenamento  e enumera áreas onde a pesquisa de RI são bem ativas tais como a recuperação baseada em \emph{clusters}, a recuperação pela combinação de diversas estratégias, indexação semântica latente, recuperação de passagem e documentos de comprimento heterogêneo.
 				
-		Sistemas de RI são estruturados através da definição da fonte de informação com a qual se trabalha. Posteriormente, as operações que serão executadas no momento das buscas devem ser determinadas, estruturando os documentos de acordo com as tarefas a serem executadas. Em seguida, um índice com os termos contidos nos documentos é criado \cite{Baeza-Yates1999}. Com uma consulta, o usuário descreve suas necessidades através de termos e o processo de RI é iniciado \cite{Beppler2008}.
+		Sistemas de RI são estruturados através da definição da fonte de informação com a qual se trabalha, ou seja, os tipos de documentos que serão indexados. Posteriormente, as operações que serão executadas no momento das buscas devem ser determinadas, estruturando os documentos de acordo com as tarefas a serem executadas. Em seguida, um índice com os termos contidos nos documentos é criado \cite{Baeza-Yates1999}. Com uma consulta, o usuário descreve suas necessidades através de termos e o processo de RI é iniciado \cite{Beppler2008}.
+		
+		A operação de recuperação em sistemas de RI objetiva computar graus de coincidência entre a consulta do usuário e os documentos para ordenar cada documento. Smeaton \cite{Smeaton1997} sugere algumas métricas heurísticas para tal ordenamento  e enumera áreas onde a pesquisa de RI são bem ativas. 
 		
 		O problema da aquisição de conhecimento de textos vêm sendo questionado pela comunidade de RI em função da rápida pulverização de informação impulsionada pela \emph{Internet}. A pesquisa sobre atividades baseadas em \emph{corpus} de textos têm sido encorajada, facilitando o desenvolvimento de soluções.
-
-
+		
 %		Motivado pela forte interdependência entre a RI e o processamento de linguagem natural, Smeaton (1995, 1995a, 1995b) questiona a real utilidade do processamento de linguagem e dos demais recursos lingüísticos para a RI. O autor alega que o processamento de linguagem natural oferece um auxílio modesto para a eficiência da RI pelo fato das técnicas de processamento de LN terem sido desenvolvidas visando aplicações de tradução automática e interfaces de linguagem natural. Uma característica que limita a ajuda oferecida pelas técnicas de processamento de LN oriunda-se na complexidade destas técnicas tornando-as eficientes apenas quando aplicadas sobre uma pequena quantidade de textos. Uma solução para este problema é proposta em Zhai (1997) que apresenta um método para indexação de documentos testado num conjunto de documentos de 250 mega bytes. Neste método, o autor propõe um modelo probabilístico para realizar um parsing de expressões ao invés da indexação por palavras, demonstrando uma significativa melhora na recuperação.
 
 %		Outras técnicas além das baseadas em linguagem natural também podem beneficiar a tecnologia de RI. O método relevance feedback (Haines e Croft, 1993) aprimora a qualidade da recuperação de informação inteligente ao modificar a consulta baseando-se na retroalimentação do usuário. A consulta é modificada através de uma modificação nos pesos que caracterizam seus termos motivada pela informação dada pelo usuário. O método relevance feedback é proposto em Haines e Croft (1993) como um aprimoramento do modelo de recuperação que utiliza Redes de Inferência (Turtle, 1991). Redes de inferência são um modelo de recuperação de informação baseado em probabilidade para raciocínio com incerteza. A rede de inferência é um grafo com quatro tipos diferentes de nós: para documentos, para a representação conceitual do conteúdo dos documentos, para as consultas, e o último para a informação desconhecida. A cada nova consulta, os nós são instanciados para cada documento do conjunto e as probabilidades são propagadas para inferir uma probabilidade associada à informação desconhecida; gerando, assim, um ordenamento dos documentos.
@@ -31,13 +34,13 @@
   
   	\section{Modelos de Recuperação de Informação}\label{RI:Modelos}
   	
-  		De acordo com Baeza-Yates e Ribeiro-Neto \cite{Baeza-Yates1999}, podemos decompor um modelo de RI em \cite{Beppler2008}:
-  		\begin{itemize}
-  		  \item um conjunto de visões lógicas de documentos de uma coleção - é a forma como o documento é indexado, por exemplo, palavras-chaves;
-  		  \item um conjunto de visões lógicas da informação prestada pelo usuário;
-  		  \item um framework para modelar documentos, consultas e suas relações - tecnologia utilizada para prover as ;
-  		  \item uma função de ordenação - função de ordenação escolhida para retornar os resultados.
-  		\end{itemize}
+%  		De acordo com Baeza-Yates e Ribeiro-Neto \cite{Baeza-Yates1999}, podemos decompor um modelo de RI em \cite{Beppler2008}:
+%  		\begin{itemize}
+%  		  \item um conjunto de visões lógicas de documentos de uma coleção - é a forma como o documento é indexado, e.g., palavras-chaves;
+%  		  \item um conjunto de visões lógicas da informação prestada pelo usuário;
+%  		  \item um framework para modelar documentos, consultas e suas relações - tecnologia utilizada para prover as ;
+%  		  \item uma função de ordenação - função de ordenação escolhida para retornar os resultados.
+%  		\end{itemize}
   		
   		Greengrass \cite{Greengrass2000} propõem duas categorias para os modelos de RI: semânticos e estátisticos. Os semânticos tem a preocupação de ``entender'' um texto em linguagem natural. Quanto aos modelos estátisticos, são atribuidos medidas estatísticas mensurando a comparação entre uma consulta e um documento. Na categoria estátistica enquandramos os modelos: Booleano, Booleano Estendido, Vetorial, Probabilístico, Difuso e Indexação Semântica Latente. O modelo de Processamento de Linguagem Natural representa a categoria semântica. 
   	
@@ -82,22 +85,28 @@
   		%Motivado pela forte interdependência entre a RI e o processamento de linguagem natural, Smeaton (1995, 1995a, 1995b) questiona a real utilidade do processamento de linguagem e dos demais recursos lingüísticos para a RI. O autor alega que o processamento de linguagem natural oferece um auxílio modesto para a eficiência da RI pelo fato das técnicas de processamento de LN terem sido desenvolvidas visando aplicações de tradução automática e interfaces de linguagem natural. Uma característica que limita a ajuda oferecida pelas técnicas de processamento de LN oriunda-se na complexidade destas técnicas tornando-as eficientes apenas quando aplicadas sobre uma pequena quantidade de textos. Uma solução para este problema é proposta em Zhai (1997) que apresenta um método para indexação de documentos testado num conjunto de documentos de 250 mega bytes. Neste método, o autor propõe um modelo probabilístico para realizar um parsing de expressões ao invés da indexação por palavras, demonstrando uma significativa melhora na recuperação.
   		
   	
-  	\section{Recuperação de Informação na WEB}\label{RI:webRI}
+  	\section{Recuperação de Informação na WEB}\label{RI:webRI}			
+
+		Quando estamos lidando com a \emph{Web} temos um cenário que contrasta com a chamada RI Clássica. Na RI Clássica temos um domínio e usuários definidos, quando na \emph{Web} encontramos um cenário dinâmico e usuários consultando simultaneamente as informações \cite{Kobayashi1999}. 
 		
-		COMPLEMENTAR\ldots
-		
-		Artigo novo dos japoneses da IBM mto interessante colocar alguns pontos entre Classica x Web\ldots
-		
-		Muitas caracteristicas devem ser levadas em conta quando estamos recuperando documentos na \emph{WEB} \cite{Huang2000}:
+		Muitas características devem ser levadas em conta quando estamos recuperando documentos na \emph{WEB} \cite{Huang2000}:
 		
 		\begin{itemize}
-          \item \textbf{Tamanho da Internet} - O tamanho da \emph{Internet}, segundo Zhang e seu grupo de pesquisa \cite{Zhang2008}, estima-se que em Janeiro de 2008 a Internet continha 62400000 hostnames ativos. De acordo com a pesquisa, a Lei de Moore\footnote{A Lei de Moore foi predita por um dos fundadores da Intel, Gordon Moore, e sugere que a cada dezoito meses a capacidade de transitores no CPU dobra. Apareceu em 1965 e se manteve como verdade por quase meio século, e costuma ser utilizada para prever modelos futuros de tecnologias.} é observada, exceto que para a Internet, foi visto que a cada cinco anos, ela dobra de tamanho;
-          \item \textbf{Dinamismo da Internet} - As tecnicas de Recuperação de Informação são geralmenta estatica, enquanto a \emph{Web} está em constante metamorfose;
+          \item \textbf{Tamanho da Internet} - O tamanho da \emph{Internet}, segundo Zhang e seu grupo de pesquisa \cite{Zhang2008}, estima-se que em Janeiro de 2008 a Internet continha 62400000 hostnames ativos. De acordo com a pesquisa, a Lei de Moore\footnote{A Lei de Moore foi predita por um dos fundadores da Intel, Gordon Moore, e sugere que a cada dezoito meses a capacidade de transitores no CPU dobra. Apareceu em 1965 e se manteve como verdade por quase meio século, e costuma ser utilizada para prever modelos futuros de tecnologias.} é observada, exceto que para a Internet, foi visto que a cada cinco anos, ela dobra de tamanho. Importante esclarecer que os dados do tamanho da \emph{Internet} vária de acordo com grupos de pesquisa, mas todos chegam a resultados similares quanto ao crescimento exponencial;
+          \item \textbf{Dinamismo da Internet} - As técnicas de Recuperação de Informação são geralmenta estática, enquanto a \emph{Web} está em constante metamorfose;
           \item \textbf{Duplicação} - 30\% do contéudo da \emph{Internet} é uma cópia de algum conteúdo existente;
-          \item \textbf{Comportamentos especificos} - É estimado que 85\% dos usuários utilizam apenas a primeira página retornada das \emph{search engines}, e 28\% modificam sua consulta original;
-          \item \textbf{Multiplos tipos de usuário} - Possui muitos tipos de usuários e cada usuário utiliza a \emph{Internet} para uma tarefa especifica;
+          \item \textbf{Comportamentos específicos} - É estimado que 85\% dos usuários utilizam apenas a primeira página retornada das \emph{search engines}, e 28\% modificam sua consulta original;
+          \item \textbf{Multiplos tipos de usuário} - Possui muitos tipos de usuários e cada usuário utiliza a \emph{Internet} para uma tarefa específica;
           \item \textbf{Idiomas} - Como a \emph{Internet} se tornou algo mundial, as páginas são encontradas em mais de 100 idiomas; 
           \item \textbf{Alta Linkagem(\emph{High Linkage})} - Cada página contém aproximadamente oito links para outras páginas;          
         \end{itemize}
         
-        Com estas caracteristicas, podemos ter uma noção da dificuldade do campo de Recuperação de Informação na \emph{Web}. E muitas vezes, o usuário não sabe expressar sua necessidade, tornando a tarefa muito mais penosa.
+        Com estas características, podemos ter uma noção da dificuldade do campo de RI na \emph{Web}. Se considerarmos a \emph{Web} como uma grande base de dados, não temos uma aplicação efetiva das tarefa da RI Clássica de indexar, categorizar, organizar ou clusterizar, e as \emph{queries} de busca de usuários distintos para uma mesma informação apresentam diferenças enormes.
+        
+%        \subsection{Indexação}
+        
+%		O conceito de indexação em RI é o ato de atribuir índices para documentos, os quais serão utilizados para recuperação posteriormente \cite{Korfhage1998}. Destacamos quatro formas de indexação: indexação manual, indexação automática, indexação baseada em agentes inteligentes e indexação de metadados.
+		
+%		A indexação manual
+        
+		        
