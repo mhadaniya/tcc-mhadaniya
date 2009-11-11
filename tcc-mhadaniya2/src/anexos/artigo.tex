@@ -18,11 +18,11 @@
 
 \title{Extração de Informações na Web}
 
-\author{Mario Henrique A. C. Adaniya\inst{1}}
+\author{Mario Lemes Proença Jr.\inst{1}, Mário Henrique A. C. Adaniya\inst{1}}
 
 \address{Departamento de Computação -- Universidade Estadual de Londrina(UEL)\\  
   Caixa Postal 6001 -- 86051-990 -- Londrina -- PR -- Brazil
-  \email{\{mhadaniya\}@dc.uel.br}
+  \email{\{proenca\}@uel.br, \{mhadaniya\}@dc.uel.br}
 }
 
 \begin{document} 
@@ -30,27 +30,27 @@
 \maketitle
     
 \begin{resumo} 
-  	É observado um crescimento exponencial nas informações contidas naWeb, e toda este crescimento tendendo ao infnito, nós seres humanos, não somos capazes de tratar e por muitas razões deixamos de agregar valor ao nosso conhecimento ou utilizar informações pelo simples fato de não termos a capacidade de processar demasiado volume. Para tanto, estudos das mais variadas area tem se concentrado em tratar os documentos em si, a informação contida nestes documentos e transformar tais informações em algo útil para nós.
+  	É observado um crescimento exponencial nas informações contidas na Web, e todo este crescimento, não somos capazes de tratar e por muitas razões deixamos de agregar valor ao nosso conhecimento ou utilizar informações pelo simples fato de não termos a capacidade de processar demasiado volume. Para tanto, estudos em áreas como Recuperação de Informação e Extração de Informação visam tratar os documentos em si e a informação contida nestes documentos. E uma área de pesquisa engloba as duas áreas transformando tais informações em algo útil para nós.
 \end{resumo}
 
 
 \section{Introdução}
 
-		Cada vez mais encontramos toda e qualquer informação que precisamos disponíveis \textit{online}. É uma tendência que grandes editoras com revistas e publicações impressas estão aderindo, mantendo os impressos tradicionais e publicando virtualmente os mesmos conteúdos e adicionando outros exclusivos na edição \textit{online}. A \textit{World Wide Web (Web)} é um meio de comunicação popular e interativo para disseminar informação atualmente\cite{Kosala2000}. Todo dia, mais e mais páginas são indexadas pelos motores de buscas. \textit{Blogs} surgem aos milhares com pessoas expressando suas idéias, opiniões e experiências. Sites de relacionamento, fóruns, \textit{Wikis} armazenam conteúdos imensos dos mais diversificados assuntos. E neste pandemônio, como encontrar o que estamos procurando? Como descobrir se a informação recuperada é confiavel?
+		Cada vez mais encontramos toda e qualquer informação que precisamos disponíveis \textit{online}. É uma tendência que grandes editoras com revistas e publicações impressas estão aderindo, mantendo os impressos tradicionais e publicando virtualmente os mesmos conteúdos e adicionando outros exclusivos na edição \textit{online}. A \textit{World Wide Web (Web)} é um meio de comunicação popular e interativo para disseminar informação atualmente \cite{Kosala2000}. Todo dia, mais e mais páginas são indexadas pelos motores de buscas. \textit{Blogs} surgem aos milhares com pessoas expressando suas idéias, opiniões e experiências. Sites de relacionamento, fóruns, \textit{Wikis} armazenam conteúdos imensos dos mais diversificados assuntos. E neste pandemônio, como encontrar o que estamos procurando? Como descobrir se a informação recuperada é confiável?
 
 \section{Recuperação de Informação} \label{sec:ri}
-		Recuperação de Informação (RI) é a tarefa de encontrar documentos relevantes a partir de um corpus ou conjunto de textos em resposta a uma necessidade de informação de um usuário\cite{Smeaton1997}. Recuperação de Informação possui limites muito bem delimitados, e qualquer tarefa além de prover ao usuário os documentos, não é um sistema de recuperação de informação.
+		Recuperação de Informação (RI) é a tarefa de encontrar documentos relevantes a partir de um corpus ou conjunto de textos em resposta a uma necessidade de informação de um usuário \cite{Smeaton1997}. Recuperação de Informação possui limites muito bem delimitados, e qualquer tarefa além de prover ao usuário os documentos, não é um sistema de recuperação de informação.
 		
 		\subsection{Recuperação de Informação na WEB}\label{RI:webRI}
 		
-		Muitas caracteristicas devem ser levadas em conta quando estamos recuperando documentos na \emph{WEB}\cite{Huang2000}:
+		Muitas características devem ser levadas em conta quando estamos recuperando documentos na \emph{WEB} \cite{Huang2000}:
 		
 		\begin{itemize}
           \item \textbf{Tamanho da Internet} - O tamanho da \emph{Internet}, segundo Zhang e seu grupo de pesquisa\cite{Zhang2008}, estima-se que em Janeiro de 2008 a Internet continha 62400000 hostnames ativos. É observada que para a Internet a cada cinco anos ela dobra de tamanho;
           \item \textbf{Dinamismo da Internet} - As técnicas de Recuperação de Informação são geralmenta estática, enquanto a \emph{Web} está em constante metamorfose;
           \item \textbf{Duplicação} - 30\% do contéudo da \emph{Internet} é uma cópia de algum conteúdo existente;
           \item \textbf{Comportamentos especificos} - É estimado que 85\% dos usuários utilizam apenas a primeira página retornada das \emph{search engines}, e 28\% modificam sua consulta original;
-          \item \textbf{Multiplos tipos de usuário} - Possui muitos tipos de usuários e cada usuário utiliza a \emph{Internet} para uma tarefa especifica;
+          \item \textbf{Multiplos tipos de usuário} - Possui muitos tipos de usuários e cada usuário utiliza a \emph{Internet} para uma tarefa específica;
           \item \textbf{Idiomas} - Como a \emph{Internet} se tornou algo mundial, as páginas são encontradas em mais de 100 idiomas; 
           \item \textbf{Alta Linkagem(\emph{High Linkage})} - Cada página contém aproximadamente oito links para outras páginas;          
         \end{itemize}
@@ -59,11 +59,11 @@
 
 \section{Extração de Informação} \label{sec:ei}
 
-		O contraste entre os objetivos dos sistemas de Extração da Informação e Recuperação de Informação podem ser descritos como seguem: Recuperação de Informação recupera documentos relevantes de uma coleção, enquanto Extração de Informação extrai informações relevantes de documentos. Consequentemente, as duas técnicas se complementam, e usadas em combinação podem prover uma ferramenta poderosa\cite{Eikvil1999}.
+		O contraste entre os objetivos dos sistemas de Extração da Informação e Recuperação de Informação podem ser descritos como seguem: Recuperação de Informação recupera documentos relevantes de uma coleção, enquanto Extração de Informação extrai informações relevantes de documentos. Consequentemente, as duas técnicas se complementam, e usadas em combinação podem prover uma ferramenta poderosa \cite{Eikvil1999}.
 
 \subsection{Abordagens}\label{EI:abordagem}
 
-		Na Extração de Informação, observamos claramente a distinção de duas abordagens\cite{Appelt1999}: \emph{Knowledge Engineering} e \emph{Automatic Training}. 
+		Na Extração de Informação, observamos claramente a distinção de duas abordagens \cite{Appelt1999}: \emph{Knowledge Engineering} e \emph{Automatic Training}. 
 		
 		Em \emph{Knowledge Engineering} o sistema é praticamente construido manualmente pelo \emph{knowledge engineer}\footnote{É a pessoa mais familiarizada com o sistema de Extração de Informação, e conhece melhor o formalismo para expressar as regraspara o sistema.}. Sua construção se baseia no conhecimento que o engenheiro possui do cenário e dominio com o qual vai se trabalhar.
 
@@ -73,14 +73,14 @@
 				
 	\subsection{Tipos de Dado}\label{EI:tipo_dado}
 		
-		A Extração se dá em documentos, e eles são categorizados em três tipos\cite{Eikvil1999}:
+		A Extração se dá em documentos, e eles são categorizados em três tipos \cite{Eikvil1999}:
 		
 		\begin{itemize}
-          \item \emph{\textbf{Documentos livre/sem estruturação}} : Texto livre é basicamente o texto onde não encontramos nenhuma forma de estrutura, e é o tipo mais encontrado. Originalmente o objetivo de Extração de Informação era desenvolver sistemas capazes de extrair informações chaves de textos em linguagem natural.                    
+          \item[I.] \emph{\textbf{Documentos livre/sem estruturação}} : Texto livre é basicamente o texto onde não encontramos nenhuma forma de estrutura, e é o tipo mais encontrado. Originalmente o objetivo de Extração de Informação era desenvolver sistemas capazes de extrair informações chaves de textos em linguagem natural.                    
 
-          \item \emph{\textbf{Documentos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. 
+          \item[II.] \emph{\textbf{Documentos semi-estruturados}} : Não são textos totalmente livres de estrutura, mas também as estrutura existente não é tão severa, os textos semi-estruturados encontram-se no intermedio. 
           
-          O pesquisador Sergel Abiteboul diferencia dentro do contexto de semi-estruturados, em cinco categorias\cite{Abiteboul1997}\cite{Silveira2001}: \textbf{Estrutura Irregular,Estrutura Implícita, Estrutura Parcial, Estrutura Indicativa} e \textbf{Estrutura Flexível}.
+          O pesquisador Sergel Abiteboul diferencia dentro do contexto de semi-estruturados, em cinco categorias \cite{Abiteboul1997}\cite{Silveira2001}: \textbf{Estrutura Irregular,Estrutura Implícita, Estrutura Parcial, Estrutura Indicativa} e \textbf{Estrutura Flexível}.
           %\begin{itemize}
            % \item \textbf{Estrutura Irregular} - Quando uma informação está disposta de mais de uma maneira na estruturação do documento,e.g., o campo de endereço, o qual poderiamos encontrar como uma única \emph{string} representando todo o endereço, ou vários campos como \emph{string} para o nome da rua, um campo de inteiro para o número do logradouro, etc.;
             %\item \textbf{Estrutura Implícita} - A estrutura existe, mas não é algo natural e possivelmente necessita de algum processamento, e a representação lógica dos dados não é de imediato obtida. Podemos configurar as paginas em \emph{HTML} nesta categoria, que é puramente texto, mesmo contendo \emph{tags}, não deixa de ser um documento semi-estruturado de puro texto, onde é necessário um processamento de suas \emph{tags} para a obtenção de alguma informação preliminar.;
@@ -91,35 +91,21 @@
           
           %Algumas ferramentas pioneiras em pequisas de dados semi-estruturados na \emph{World Wide Web} foram:  \emph{Yahoo\footnote{Yahoo - http://www.yahoo.com}} e \emph{Altavista\footnote{Altavista - http://www.altavista.com}}. Utilizam uma técnica chamada \emph{full text search}, que desconsidera a semântica, comparando o texto completo com as entradas do usuário\cite{Silveira2001}.                      
           
-          \item \emph{\textbf{Documentos estruturados}} : Informações textuais contidas em banco de dados ou qualquer outro gênero de documento com uma estruturação rigida, são a base de textos estruturados. Como seguem uma moldura sem grandes diferenças de um documento para outro, sua informação é facilmente extraida.
+          \item[III.] \emph{\textbf{Documentos estruturados}} : Informações textuais contidas em banco de dados ou qualquer outro gênero de documento com uma estruturação rigida, são a base de textos estruturados. Como seguem uma moldura sem grandes diferenças de um documento para outro, sua informação é facilmente extraida.
 
         \end{itemize}
         
         \subsection{Avaliação}\label{EI:avaliacao} 
 		
-		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration})\cite{Sundheim1991}. 
-		 
-		%\begin{itemize}
-          	%\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) : Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_{extraido-correto}$) sobre a informação relevante na página($N_{total-extraidos}$). Representada pela fórmula~\ref{formula:cobertura}
-          	
-          	%\begin{equation}\label{formula:cobertura}
-            %  Cobertura = \frac{N_{extraido-correto}}{N_{total-extraidos}}              
-            %\end{equation}            
-    	
-          	%\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas ($N_{resposta}$).
-          	
-          	%\begin{equation}\label{formula:precisao}
-            %  Precis\~{a}o = \frac{N_{extraido-correto}}{N_{resposta}}
-            %\end{equation}
-						
-			%Importante ressaltar que $N_{total-extraido}$ e $N_{resposta}$ são inversamente proporcionais, isto é, quando a \emph{Cobertura} aumenta, a \emph{Precisão} tende a diminuir e vice-cersa. \emph{Precisão} e \emph{Cobertura} estão sempre no intervalo de $[0, 1]$, sendo 0 o pior resultado e 1 o melhor.
-			Quando a \emph{Cobertura} aumenta, a \emph{Precisão} tende a diminuir e vice-cersa, pois são inversamente proporcionais. \emph{Precisão} e \emph{Cobertura} estão sempre no intervalo de $[0, 1]$, sendo 0 o pior resultado e 1 o melhor.
+		Os critérios de avaliação consistem em: quanta informação foi extraída (\textit{recall}), quanto da informação extraída é correta (\textit{precision}) e quanto da informação extraída é supérflua (\textit{overgeneration}) \cite{Sundheim1991}. Quando a \emph{Cobertura} aumenta, a \emph{Precisão} tende a diminuir e vice-cersa, pois são inversamente proporcionais. \emph{Precisão} e \emph{Cobertura} estão sempre no intervalo de $[0, 1]$, sendo 0 o pior resultado e 1 o melhor.
 			  
-  		 	\item \textbf{\textit{F-measure}} : A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas. 
+ 		 	A \textit{F-measure} mede considerando a precisão e a cobertura. O parâmetro $\beta$ quantifica a preferência da cobertura sobre a precisão. Geralmente utilizamos $\beta = 1$ , balanceando assim as duas medidas. 
   		 	
   		 	\begin{equation} \label{formula:F-measure}
               F-measure = \frac{(\beta^2 + 1)*Cobertura*Precisão}{\beta^2 * (Cobertura + Precisão)}
             \end{equation}
+            
+            Para esclarecer um pouco mais o conceito de Precisão e Cobertura, tomamos um total de 16 termos extraídos. Desses 16 termos, apenas 4 são nomes corretos e esperávamos no total 8 nomes, então nossa \textbf{Precisão} é de 50\%. Resultando em uma precisão média. A \textbf{Cobertura} são os nomes extraídos corretamente sobre o total de termos que extraímos, resultando em apenas 25\%. Isso significa que de toda informação extraída, apenas 25\% é relevante para o domínio do sistema.
 
 			%, e aplicando na fórmula~\ref{formula:F-measure} temos:
 			 
@@ -131,14 +117,14 @@
         
 \section{Web Mining}
 
-	\textit{Web Mining} é o uso das técnicas de Mineração de Dados para descobrir e extrair automaticamente a informação de documentos na \emph{Web}\cite{Etzione1996}. A Mineração de Dados refere-se ao processo não trivial de identificação de padrões válidos, previamente desconhecidos e potencialmente úteis de dados\cite{Frawley1992}. Seguindo o conceito de Etzione, que utiliza da Descoberta do Conhecimento(\textit{Knowledge Discovery Database}) como base, ele decompõe a Web Mining em 4(quatro) tarefas: \emph{Resource finding}(Coleta de Documentos), \emph{Information selection and pre-processing}(Pré-processamento), \emph{Generalization}(Extração de Padrões) e 
-\emph{Analysis}(Análise).        		
+	\textit{Web Mining} é o uso das técnicas de Mineração de Dados para descobrir e extrair automaticamente a informação de documentos na \emph{Web} \cite{Etzione1996}. A Mineração de Dados refere-se ao processo não trivial de identificação de padrões válidos, previamente desconhecidos e potencialmente úteis de dados \cite{Frawley1992}. Seguindo o conceito de Etzione, que utiliza da Descoberta do Conhecimento (\textit{Knowledge Discovery Database}) como base, ele decompõe a Web Mining em quatro tarefas: \emph{Resource finding} (Coleta de Documentos), \emph{Information selection and pre-processing} (Pré-processamento), \emph{Generalization} (Extração de Padrões) e 
+\emph{Analysis} (Análise).        		
 		
 %		É importante ressaltar que \emph{Web Mining} é diferente de Recuperação da Informação(\emph{Information Retrieval}) e Extração da Informação(\emph{Information Extraction}). Mas uma combinação das técnicas em si são utilizadas nas etapas do \emph{Web Mining}.
 		
 \subsection{Categorias de WEB Mining}
 		
-		Com o crescimento exponencial das fontes de informação disponiveis na \emph{World Wide Web} ao nosso redor, cresce a necessidade de automatizar ferramentas que busquem as informações desejadas e corretamente. Ferramentas mais eficazes no rastreamento, tanto do lado dos servidores como dos clientes, são comumente alvos de pesquisas e projetos na busca de uma mineração de dados. Do lado dos servidores, temos extensas listas de \emph{logs}, registros de usuários ou perfil de usuário, entre outros itens que podem ser análisados\cite{Cooley1997}. %Na figura~\ref{fig:WM-toxonomia} podemos observar um esboço da taxonomia.  
+		Com o crescimento exponencial das fontes de informação disponíveis na \emph{Web} ao nosso redor, cresce a necessidade de automatizar ferramentas que busquem as informações desejadas e corretamente. Ferramentas mais eficazes no rastreamento, tanto do lado dos servidores como dos clientes, são comumente alvos de pesquisas e projetos na busca de uma mineração de dados. Do lado dos servidores, temos extensas listas de \emph{logs}, registros de usuários ou perfil de usuário, entre outros itens que podem ser análisados \cite{Cooley1997}. %Na figura~\ref{fig:WM-toxonomia} podemos observar um esboço da taxonomia.  
 		
 %		\begin{figure}[htb]
 %			\begin{center}				
@@ -182,7 +168,7 @@
 
  		 \subsubsection{Mineração de Uso}\label{webmining:uso}
  		 
- 		 A mineração de uso utiliza os dados secundários provindos de logs de servidores, logs de browsers, perfis de usuário, cookies, seções ou transações de usuários, pasta favoritos, consultas do usuário, cliques de mouse e qualquer outro dado gerado pela interação do usuário com a \textit{Web}. As aplicações da mineração de dados de uso são classificadas em duas categorias: aprendizado de perfil de usuário (modelagem em interfaces adaptativas) e aprendizado de padrões de navegação de usuário. Talvez umas das técnicas em mais utilização atualmente, devido ao grande número de \emph{E-Commerce}, pois com isto podemos adaptar sites de acordo com o cliente, recomendar produtos de acordo com compras passadas ou baseadas nas similaridades entre perfis de usuários.
+ 		 A mineração de uso utiliza os dados secundários provindos de \emph{logs} de servidores, \emph{logs} de \emph{browsers}, perfis de usuário, \emph{cookies}, seções ou transações de usuários, pasta favoritos, consultas do usuário, cliques de mouse e qualquer outro dado gerado pela interação do usuário com a \textit{Web}. As aplicações da mineração de dados de uso são classificadas em duas categorias: aprendizado de perfil de usuário (modelagem em interfaces adaptativas) e aprendizado de padrões de navegação de usuário. Talvez umas das técnicas em mais utilização atualmente, devido ao grande número de \emph{E-Commerce}, pois com isto podemos adaptar sites de acordo com o cliente, recomendar produtos de acordo com compras passadas ou baseadas nas similaridades entre perfis de usuários.
  		 
 		%As organizações estão confiando e conduzindo muitos negócios através da \emph{Internet} e como tal, é necessário técnicas diferentes das tradicionais, pois estas precisam ser revistas. O volume de dados operados diariamente é enorme, tanto dentro quanto fora da empresa. Muito destes dados são gerados automaticamente, e analisar tudo manualmente é um trabalho muito dispendioso, e ao mesmo tempo crucial, pois dados muito importantes estão contidos e podem ser essenciais para uma tomada de decisão para a empresa quanto a estratégia de mercado. Analisando estes dados, as oganizações conseguem estipular vida útil e valor de um determinado produto ao consumidor, estratégias de marketing, campanhas promocionais, entre outros. Dentro das organizações também auxiliam na produtividade, melhorando a comunicação entre os diversos setores através da analise dos dados de intranet\cite{Cooley1997}.
 		
@@ -196,12 +182,11 @@
 
         \subsubsection{Web Semântica}\label{webminig:semantica}
 		 
-		 A Web Semântica é uma extens˜ão da web já existente, onde a informaç˜ão ganha melhores
-significados, proporcionando aos humanos trabalhar melhor em conjunto com os computadores \cite{Berners-Lee2001}. Acredita-se muito que a Web Semântica será o próximo passo evolutivo da Web, pois possui uma linguagem semântica muito rica, e.g., \emph{Web Ontology Language\footnote{Web Ontology Language - http://www.w3.org/TR/owl-feature}}.
+		 A Web Semântica é uma extensão da web já existente, onde a informação ganha melhores significados, proporcionando aos humanos trabalhar melhor em conjunto com os computadores \cite{Berners-Lee2001}. Acredita-se muito que a Web Semântica será o próximo passo evolutivo da Web, pois possui uma linguagem semântica muito rica, e.g., \emph{Web Ontology Language\footnote{Web Ontology Language - http://www.w3.org/TR/owl-feature}}.
 
-		Como somos expostos a muitas informações de diversas maneiras, não sabemos lidar com o que exatamente é correto ou útil para nós, resultando em uma "sobrecarga de informação". Observamos duas características importantes para este fenomeno: demasiado volume e a falta de uma definição semântica interpretável por programas e sistemas\cite{Freitas}.%[FREITAS].
+		Como somos expostos a muitas informações de diversas maneiras, não sabemos lidar com o que exatamente é correto ou útil para nós, resultando em uma ``sobrecarga de informação". Observamos duas características importantes para este fenômeno: demasiado volume e a falta de uma definição semântica interpretável por programas e sistemas \cite{Freitas2003}.%[FREITAS].
 
-		Algumas areas estudadas na Inteligencia Artificial casou muito bem, pelo fato de serem mecanismos que captam a semantica do contéudo e se ajustam de acordo com as necessidades. Uma das abordagens propostas era de dotar a Internet de inteligência própria, construindo paginas mais elaboradas e ricas semânticamente e onde agentes pudessem raciocinar sobre semântica, logo, modelando uma Web Semântica.
+		Algumas areas estudadas na Inteligência Artificial casou muito bem, pelo fato de serem mecanismos que captam a semântica do contéudo e se ajustam de acordo com as necessidades. Uma das abordagens propostas era de dotar a Internet de inteligência própria, construindo páginas mais elaboradas e ricas semânticamente e onde agentes pudessem raciocinar sobre semântica, logo, modelando uma Web Semântica.
 
 		A semântica é obtida através de ontologias, que são modelos de dados representando o conhecimento adquirido sobre um mundo ou parte deste em um conjunto de conceitos existentes em um dominio e os relacionamentos entre estes. As ontologias descrevem geralmente: individuos, classes, atributos e relacionamentos.
 
@@ -250,7 +235,7 @@ significados, proporcionando aos humanos trabalhar melhor em conjunto com os com
 %            \label{fig:starwars}
 %		\end{figure}
 				
-		Muitos problemas são enfrentados nesta area de estudo, mas grandes avanços vem ocorrendo. Como fazer a ontologia chegar ao usuário comum sem ser tão complicado, como assegurar que o conteúdo será sempre preciso e claro, padrões ontológicos, entre outros são as discussões atualmente na area.
+		Muitos problemas são enfrentados nesta área de estudo, mas grandes avanços são observados. Como fazer a ontologia chegar ao usuário comum sem ser tão complicada, como assegurar que o conteúdo será sempre preciso e claro, padrões ontológicos, entre outros são as discussões que direcionam as pesquisas na área.
 
 \bibliographystyle{acm}
 \def\refname{Referências Bibliográficas}
