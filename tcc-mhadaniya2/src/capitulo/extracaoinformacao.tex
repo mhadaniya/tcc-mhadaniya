@@ -10,21 +10,28 @@
 
 \chapter{Extração de Informação} \label{EI}
 
+\sigla{DARPA}{Defense Advanced Research Projects Agency}
+\sigla{DAML}{DARPA Agent Markup Language}
 \sigla{EI}{Extração de Informação}
+\sigla{GNU}{GNU is Not Unix}
+\sigla{GPL}{General Public License}
 \sigla{HTML}{Hypertext Markup Language}
 \sigla{KDD}{Knowledge Discovery Database}
+\sigla{LSI}{Latent Semantic Indexing}
 \sigla{MUC}{Message Understading Conference}
-\sigla{OWL}{Web Ontology Language } 
+\sigla{NER}{Named Entity Recognition}
+\sigla{OWL}{Web Ontology Language} 
 \sigla{PLN}{Processamento de Linguagem Natural}
 \sigla{RDF}{Resource Description Framework}
 \sigla{RI}{Recuperação de Informação}
+\sigla{SVD}{Singular Value Decomposition}
 \sigla{XML}{Extensible Markup Language}
 \sigla{URI}{Uniform Resource Identifier}
 \sigla{WB}{Web Mining}
 \sigla{WWW}{World Wide Web}
 \sigla{W3C}{World Wide Web Consortium}
 
-		Não temos a capacidade de processar \emph{megabytes} de texto todos os dias, e nesse volume de bytes, quantas oportunidades deixamos de aproveitar ou informações que estaríamos perdendo? Projetos em Processamento de Linguagem Natural(PLN) originaram a Extração da Informação. EI tem como objetivo transformar a coleção de documentos, geralmente com o auxílio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida \cite{Lehnert1996}. Na EI, a compreensão do texto fonte não é obrigatória, pois a análise é feita com o objetivo de encontrar porções que contenham o quê deve ser extraído. A sáida de um sistema de Extração da Informação são informações relevantes para o domínio específico em um determinado formato pré-estabelecido de acordo com as orientações iniciais.
+		Não temos a capacidade de processar \emph{megabytes} de texto todos os dias, e nesse volume de bytes, quantas oportunidades deixamos de aproveitar ou informações que estaríamos perdendo? Projetos em Processamento de Linguagem Natural (PLN) originaram a Extração da Informação. EI tem como objetivo transformar a coleção de documentos, geralmente com o auxílio de um sistema de Recuperação de Informação, em informação que é facilmente analisada e digerida \cite{Lehnert1996}. Na EI, a compreensão do texto fonte não é obrigatória, pois a análise é feita com o objetivo de encontrar porções que contenham o quê deve ser extraído. A sáida de um sistema de Extração da Informação são informações relevantes para o domínio específico em um determinado formato pré-estabelecido de acordo com as orientações iniciais.
 		
 		A Extração da Informação é uma tarefa mais limitada do que a ``compreensão completa do texto''. Na Extração da Informação, nós delimitamos o escopo, estabelecendo assim um limite de compreensão, assim, não necessitando analisar o texto completo e seu sentido \cite{Grishman1997}. A Extração da Informação tem um potencial muito grande em extrair dados com maior precisão, existindo um interesse muito grande nas pesquisas, uma vez que encontramos uma enorme quantidade de informações em linguagem natural.
 
@@ -38,13 +45,14 @@
 						
 \section{MUC - Message Understanding Conference}\label{EI:MUC}
 		
-		Observamos dois fatores principais que impulsionaram os estudos em EI: o crescimento exponencial de informação conjuntamente com a popularização da internet e um grande alavancador nas pesquisas em EI, os congressos \textit{MUC(Message Understanding Conferences)} \cite{Gaizauskas1998}. Eram congressos financiadas pelo \textit{DARPA\footnote{Defense Advanced Research Projects Agency - http://www.darpa.mil/}}, e foram assim batizados por tratar-se do processamento de entendimento de mensagens. Surgindo em meados dos anos noventa, ela instaurou métricas e algoritmos estatísticos para auxiliar o governo americano na avaliação de novos sistemas de Extração de Informação \cite{Sundheim1991}. 
+		Observamos dois fatores principais que impulsionaram os estudos em EI: o crescimento exponencial de informação conjuntamente com a popularização da internet e um grande alavancador nas pesquisas em EI, os congressos \textit{MUC (Message Understanding Conferences)} \cite{Gaizauskas1998}. Eram congressos financiadas pelo \textit{DARPA\footnote{Defense Advanced Research Projects Agency - http://www.darpa.mil/}}, e foram assim batizados por tratar-se do processamento de entendimento de mensagens. Surgindo em meados dos anos noventa, ela instaurou métricas e algoritmos estatísticos para auxiliar o governo americano na avaliação de novos sistemas de Extração de Informação \cite{Sundheim1991}. 
 						
-		Na avaliação dos MUC, uma descrição detalhada do cenário e quais informações a serem extraidas era dado aos participantes(formados por grupos de pesquisa academicos e particulares), junto com um conjunto de documentos e o modelo a ser extraido dos documentos. Os participantes tinham um tempo limitado\footnote{Geralmente de 1 mês a 6 meses.} para adaptar os sistemas para um novo cenário. Então uma nova coleção de documentos era passado para os participantes, e estes enviavam para os organizadores os resultados extraídos. E assim a avaliação era feita, comparando o gabarito com os resultados extraídos \cite{Appelt1999}.
+		Na avaliação dos MUC, uma descrição detalhada do cenário e quais informações a serem extraidas era dado aos participantes (formados por grupos de pesquisa acadêmicos e particulares), junto com um conjunto de documentos e o modelo a ser extraido dos documentos. Os participantes tinham um tempo limitado\footnote{Geralmente de 1 mês a 6 meses.} para adaptar os sistemas para um novo cenário. Então uma nova coleção de documentos era passado para os participantes, e estes enviavam para os organizadores os resultados extraídos. E assim a avaliação era feita, comparando o gabarito com os resultados extraídos \cite{Appelt1999}.
 	
-		Podemos observar na tabela~\ref{tab:MUC} as edições e o ano da conferências, bem como as fontes de texto a serem extraidas e os temas(cenario). 
+		Podemos observar na tabela~\ref{tab:MUC} as edições e o ano da conferências, bem como as fontes de texto a serem extraídas e os temas (cenários). 
 		% Tabela dos MUC
 		\begin{table}[htbp]
+		  \caption{Conferências e seus temas}
 		  \centering   
 		    \begin{tabular}{rrrr}
 		    \addlinespace
@@ -59,12 +67,11 @@
 		    MUC-6 & 1995  & Artigos de Jornais & Negotiation of Labor Disputes \\%and Corporate management Succession \\
 		    MUC-7 & 1997  & Artigos de Jornais & Acidente de aviões \\%lançamento de foguetes \\
 		    \bottomrule
-		    \end{tabular}
-			\caption{MUC}
+		    \end{tabular}			
 		  \label{tab:MUC}
 		\end{table}
 				
-		O formato de saída era livre na primeira edição da conferência, da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. Existiam cinco tarefas importantes para a Extração de Informação dentro das MUC: \textit{Named Entity Recognition, Coreference Resolution, Remplate Element Construction, Template Relation Construction e Scenario Template Production} \cite{Chang2006}.
+		O formato de saída era livre na primeira edição da conferência, da segunda conferência em diante, o formato de saída era determinado pelo cômite organizador. Alguns campos típicos relacionados eram: causa, agente, lugar e tempo de um evento, consequências, etc. Existiam cinco tarefas importantes para a Extração de Informação dentro das MUC: \textit{Named Entity Recognition (NER), Coreference Resolution, Remplate Element Construction, Template Relation Construction e Scenario Template Production} \cite{Chang2006}.
 
 \section{Conceitos Básicos}\label{EI:conceitos}
 
@@ -102,7 +109,7 @@
             \item \textbf{Estrutura Flexível} - A instância do objeto consegue assumir outras formas de dados, sendo isso nativo da estrutura em si.
           \end{itemize}
           
-          Algumas ferramentas pioneiras em pequisas de dados semi-estruturados na \emph{World Wide Web} foram:  \emph{Yahoo\footnote{Yahoo - http://www.yahoo.com}} e \emph{Altavista\footnote{Altavista - http://www.altavista.com}}. Utilizam uma técnica chamada \emph{full text search}, que desconsidera a semântica, comparando o texto completo com as entradas do usuário \cite{Silveira2001}.
+          Algumas ferramentas pioneiras em pequisas de dados semi-estruturados na \emph{Web} foram:  \emph{Yahoo\footnote{Yahoo - http://www.yahoo.com}} e \emph{Altavista\footnote{Altavista - http://www.altavista.com}}. Utilizam uma técnica chamada \emph{full text search}, que desconsidera a semântica, comparando o texto completo com as entradas do usuário \cite{Silveira2001}.
             
           Entretanto, como apresenta um mínino de estruturação, alguns padrões podem ser construidos, limitando sua utilização na extração.
           
@@ -134,7 +141,7 @@
 		 
 		 Para demonstrar a Análise de Domínio, tomamos como regra, a obtenção dos substantivos dos sujeitos. Com isto, conseguimos extrair ``dia'' de nossa sentença original. E finalizamos o processo de extração.
 
-		O processo de Extração de Informação pode ser abstraído em duas grandes partes. Primeiramente a extração \textbf{fatos} individuais do texto através de uma análise textual. Então, a integração destes fatos, aumentando os fatos já obtidos ou criando fatos novos. E por fim, os fatos pertinentes ao cenário, nós transformamos para o formato de saída \cite{Grishman1997}. Para isto, o processo passa por algumas complexidades que se relacionam diretamente com os módulos que utilizaremos.		
+		O processo de Extração de Informação pode ser abstraído em duas grandes partes. Primeiramente a extração de \textbf{fatos} individuais do texto através de uma análise textual. Então, a integração destes fatos, aumentando os fatos já obtidos ou criando fatos novos. E por fim, os fatos pertinentes ao cenário, nós transformamos para o formato de saída \cite{Grishman1997}. Para isto, o processo passa por algumas complexidades que se relacionam diretamente com os módulos que utilizaremos.		
 		      
 		\paragraph{Fatores de complexidade}	Como a Extração de Informação trabalha com textos, enfrentamos dificuldades como a língua na qual é escrita, o gênero do documento, propriedades e a própria tarefa que efetuaremos sobre o documento \cite{Appelt1999}.
 		
@@ -154,6 +161,7 @@
 
 		% Tabela com exemplos de aparição de nomes
 		\begin{table}[htbp]
+		\caption{Exemplos de aparição de nomes}
 		  \centering   
 		    \begin{tabular}{rrrr}
 		    \addlinespace
@@ -168,8 +176,7 @@
 		    JOÃO JOSÉ DA SILVA PEREIRA JUNIOR \\
 		    JUNIOR, João J. S. P.		    
 		    \bottomrule
-		    \end{tabular}
-			\caption{Exemplos de aparição de nomes}
+		    \end{tabular}			
 		  \label{tab:exemplos_nome}
 		\end{table}
 
@@ -179,16 +186,16 @@
 
 \section{Avaliação}\label{EI:avaliacao} 
 		
-		Os critérios de avaliação consistem em: quanta informação foi extraída(\textit{recall}), quanto da informação extraída é correta(\textit{precision}) e quanto da informação extraída é supérflua(\textit{overgeneration}) \cite{Sundheim1991}. As conferência \textit{MUC} têm um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas \cite{Gaizauskas1998}.
+		Os critérios de avaliação consistem em: quanta informação foi extraída (\textit{recall}), quanto da informação extraída é correta (\textit{precision}) e quanto da informação extraída é supérflua (\textit{overgeneration}) \cite{Sundheim1991}. As conferências \textit{MUC} possuem um papel fundamental na definição dessas medidas, na necessidade de avaliar os sistemas de Extração de Informação. Inicialmente as medidas de precisão e cobertura foram herdadas do sistema de avaliação de Recuperação de Informação. Como as técnicas de Extração e Recuperação são distintas, os nomes foram mantidos, porém as definições das medidas foram alteradas \cite{Gaizauskas1998}.
 		 
 		\begin{itemize}
-          	\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) : Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída($N_{extraido-correto}$) sobre a informação relevante na página($N_{total-extraidos}$). Representada pela fórmula~\ref{formula:cobertura}
+          	\item \textbf{Cobertura ou Abrangência}(\textit{Recall}) : Quanto da informação extraída é relevante. Ou seja, é medida através da informação corretamente extraída ($N_{extraido-correto}$) sobre a informação relevante na página ($N_{total-extraidos}$). Representada pela fórmula~\ref{formula:cobertura}
           	
           	\begin{equation}\label{formula:cobertura}
               Cobertura = \frac{N_{extraido-correto}}{N_{total-extraidos}}              
             \end{equation}            
     	
-          	\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída($N_{extraido-corretos}$) sobre a informações extraídas ($N_{resposta}$).
+          	\item \textbf{Precisão}(\textit{Precision}) : Quanto da informação extraída é correta. É obtida através da informação corretamente extraída ($N_{extraido-corretos}$) sobre a informações extraídas ($N_{resposta}$).
           	
           	\begin{equation}\label{formula:precisao}
               Precis\~{a}o = \frac{N_{extraido-correto}}{N_{resposta}}
@@ -202,7 +209,7 @@
               F-measure = \frac{(\beta^2 + 1)*Cobertura*Precisão}{\beta^2 * (Cobertura + Precisão)}
             \end{equation}
 
-			$\beta = Cobertura/Precis\~{a}o$, onde encontramos a F-measure sendo orientada para cobertura quando $\beta > 1$  e orientada para a precisão quando $\beta < 1$. Por este motivo, geralmente utiliza-se $\beta = 1$ , balanceando assim as duas medidas, e aplicando na fórmula~\ref{formula:F-measure} temos:
+			$\beta = Cobertura/Precis\~{a}o$, onde encontramos a \textit{F-measure} sendo orientada para cobertura quando $\beta > 1$  e orientada para a precisão quando $\beta < 1$. Por este motivo, geralmente utiliza-se $\beta = 1$ , balanceando assim as duas medidas, e aplicando na fórmula~\ref{formula:F-measure} temos:
 
   		 	\begin{equation}\label{formula:F1}
               F_1 = \frac{2*Cobertura*Precisão}{(Cobertura + Precisão)}
@@ -223,7 +230,8 @@
 		A regra criada para a extração de nome tem como base as definições da gramática, sendo considerado um nome uma palavra que começa com uma letra maiúscula seguida de letras minúsculas. Como os nomes estão sendo extraídos de páginas \textit{Web}, e elas não possuem uma regra quanto a sua estética, podemos encontrar muitas palavras que não são necessariamente um nome. E isto realmente acontece, como podemos observar na tabela~\ref{tab:termos_extraidos}. 
 
 			\begin{table}[htbp]
-              \centering              
+			\caption{Exemplos de alguns termos extraidos}  
+              \centering                
                     \begin{tabular}{rrrr}
                         \addlinespace
                         \toprule
@@ -234,30 +242,29 @@
                                 Ralph & Nixon & Samuel & Lennart \\
                                 Michigan & Chicago & National & Office \\                                                             
                         \bottomrule
-                    \end{tabular}
-                \caption{Exemplos de alguns termos extraidos}
+                    \end{tabular}                
               \label{tab:termos_extraidos}
             \end{table}
 		
 		Para esclarecer um pouco mais o conceito de Precisão e Cobertura, utilizando-se da tabela~\ref{tab:termos_extraidos}, temos o total de 16 termos extraídos. Desses 16 termos, apenas 4 são nomes corretos e esperávamos no total 8 nomes, então nossa \textbf{Precisão} é de 50\%. Resultando em uma precisão média. A \textbf{Cobertura} são os nomes extraídos corretamente sobre o total de termos que extraímos, resultando em apenas 25\%. Isso significa que de toda informação extraída, apenas 25\% é relevante para o domínio do sistema. Note que extraimos nomes como Michigan e Chicago, que estão corretos do ponto de vista de serem nomes, mas são nomes de lugares, e o foco é nome de pessoas.
 		
-		Temos como resultante a tabela ~\ref{tab:resultados_alzheimerassociation}.
+		Para a avaliação real da performance temos a tabela ~\ref{tab:resultados_alzheimerassociation} como resultante do processo de extração dos nomes na pagina \textit{Association Alzheimer}. Podemos analisar que a ferramenta possui uma precisão altíssima, conseguindo encontrar todos os nomes com êxito. Em contrapartida, extrai muitos dados irrelevantes para o contexto da pesquisa que se enquadram nas regras descritas como nomes.
 				
             \begin{table}[htbp]
-              \centering              
+            \caption{Resultados da extração}               
+              \centering              	          
                     \begin{tabular}{rr}
                         \addlinespace
                         \toprule
                               & Página \\
                         \midrule                              
-                                Nomes presentes & 8 \\
-                                Nomes identificados pelo programa (usando expressões) & 16 \\
-                                Nomes corretamente identificados (usando expressões) &  4\\
-                                Precisão/Precision & 50\% \\
-                                Cobertura/Recall & 25\% \\                              
+                                Nomes presentes & 16 \\
+                                Nomes identificados pelo programa (usando expressões) & 83 \\
+                                Nomes corretamente identificados (usando expressões) &  16\\
+                                Precisão/Precision & 100\% \\
+                                Cobertura/Recall & 19\% \\                              
                         \bottomrule
-                    \end{tabular}
-                \caption{Resultados da extração}
+                    \end{tabular}                
               \label{tab:resultados_alzheimerassociation}
             \end{table}
 

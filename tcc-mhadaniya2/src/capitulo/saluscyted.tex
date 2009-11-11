@@ -20,7 +20,7 @@
 	
 		Um Parser é um programa de computador (ou apenas um componente de um programa) que serve para analisar a estrutura gramatical de uma entrada, manipulando os tokens, que são segmentos de texto ou símbolos que podem ser manipulados.
 		
-		A ferramenta para a implementação do NameParser foi o JavaCC(Java Compiler Compiler[tm]). É um gerador de parser \textit{open-source} inicialmente desenvolvido pela \textit{Sun}. Utiliza uma sintaxe próxima do Java, e trabalha \textit{top-down}.
+		A ferramenta para a implementação do NameParser foi o JavaCC (Java Compiler Compiler[tm]). É um gerador de parser \textit{open-source} inicialmente desenvolvido pela \textit{Sun}. Utiliza uma sintaxe próxima do Java, e trabalha \textit{top-down}.
 		
 		\textbf{Parser} - é um componente de um programa que analisa a estrutura léxica de uma entrada de acordo com regras pré-definidas. E para a implementação do \emph{NameParser} foi utilizado o JavaCC que utiliza o Java como linguagem.
 		
@@ -47,18 +47,18 @@
 				
 		\subsection{JavaCC}
 		
-		JavaCC (Java Compiler Compiler) é um gerador de analisador sintático, similar ao yacc. O formalismo que tratato é o Backus-Naur Estendido, e a saída gerada é na linguagem Java. Um limitante do JavaCC é a geração de analisadores sintáticos descendentes, limitando as gramaticas analisadas(LL(k)).
+		JavaCC (Java Compiler Compiler) é um gerador de analisador sintático, similar ao yacc. O formalismo que tratato é o Backus-Naur Estendido, e a saída gerada é na linguagem Java. Um limitante do JavaCC é a geração de analisadores sintáticos descendentes, limitando as gramáticas analisadas (LL(k)).
 		
 		JavaCC é comumente utilizado quando precisamos tratar outras linguagens, mas não é seu único uso. O programador necessita especificar uma coleção de "expressões regulares" que serão as regras utilizadas para a leitura e quebra dos tokens. O analisador consome a sequência de tokens, analisa a estrutura e como resultado produz o que o programador especificou, e assim gera o analisador em Java.
 												
 		\section{NameParser}
-		
+	
 		A aplicação funciona da seguinte maneira:
 		
 		\begin{itemize}
           \item 1. É executado uma varredura do HtmlParser na página escolhida, e obtemos como resultado uma arvore da página;
           \item 2. Analisamos nós que possuem nós filhos textos, onde temos maior probabilidade de encontrar nomes;
-          \item 3. Sob o conteúdo destes nós textos, executamos o NameParser para a extração de possiveis nomes;
+          \item 3. Sob o conteúdo destes nós textos, executamos o NameParser para a extração de possiveis nomes; 
           \item 4. Com os possiveis nomes extraidos, eliminamos aqueles que estão presentes no dicionário;
           \item 5. Lista final com os nomes extraidos pela aplicação.                   
         \end{itemize}
@@ -79,7 +79,7 @@
 		
 		\begin{figure}[htb]
 			\begin{center}				
-				\includegraphics[scale=0.6]{./figuras/regras01.png}
+				\includegraphics[scale=0.5]{./figuras/regras01.png}
 			\end{center}
 			\caption{Declaração das regras de tokens}
             \label{fig:tokens01}
@@ -100,11 +100,12 @@
 		% Tabela das regras e nomes.
 		\begin{table}[htbp]
 		  \centering   
-		    \begin{tabular}{rr}
+		  	\footnotesize
+		    \begin{tabular}{cc}
 		    \addlinespace
 		    \toprule
 		    {\bf REGRA} & {\bf Exemplo de Nome} \\
-		    \midrule
+		    \midrule 
 		    (<NOME>" ")+ (<PREFIXO>" ")* <NOME> & Pedro de Alcântara \\
 		    (<NOME>" ")+ (<MAIUSCULA>"."" ")* (<MAIUSCULA>(".")*) & Pedro A. F. \\
 		    (<NOME>" ")+ (<MAIUSCULA>"."" ")* \\ (<NOME>|<PREFIXO>)* " "<NOME>	& Pedro A. Francisco da Silva \\
@@ -122,4 +123,4 @@
 		
 		O resultado foi satisfatório para um inicio de pesquisa, mas muitas outras abordagens e implementações podem ser feitas. Como queremos um resultado mais universal, uma opção é de integrarmos com alguma search engine, e.g. Google, e buscarmos informações. No primeiro momento com \emph{queries} do tipo: <NOME COMPLETO> is author, <NOME COMPLETO> was born in, <NOME COMPLETO> é autor, <NOME COMPLETO> é nascido em. Com isto, descartamos o dicionario a principio mas é algo a ser avaliado num futuro projeto.
 		
-		Todo o código utilizado para implementação da ferramenta se encontra disponivel no final do trabalho como anexo e no repositório http://tcc-mhadaniya.googlecode.com/svn/trunk/. Está disponivel sob as licensas GNU General Public License Versão 3 e seu conteúdo sob a Creative Commons 3.0 BY-SA.
+		Todo o código utilizado para implementação da ferramenta se encontra disponivel no final do trabalho como anexo e no repositório http://salusparser.googlecode.com/svn/trunk/. Está disponivel sob as licensas GNU General Public License Versão 3 e seu conteúdo sob a Creative Commons 3.0 BY-SA.

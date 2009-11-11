@@ -28,13 +28,13 @@
 
 \section{Web Mining}
 	
-		\textit{Web Mining} é o uso das técnicas de Mineração de Dados para descobrir e extrair automaticamente a informação de documentos na \emph{Web} \cite{Etzione1996}. A Mineração de Dados refere-se ao processo não trivial de identificação de padrões válidos, previamente desconhecidos e potencialmente úteis de dados \cite{Frawley1992}. Seguindo o conceito de Etzione, que utiliza da Descoberta do Conhecimento(\textit{Knowledge Discovery Database}) como base, ele decompõe a Web Mining em 4(quatro) tarefas: \emph{Resource finding}(Coleta de Documentos), \emph{Information selection and pre-processing}(Pré-processamento), \emph{Generalization}(Extração de Padrões) e \emph{Analysis}(Análise).        		
+		\textit{Web Mining} é o uso das técnicas de Mineração de Dados para descobrir e extrair automaticamente a informação de documentos na \emph{Web} \cite{Etzione1996}. A Mineração de Dados refere-se ao processo não trivial de identificação de padrões válidos, previamente desconhecidos e potencialmente úteis de dados \cite{Frawley1992}. Seguindo o conceito de Etzione, que utiliza da Descoberta do Conhecimento (\textit{KDD - Knowledge Discovery Database}) como base, ele decompõe a Web Mining em quatro tarefas: \emph{Resource finding} (Coleta de Documentos), \emph{Information selection and pre-processing} (Pré-processamento), \emph{Generalization} (Extração de Padrões) e \emph{Analysis} (Análise).        		
 		
-		É importante ressaltar que \emph{Web Mining} é diferente de Recuperação da Informação(\emph{Information Retrieval}) e Extração da Informação(\emph{Information Extraction}). Mas uma combinação das técnicas em si são utilizadas nas etapas do \emph{Web Mining}.
+		É importante ressaltar que \emph{Web Mining} é diferente de Recuperação da Informação e Extração da Informação. Mas uma combinação das técnicas em si são utilizadas nas etapas do \emph{Web Mining}.
 		
 \section{Descoberta do Conhecimento}
 
-		Muitas são as definições que os pesquisadores adotam para \emph{KDD(Knowledge Discovery Database)} ou Mineração de Dados, a mais difundida e adotada é encontrada nos trabalhos de Fayyad e seu grupo de pesquisa \cite{Fayyad1996a}: 
+		Muitas são as definições que os pesquisadores adotam para KDD ou Mineração de Dados, a mais difundida e adotada é encontrada nos trabalhos de Fayyad e seu grupo de pesquisa \cite{Fayyad1996a}: 
 
 		\begin{flushright}
 		     \parbox{4.0in}{\footnotesize{\emph{Knowledge Discovery Database} é o processo não trivial de identificação de padrões válidos, novos, potencialmente úteis e compreensiveis que estejam presentes nos dados.}}
@@ -58,14 +58,14 @@
 	 	 
 	 	 \subsection{Identificação do Problema} %\paragraph{Identificação do Problema}
 	 	 
-	 	 Para iniciarmos todo o processo, precisamos ter um conhecimento mínimo que seja do dominio com o qual iremos trabalhar, e devemos ter claro o objetivo que almejamos. Nesta fase, construimos nosso conhecimento e todas as etapas posteriores são dependentes de uma análise que cubra as metas, objetivos e restrições. Criamos o conceito de útil para o sistema e para o usúario nesta fase.
+	 	 Para iniciarmos todo o processo, precisamos ter um conhecimento mínimo que seja do domínio com o qual iremos trabalhar, e devemos ter claro o objetivo que almejamos. Nesta fase, construímos nosso conhecimento e todas as etapas posteriores são dependentes de uma análise que cubra as metas, objetivos e restrições. Criamos o conceito de útil para o sistema e para o usúario nesta fase.
 	 	 
 	 	 \subsection{Pré-Processamento} %\paragraph{Pré-Processamento}
 	 	 
 	 	 Muitas vezes os dados não se encontram formatados adequadamente para a utilização na etapa de extração de padrões, ou outras características limitam a aplicação. Para adequá-los alguma tarefas podem ser inseridas no Pré-Processamento: Integração, Transformação, Limpeza e Redução de Dados.
 	 	 
 	 	 	\begin{itemize}
-                \item \textbf{Integração:} Os dados muitas vezes são provenientes de diversas fontes, precisando uma unificação. Obtemos nesta fase, uma fonte única de dados para utilizar nas estapas posteriores \cite{Alvarez2007}.
+                \item \textbf{Integração:} Os dados muitas vezes são provenientes de diversas fontes, precisando uma unificação. Obtemos nesta fase, uma fonte única de dados para utilizar nas etapas posteriores \cite{Alvarez2007}.
                 \item \textbf{Transformação:} Para minimizar as diferenças encontradas nos dados para melhorar sua extração, algumas transformações aplicadas são: normalização, transformação de tipo, discretização de atributos quantitativos, entre outros \cite{Batista2003}.
                 \item \textbf{Limpeza:} Com o conhecimento adquirido no passo de Identificação do problema, temos um embasamento melhor para remover dados indesejáveis. Alguns atributos podem estar preenchidos incorretamente \cite{Alvarez2007}.
                 \item \textbf{Redução:} Muitas vezes somos obrigados a limitar nossa ação diretamente ligados a inúmeros fatores. O volume pode ultrapassar a capacidade de processamento, sendo isto observado quando executamos muitas vezes os experimentos \cite{Weiss1998}.
@@ -124,14 +124,14 @@
 			
 			Podemos também supor que termos que aparecem muitas vezes no documento, não revelam muitas informações sobre o documeto. Analogamente, termos que aparecem pouco também podem ser excluidos \cite{Yang1997}.
 			
-			\subparagraph{\textit{Stemming}} Nos documentos, as palavras podem ser encontradas flexionadas em diversas formas e as vezes compartilham a mesma raiz semântica. O processo de \emph{steamming} consiste em reduzir estas formas encontradas na raiz(\emph{stem}). Podemos citas Porter \cite{Porter1997} e Lovins \cite{Lovins1968} como grandes pesquisadores nesta área. Para a lingua portuguesa, temos o \textit{STEMBR : A stemming algorithm for the brazilian portuguese language}.
+			\subparagraph{\textit{Stemming}} Nos documentos, as palavras podem ser encontradas flexionadas em diversas formas e as vezes compartilham a mesma raiz semântica. O processo de \emph{steamming} consiste em reduzir estas formas encontradas na raiz (\emph{stem}). Podemos citas Porter \cite{Porter1997} e Lovins \cite{Lovins1968} como grandes pesquisadores nesta área. Para a lingua portuguesa, temos o \textit{STEMBR : A stemming algorithm for the brazilian portuguese language}.
 
 		Filtragem e \emph{Stemming} são apenas algumas das técnicas envolvidas no Pré-Processamento, podemos adotar muitas outras que trabalham no âmbito semântico, hierarquico, com atributos relevantes, etc.
 		
 		\paragraph{Pré-processamento Linguístico} Esta etapa é essencial em cenários onde a mineração tem como objetivo o reconhecimento de nomes próprios, lugares e organizações, e se faz necessário um pré-processamento linguístico. As seguintes tarefas são adotadas no processo:
 		
 		\begin{itemize}
-		  \item \textbf{Etiquetagem morfossintática(\emph{Part-Of-Speech Tagging})} No texto, encontramos palavras, símbolos, fórmulas matematicas, entre outros termos. A etiquetagem morfossintática tem como tarefa atribuir uma etiqueta para cada termo encontrado de acordo com sua categoria. 
+		  \item \textbf{Etiquetagem morfossintática (\emph{Part-Of-Speech Tagging})} No texto, encontramos palavras, símbolos, fórmulas matematicas, entre outros termos. A etiquetagem morfossintática tem como tarefa atribuir uma etiqueta para cada termo encontrado de acordo com sua categoria. 
 		  
 		  \item \textbf{Reconhecimento de frases} Com o agrupamento de termos, analisando o documento, tem como objetivo formar sentenças \cite{Weiss1998}.
 		  
@@ -187,21 +187,21 @@
 		 
 		 A Mineração de Conteúdo e a Recuperação de Informação são muitas vezes utilizadas em conjunto. Enquanto uma realiza a mineração diretamente do conteúdo dos documentos a outra incrementa o poder de busca de outras ferramentas e serviços. Áudio, vídeo, dados simbólicos, metadados e vínculos de hipertexto fazem parte do conteúdo de documentos da \textit{Web} atualmente, e como tal, na mineração de conteúdos também são analisados. Existem áreas de pesquisas destinadas a mineração de dados multimídias, entretanto, como uma enorme parte da \textit{Web} é constituída de texto e hipertexto, permanecendo assim o foco em dados de texto.
 		
-		Com o continuo crescimento da \emph{Web}, as pesquisas voltadas para ferramentas mais eficazes, melhorias nas técnicas de mineração e extração de dados se desenvolveram. Podemos observar duas grandes abordagens quando tratamos de Mineração de Conteúdo: Baseado em Agente(\emph{Agent-Based}) e Banco de Dados(\emph{Database}).
+		Com o continuo crescimento da \emph{Web}, as pesquisas voltadas para ferramentas mais eficazes, melhorias nas técnicas de mineração e extração de dados se desenvolveram. Podemos observar duas grandes abordagens quando tratamos de Mineração de Conteúdo: Baseado em Agente (\emph{Agent-Based}) e Banco de Dados (\emph{Database}).
 		 
-		\paragraph{Baseado em Agente(\emph{Agent-Based})} Esta abordagem de mineração de dados trabalha diretamente com o campo de Inteligência Artificial, provendo um sistema autônomo ou semi-autônomo, que trabalha para a coleta de conhecimento e organização das informações na \emph{WEB} delimitado pelo escopo do sistema. Dentro desta abordagem, temos as seguintes categorias: 		
+		\paragraph{Baseado em Agente (\emph{Agent-Based})} Esta abordagem de mineração de dados trabalha diretamente com o campo de Inteligência Artificial, provendo um sistema autônomo ou semi-autônomo, que trabalha para a coleta de conhecimento e organização das informações na \emph{WEB} delimitado pelo escopo do sistema. Dentro desta abordagem, temos as seguintes categorias: 		
 		
-			\subparagraph{Agentes de Busca Inteligentes(\emph{Intelligent Search Agents})} Muitos sistemas de Agentes Inteligentes utilizam informações caracteristicas de um domínio para organizar e interpretar essas informações de uma forma totalmente autônoma. Como exemplo, temos alguns trabalhos como o \emph{Harvest} \cite{Bowman1995}, \emph{FAQ-Finder} \cite{Hammond1994}, \emph{OCCAM} \cite{Kwok1996} e \emph{ParaSite} \cite{Spertus1997} que extraem e interpretam documentos através de um dominio específico. Outros agente como \emph{ShopBot} \cite{Etzione1997} e \emph{ILA(Internet Learning Agent)} \cite{Etzione1995} através de estruturas de fontes de informação não familiares tentam através da interação, aprender novos comportamentos. \emph{ShopBot} coleta informações de produtos em vários sites de venda utilizando apenas informações gerais dos produtos, enquanto o \emph{ILA} aprende com os modelos e traduz para um conceito interno do sistema \cite{Cooley1997}.
+			\subparagraph{Agentes de Busca Inteligentes (\emph{Intelligent Search Agents})} Muitos sistemas de Agentes Inteligentes utilizam informações caracteristicas de um domínio para organizar e interpretar essas informações de uma forma totalmente autônoma. Como exemplo, temos alguns trabalhos como o \emph{Harvest} \cite{Bowman1995}, \emph{FAQ-Finder} \cite{Hammond1994}, \emph{OCCAM} \cite{Kwok1996} e \emph{ParaSite} \cite{Spertus1997} que extraem e interpretam documentos através de um dominio específico. Outros agente como \emph{ShopBot} \cite{Etzione1997} e \emph{ILA (Internet Learning Agent)} \cite{Etzione1995} através de estruturas de fontes de informação não familiares tentam através da interação, aprender novos comportamentos. \emph{ShopBot} coleta informações de produtos em vários sites de venda utilizando apenas informações gerais dos produtos, enquanto o \emph{ILA} aprende com os modelos e traduz para um conceito interno do sistema \cite{Cooley1997}.
 								
-			\subparagraph{Categorização e Filtragem de Informação} Muitos agentes \emph{Web} utilizam tecnicas de Recuperação de Informação para automaticamente filtrar e categorizar documentos da Web. O \emph{BO(Bookmark Organizer)} combina técnicas de \emph{clustering} e interação com o usuário para orgazinar o conjunto de documentos baseado em informação conceitual \cite{Maarek1996}. O HyPursuit usa informação semântica embutida nos links e no conteúdo em si dos documentos para criar uma hierarquia de \emph{cluster} de hipertextosm e estruturar as informações \cite{Weiss1996}. \emph{Google News\footnote{GoogleNews - http://news.google.com}} atualmente é uma das ferramentas mais populares que classifica noticias de mais de 4.000 fontes \cite{Kolari2004}.
+			\subparagraph{Categorização e Filtragem de Informação} Muitos agentes \emph{Web} utilizam tecnicas de Recuperação de Informação para automaticamente filtrar e categorizar documentos da Web. O \emph{BO (Bookmark Organizer)} combina técnicas de \emph{clustering} e interação com o usuário para orgazinar o conjunto de documentos baseado em informação conceitual \cite{Maarek1996}. O HyPursuit usa informação semântica embutida nos links e no conteúdo em si dos documentos para criar uma hierarquia de \emph{cluster} de hipertextosm e estruturar as informações \cite{Weiss1996}. \emph{Google News\footnote{GoogleNews - http://news.google.com}} atualmente é uma das ferramentas mais populares que classifica noticias de mais de 4.000 fontes \cite{Kolari2004}.
 			
 			\subparagraph{Personalização} Outra categoria de agentes Web incluem aqueles que obtêm ou aprendem as preferencias do usuário e procuram fontes de informação na \emph{Web} que correspondam aquelas preferências, e possivelmente, utilizando filtragem colaborativa, procuram interesses similares. Exemplos que utilizam esta abordagem são \emph{WebWatcher} \cite{Freitag1995}, \emph{PAINT} \cite{Wiggins1994}, \emph{Firefly} \cite{Shardanand1995} e \emph{Syskill\&Webert} \cite{Pasani1996}.
 						 
-		\paragraph{Banco de Dados(\emph{Database})} A abordagem de Banco de Dados, como o nome pressupõem, trabalha com a organização e integração dos documentos semi-estruturados para um documento estruturado, como em um banco de dados relacional, usando inclusive consultas e mecanismos de banco de dados para acesso e analise das informações.
+		\paragraph{Banco de Dados (\emph{Database})} A abordagem de Banco de Dados, como o nome pressupõem, trabalha com a organização e integração dos documentos semi-estruturados para um documento estruturado, como em um banco de dados relacional, usando inclusive consultas e mecanismos de banco de dados para acesso e analise das informações.
 		
 			\subparagraph{Banco de Dados em Multiníveis} Uma organização das informações em multiníveis é proposto por muitos pesquisadores. No nível principal são encontrados informações armazenadas de forma semi-estruturadas em vários repositórios na \emph{Web}. Em níveis acima do principal, encontramos meta-dados ou generalizações que são extraídas das camadas abaixo e organizadas de forma com uma estrutura rigida como um modelo relacional ou orientado objeto \cite{Cooley1997}. Em uma das pesquisas desenvolvidas por Han e seu grupo de pesquisa, utilizam um banco de dados de multi-camadas onde cada camada é obtida com operações de transformações e generalização das camadas inferiores \cite{Han1995}. O sistema ARANEUS extrai informações relevantes de documentos de hipertexto e integra em documentos derivados de hipertexto que são generalizações de \emph{views} de banco de dados \cite{Merialdo1997}.
 			
-			\subparagraph{Sistemas de Consulta Web(\emph{Web Query Systems})} Nesta abordagem, a utilização de \emph{queries} são utilizadas procurando uma aproximação das linguagens de consulta como SQL. Cria-se uma abstração para o usuário final que consulta como se estivesse consultado um banco de dados, quando na realidade existe uma estruturação semântica em cima da semi-estruturada \emph{Web}. Como exemplo, podemos citar \emph{WebLog} \cite{Lakshmanan1996} que utiliza uma linguagem de consulta baseado em lógica para reconstruir a informação extraida das fontes na \emph{Web}. Seguindo a mesma vertente, temos o \emph{WebSQL} \cite{Milo1996}.				
+			\subparagraph{Sistemas de Consulta Web (\emph{Web Query Systems})} Nesta abordagem, a utilização de \emph{queries} são utilizadas procurando uma aproximação das linguagens de consulta como SQL. Cria-se uma abstração para o usuário final que consulta como se estivesse consultado um banco de dados, quando na realidade existe uma estruturação semântica em cima da semi-estruturada \emph{Web}. Como exemplo, podemos citar \emph{WebLog} \cite{Lakshmanan1996} que utiliza uma linguagem de consulta baseado em lógica para reconstruir a informação extraida das fontes na \emph{Web}. Seguindo a mesma vertente, temos o \emph{WebSQL} \cite{Milo1996}.				
 	 
 		A área de mineração de textos está bem esclarecida, com muitas técnicas, uma das quais seria reestruturar o documento para uma linguagem entendida pela maquina. Uma mineração que vem ganhando destaque em pesquisas é a mineração em serviços da Web tais como grupo de noticias, grupos de e-mails, lista de discussão. Outro conceito é introduzido por estes pesquisadores, chamado de \textit{Web Intelligence}, que promete transformar os serviços da \textit{Web} em entidades inteligentes, de forma que elas possam interagir e se comunicar através de uma linguagem comum. 
 
@@ -209,7 +209,7 @@
 		
 		Como o próprio nome descreve, nesta categoria de mineração estamos preocupados com a estrutura dos documentos \textit{Web} e como estes estão ligados entre si. Os vínculos de ligação de hipertexto são os principais objetos de estudos nesta categoria. Podemos visualizar a \textit{Web} como um grafo orientado, onde os nós representam páginas e as setas entre os pares de nós representam os vínculos entre as paginas. Como ocorre em citações bibliográficas quando um artigo é bastante citado indicando que provavelmente este artigo tem um peso importante perante outros que abordam o mesmo tema, o mesmo pode ser observado entre os documentos \textit{Web}. Podemos drasticamente comparar que se uma pagina contém muitas setas entrando, ela teria certa relevância quanto ao seu conteúdo ser confiável.
 		
-		Hyperlink-induced topic search(HITS) é um algoritmo para mapear a \emph{Web} e identifica os \emph{hubs} e \emph{authorities}.  \emph{Authorities} são páginas bem rankeadas sobre um determinado tópico, e \emph{hubs} são páginas com links para os \emph{authorities}. Como exemplo fundamental, temos que citar o \emph{PageRank} \cite{Page1999} largamente difundido graças ao \emph{Google}. 
+		Hyperlink-induced topic search (HITS) é um algoritmo para mapear a \emph{Web} e identifica os \emph{hubs} e \emph{authorities}. \emph{Authorities} são páginas bem rankeadas sobre um determinado tópico, e \emph{hubs} são páginas com links para os \emph{authorities}. Como exemplo fundamental, temos que citar o \emph{PageRank} \cite{Page1999} largamente difundido graças ao \emph{Google}. 
 
  		 \subsection{Mineração de Uso}\label{webmining:uso}
  		 
@@ -219,9 +219,9 @@
 		
 		As ferramentas para análise da \emph{Web} praticamente nasceram com elas, tendo mecanismos para medir as atividades do servidor desde os famigerados contadores de visitação. Atualmente, estas ferramentas acoplaram muito mais tarefas como determinar o tempo e o intervalo de visitas além de determinar o número de acessos. Pode-se descobrir quais são os arquivos mais acessados, podendo assim mapear um fluxo de navegação dentro de um determinado domínio \cite{Cooley1997}.
 		
- 		\paragraph{Ferramentas de Descobrimento de Padrões(\emph{Pattern Discovery Tools})} Com uma combinação sofisticada de muitas áreas como Inteligência Artificial, Mineração de Dados, Psicologia, Teoria da Informação, Economia, Estatística para a mineração do conhecimento e interpretação em um conjunto de dados. Como exemplo, temos a ferramenta \emph{WEBMINER} \cite{Mobasher1997} \cite{Mobasher1996} que descobre automaticamente regras e sequência de padrões através de \emph{logs} de acesso do servidor.
+ 		\paragraph{Ferramentas de Descobrimento de Padrões (\emph{Pattern Discovery Tools})} Com uma combinação sofisticada de muitas áreas como Inteligência Artificial, Mineração de Dados, Psicologia, Teoria da Informação, Economia, Estatística para a mineração do conhecimento e interpretação em um conjunto de dados. Como exemplo, temos a ferramenta \emph{WEBMINER} \cite{Mobasher1997} \cite{Mobasher1996} que descobre automaticamente regras e sequência de padrões através de \emph{logs} de acesso do servidor.
 
-		\paragraph{Ferramentas de Análise de Padrões(\emph{Pattern Analysis Tools})} Uma vez descobertos os padrões, é necessário uma análise sobre os dados extraidos para um aproveitamento do conhecimento obtido. Muitas dessas ferramentas utilizam técnicas onde analistas podem visualizar, interpretar e entender estes dados. A ferramenta \emph{WEBMINER} possui um mecanismo de consulta no estilo da linguagem \emph{SQL}, pois além de extrair o padrão, acopla em suas funcionalidades algumas possibilidades de visualização dos dados extraídos. Mas outras ferramentas como o \emph{WebViz} \cite{Pitkow1994} tem um dos pontos fundamentais para a interação com o usuário apresentando os resultados gráficamente.
+		\paragraph{Ferramentas de Análise de Padrões (\emph{Pattern Analysis Tools})} Uma vez descobertos os padrões, é necessário uma análise sobre os dados extraidos para um aproveitamento do conhecimento obtido. Muitas dessas ferramentas utilizam técnicas onde analistas podem visualizar, interpretar e entender estes dados. A ferramenta \emph{WEBMINER} possui um mecanismo de consulta no estilo da linguagem \emph{SQL}, pois além de extrair o padrão, acopla em suas funcionalidades algumas possibilidades de visualização dos dados extraídos. Mas outras ferramentas como o \emph{WebViz} \cite{Pitkow1994} tem um dos pontos fundamentais para a interação com o usuário apresentando os resultados gráficamente.
 		
 		A personalização é um dos pontos chaves na Mineração de Uso. Como exemplo, podemos visualizar grandes sites de E-Commerce que sempre buscam personalizar seu site de acordo com as preferências de cada cliente, e.g., se eu sempre procuro livros de informática, o site sempre procura me mostrar ofertas em livros de informática e afins. \emph{Web sites} que demonstram um comportamento de mudar a organização de seu conteúdo e apresentação de acordo com as preferências do usuário são chamados sites adaptativos \cite{Kolari2004}.
 
@@ -230,7 +230,7 @@
 		 A Web Semântica é uma extens˜ão da web já existente, onde a informaç˜ão ganha melhores
 significados, proporcionando aos humanos trabalhar melhor em conjunto com os computadores \cite{Berners-Lee2001}. Acredita-se muito que a Web Semântica será o próximo passo evolutivo da Web, pois possui uma linguagem semântica muito rica, e.g., \emph{Web Ontology Language\footnote{Web Ontology Language - http://www.w3.org/TR/owl-feature}}.
 
-		Como somos expostos a muitas informações de diversas maneiras, não sabemos lidar com o que exatamente é correto ou útil para nós, resultando em uma "sobrecarga de informação". Observamos duas características importantes para este fenomeno: demasiado volume e a falta de uma definição semântica interpretável por programas e sistemas \cite{Freitas}.
+		Como somos expostos a muitas informações de diversas maneiras, não sabemos lidar com o que exatamente é correto ou útil para nós, resultando em uma ``sobrecarga de informação". Observamos duas características importantes para este fenômeno: demasiado volume e a falta de uma definição semântica interpretável por programas e sistemas \cite{Freitas}.
 
 		Algumas áreas estudadas na Inteligência Artificial casou muito bem, pelo fato de serem mecânismos que captam a semântica do contéudo e se ajustam de acordo com as necessidades. Uma das abordagens propostas era de dotar a Internet de inteligência própria, construindo páginas mais elaboradas e ricas semânticamente e onde agentes pudessem raciocinar sobre semântica, logo, modelando uma Web Semântica.
 
@@ -238,7 +238,7 @@ significados, proporcionando aos humanos trabalhar melhor em conjunto com os com
 
 		\subsubsection{Camadas da Web Semântica}
 
-		O orgão \emph{W3C(World-Wide Web Consortium)} tem contribuido na questão de manter padrões para a \emph{World-Wide Web}, inclusive para a Web Semântica. Tem padronizado linguagens para definição de ontologias. A figura~\ref{fig:camadasW3C} é uma ilustração das camadas propostas pela \emph{W3C} para a Web Semântica.
+		O orgão \emph{W3C (World-Wide Web Consortium)} tem contribuido na questão de manter padrões para a \emph{World-Wide Web}, inclusive para a Web Semântica. Tem padronizado linguagens para definição de ontologias. A figura~\ref{fig:camadasW3C} é uma ilustração das camadas propostas pela \emph{W3C} para a Web Semântica.
 		
 		\begin{figure}[htb]
 			\begin{center}				
@@ -257,11 +257,11 @@ significados, proporcionando aos humanos trabalhar melhor em conjunto com os com
 		Na segunda camada, encontramos o XML. É uma meta-linguagem de editoração, permitindo a representação de outras linguagens padronizadas.
 		
 		\item \textbf{CAMADA RDF}
-		Na terceira camada é adicionada mais semântica a um documento, descrevendo recursos da Web sem se referir a estruturação. Descreve os recursos por meio de sentenças. Os recursos podem ser partes de um documento ou dados, geralmente descritos como um trio com sujeito(recurso)-predicato(atributo)-objeto(valor do atributo). Comumente são ilustradas como um grafo direto rotulado ou através de XML.
+		Na terceira camada é adicionada mais semântica a um documento, descrevendo recursos da Web sem se referir a estruturação. Descreve os recursos por meio de sentenças. Os recursos podem ser partes de um documento ou dados, geralmente descritos como um trio com sujeito-predicato-objeto (recurso-atributo-valor do atributo). Comumente são ilustradas como um grafo direto rotulado ou através de XML.
 		
 	 
 		\item \textbf{CAMADA de ONTOLOGIA}
-		É a camada responsável pela expressividade e representação das ontologias através da extensibilidade do RDF. Existem algumas linguagens padronizadas: DAML, OIL, OWL entre outras.
+		É a camada responsável pela expressividade e representação das ontologias através da extensibilidade do RDF. Existem algumas linguagens padronizadas: DAML, OWL, entre outras.
 		
 		Permitem definir propriedades como: listas, restrições, cardinalidades, tipos de dados, etc
 	
