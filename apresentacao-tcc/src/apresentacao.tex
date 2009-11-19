@@ -5,44 +5,45 @@
 
 %\documentclass[ucs]{beamer}%para sistemas com ucs
 %\usepackage[utf8x]{inputenc}%idem
-\usetheme{Berkeley} %apenas um dos muitos temas disponíveis: Antibes, Bergen, Berkeley, default, Darmstadt, Boadila, Madrid, Pittsburgh, Rochester, Copenhagen, Warsaw, Singapore, Malmoe, Dresden, Frankfurt, Goettingen, Hannover, Ilmenau, JuanLesPins, Luebeck, Marburg, Montpellier, PaloAlto, Szeged, boxes
+\usetheme{Frankfurt} %apenas um dos muitos temas disponíveis: Antibes, Bergen, Berkeley, default, Darmstadt, Boadila, Madrid, Pittsburgh, Rochester, Copenhagen, Warsaw, Singapore, Malmoe, Dresden, Frankfurt, Goettingen, Hannover, Ilmenau, JuanLesPins, Luebeck, Marburg, Montpellier, PaloAlto, Szeged, boxes
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
 \title[Extra\c{c}\~ao de Informa\c{c}\~ao na Web]{Trabalho de Conclus\~ao de Curso \\ Extra\c{c}\~ao de Informa\c{c}\~ao na Web}
 \author[Mario H. Adaniya]{Aluno: M\'ario Henrique Akihiko da Costa Adaniya \\Orientador: Prof. Dr. Mario Lemes Proença Jr.}
-\institute{Universidade Estadual de Londrina}
+\institute{\large Universidade Estadual de Londrina}
 \date{\today}
-\logo{\includegraphics[scale=0.18]{./figuras/uellogo1.jpg}}
+\logo{\includegraphics[scale=0.2]{./figuras/uellogo1.jpg}}
 
 \begin{document}
   
-\AtBeginSection[] 
-{
-\begin{frame}
-\frametitle{Sumário} 
-\tableofcontents[currentsection]
-\end{frame}
-}
-
+%	\AtBeginSection[] 
+%	{
+%		\begin{frame}
+%		\frametitle{Sumário} 
+%		\tableofcontents[currentsection]
+%		\end{frame}
+%	}
+ 
 %para criar a página de rosto
-\frame{\titlepage} %inclui a front page 
+	\frame{\titlepage} %inclui a front page 
 %==================================================slide
 % cria o sumário
-\begin{frame}
- \frametitle{Sumário}
- \tableofcontents%[pausesections]
-\end{frame}
-%-------------------------------------------------------
+	\begin{frame}
+	 \frametitle{Sumário}
+	 \tableofcontents%[pausesections]
+	\end{frame}
+%-----------------------------------------------------
 %==================================================slide
 %criando um slide
-\include{./slides/capitulo1}
-\include{./slides/capitulo2}
-\include{./slides/capitulo3}
-\include{./slides/capitulo4}
-\include{./slides/conclusoes}
-\section{Refer\^encias Bibliogr\'aficas}
-%\bibliographystyle{abnt-alf}
-%\bibliography{../referencias/refbi}
+	\include{./slides/capitulo1}
+	\include{./slides/capitulo2}
+	\include{./slides/capitulo3}
+	\include{./slides/capitulo4}
+	\include{./slides/conclusoes}
+	
+	%\section{Refer\^encias Bibliogr\'aficas}
+	%\bibliographystyle{abnt-alf}
+	\bibliography{./bibliografia/bibliografia}
 
 \end{document}
